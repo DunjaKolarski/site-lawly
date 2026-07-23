@@ -1,0 +1,15 @@
+.home-work-with {
+  height: 15vh;
+  width: 100%;
+  background-color: #e2eefa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home-work-with > h3 {
+  font-size: 2rem;
+  color: #000d50;
+}
+.home-work-with > h3 > span {
+  color: #6bb8ff;
+}
