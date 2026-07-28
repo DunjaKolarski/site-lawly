@@ -12,7 +12,7 @@ function HomeHero() {
             Work with T14 admits, seasoned consultants, and former admissions
             officers. Your future starts here - make every detail count.
           </p>
-          <button>Match me with a consultant</button>
+          <button className="primary-button">Match me with a consultant</button>
         </div>
         <div className="home-hero-image">
           <img src={heroImage} alt="Students working together" />

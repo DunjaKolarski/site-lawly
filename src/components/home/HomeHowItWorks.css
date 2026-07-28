@@ -86,13 +86,4 @@
   right: -0.2rem;
   border-radius: 0.5rem;
 }
-.home-how-does-it-work > button {
-  width: fit-content;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #ffffff;
-  background-color: #6b9fff;
-  border: none;
-  border-radius: 0.5rem;
-  padding: 0.8rem;
-}
+

@@ -9,12 +9,6 @@
   border-left: 1px solid var(--border-color);
   border-right: 1px solid var(--border-color);
 }
-.container-home {
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 .home-hero-content {
   width: 60%;
   display: flex;
@@ -33,16 +27,6 @@
 .home-hero-content > p {
   font-size: 1rem;
   color: #000d50;
-}
-.home-hero-content > button {
-  width: fit-content;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #ffffff;
-  background-color: #6b9fff;
-  border: none;
-  border-radius: 0.5rem;
-  padding: 0.8rem;
 }
 .home-hero-image {
   width: 30%;

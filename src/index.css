@@ -18,3 +18,19 @@ a {
 :root {
   --border-color: #e5e5e5;
 }
+.container-home {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.primary-button {
+  width: fit-content;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #6b9fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+}

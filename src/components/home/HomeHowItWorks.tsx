@@ -75,7 +75,7 @@ function HomeHowItWorks() {
           <img src={profile8Logo} alt="8 profile uni logo image" className="home-how-work-images-second"/>
         </div>
       </div>
-      <button>Browse Consultants</button>
+      <button className="primary-button">Browse Consultants</button>
     </section>
   );
 }
