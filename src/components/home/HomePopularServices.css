@@ -1,0 +1,61 @@
+.home-popular-services {
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+}
+
+.home-popular-services > h2 {
+  font-size: 2.3rem;
+  color: #000d50;
+}
+
+.home-services-scroll {
+  width: 100%;
+  overflow: hidden;
+  cursor: grab;
+  background-color: #eff4f7;
+}
+
+.home-services-scroll:active {
+  cursor: grabbing;
+}
+
+.home-services-container {
+  display: flex;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 3rem;
+  touch-action: pan-y pinch-zoom;
+}
+
+.home-service-card {
+  flex: 0 0 20rem;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.home-service-card > i {
+  font-size: 2.5rem;
+  color: #398edb;
+}
+
+.home-service-card > h6 {
+  font-size: 1.2rem;
+  color: #398edb;
+}
+
+.home-service-card > p {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #000d50;
+}

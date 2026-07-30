@@ -4,6 +4,7 @@ import HomeWorkWith from "../components/home/HomeWorkWith";
 import HomeHowItWorks from "../components/home/HomeHowItWorks";
 import HomeStrategySession from "../components/home/HomeStrategySession";
 import HomeSimpleDirect from "../components/home/HomeSimpleDirect";
+import HomePopularServices from "../components/home/HomePopularServices";
 
 function Home() {
   return (
@@ -16,6 +17,7 @@ function Home() {
         <HomeHowItWorks />
         <HomeStrategySession />
         <HomeSimpleDirect />
+        <HomePopularServices />
       </main>
     </>
   );
