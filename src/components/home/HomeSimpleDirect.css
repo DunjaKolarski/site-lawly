@@ -1,0 +1,86 @@
+.home-simple {
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+}
+.home-simple > h2 {
+  font-size: 2.3rem;
+  color: #000d50;
+}
+.home-simple > p {
+  font-size: 1rem;
+  color: #000d50;
+}
+.container-home-app {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+}
+.appr {
+  min-height: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.appr > h4 {
+  font-size: 1.8rem;
+  color: #000d50;
+}
+.appr > p {
+  font-size: 1rem;
+  color: #000d50;
+  text-align: center;
+}
+.home-simple-flow {
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.home-simple-flow > h5 {
+  font-size: 1.2rem;
+  color: #000d50;
+}
+.home-simple-our-app {
+  width: 45%;
+  background-color: #dfeffd;
+}
+.home-simple-trad-app {
+  width: 50%;
+  background-color: #ececec;
+}
+.arrow,
+.first-person-app,
+.building-app {
+  color: #000d50;
+}
+.arrow {
+  font-size: 4rem;
+}
+.first-person-app {
+  font-size: 3rem;
+}
+.building-app {
+  font-size: 3rem;
+}
+.pref-person-app {
+  font-size: 3rem;
+  color: #649aff;
+}
+.ran-person-app {
+  font-size: 3rem;
+  color: #808080;
+}
