@@ -6,6 +6,7 @@ import HomeStrategySession from "../components/home/HomeStrategySession";
 import HomeSimpleDirect from "../components/home/HomeSimpleDirect";
 import HomePopularServices from "../components/home/HomePopularServices";
 import HomeFeaturedConsultants from "../components/home/HomeFeaturedConsultants";
+import HomeApplicants from "../components/home/HomeApplicants";
 
 function Home() {
   return (
@@ -20,6 +21,7 @@ function Home() {
         <HomeSimpleDirect />
         <HomePopularServices />
         <HomeFeaturedConsultants />
+        <HomeApplicants />
       </main>
     </>
   );
