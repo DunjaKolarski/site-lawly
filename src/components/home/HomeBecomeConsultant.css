@@ -1,0 +1,68 @@
+.home-become-consultant {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+}
+.home-become-consultant-image {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home-become-consultant-image > img {
+  width: 100%;
+  height: auto;
+}
+.home-become-consultant-content {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+}
+.home-become-consultant-content > h2 {
+  font-size: 2.3rem;
+  color: #000d50;
+}
+.home-consultant-paragraphs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.home-consultant-paragraphs > p {
+  font-size: 1rem;
+  color: #000d50;
+}
+.home-consultant-about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  color: #000d50;
+}
+.home-consultant-about-item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.home-consultant-about-item > i {
+  height: 1.8rem;
+  width: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #000d50;
+  border-radius: 50%;
+}
+.home-consultant-about-item > p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}

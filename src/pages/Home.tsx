@@ -7,6 +7,7 @@ import HomeSimpleDirect from "../components/home/HomeSimpleDirect";
 import HomePopularServices from "../components/home/HomePopularServices";
 import HomeFeaturedConsultants from "../components/home/HomeFeaturedConsultants";
 import HomeApplicants from "../components/home/HomeApplicants";
+import HomeBecomeConsultant from "../components/home/HomeBecomeConsultant";
 
 function Home() {
   return (
@@ -22,6 +23,7 @@ function Home() {
         <HomePopularServices />
         <HomeFeaturedConsultants />
         <HomeApplicants />
+        <HomeBecomeConsultant />
       </main>
     </>
   );
