@@ -39,3 +39,39 @@
   height: auto;
   border-radius: 0.5rem;
 }
+
+@media (max-width: 767px) {
+  .home-hero {
+    height: 80vh;
+  }
+  .home-hero > .container-home {
+    width: 80%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .home-hero-content {
+    display: contents;
+  }
+  .home-hero-content > h1 {
+    order: 1;
+    text-align: center;
+  }
+  .home-hero-content > p {
+    order: 2;
+    text-align: center;
+  }
+  .home-hero-image {
+    order: 3;
+    width: 100%;
+  }
+  .home-hero-content > h3 {
+    order: 4;
+    text-align: center;
+  }
+  .home-hero-content > .primary-button {
+    order: 5;
+    align-self: center;
+  }
+}
