@@ -8,6 +8,7 @@ import HomePopularServices from "../components/home/HomePopularServices";
 import HomeFeaturedConsultants from "../components/home/HomeFeaturedConsultants";
 import HomeApplicants from "../components/home/HomeApplicants";
 import HomeBecomeConsultant from "../components/home/HomeBecomeConsultant";
+import HomePreLaw from "../components/home/HomePreLaw";
 
 function Home() {
   return (
@@ -24,6 +25,7 @@ function Home() {
         <HomeFeaturedConsultants />
         <HomeApplicants />
         <HomeBecomeConsultant />
+        <HomePreLaw />
       </main>
     </>
   );
