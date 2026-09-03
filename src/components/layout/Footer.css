@@ -56,3 +56,52 @@
 .footer-socials > a > i {
   font-size: 2.5rem;
 }
+
+@media (max-width: 767px) {
+  .footer {
+    height: 50vh;
+  }
+  .footer-content {
+    width: 75%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+  }
+  .footer-links-copy {
+    display: contents;
+  }
+  .footer-socials {
+    order: 1;
+    width: 100%;
+    gap: 3rem;
+  }
+  .footer-socials > a > i {
+    font-size: 2rem;
+  }
+  .footer-links {
+    order: 2;
+    width: 100%;
+    align-items: flex-start;
+  }
+  .footer-links > div {
+    gap: 2rem;
+  }
+  .logo-footer {
+    order: 3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .logo-footer > img {
+    width: 30%;
+    height: auto;
+  }
+  .footer-copyright {
+    order: 4;
+    width: 100%;
+  }
+  .footer-copyright > p {
+    font-size: 0.7rem;
+    text-align: center;
+  }
+}
