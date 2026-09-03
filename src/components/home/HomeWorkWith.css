@@ -15,3 +15,9 @@
 .home-work-with > h3 > span {
   color: #6bb8ff;
 }
+
+@media (max-width: 767px) {
+  .home-work-with > h3 > span {
+    display: block;
+  }
+}
