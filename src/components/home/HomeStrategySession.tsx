@@ -9,17 +9,19 @@ function HomeStrategySession() {
           <h4>Not sure where to start?</h4>
           <h2>Book a 15-Minute Strategy Session</h2>
           <p>
-            Meet with [Consultant Namme] to get personalized feedback and a
-            roadmap tailored to your law school goals. Ask questions. Get
-            expertt insight. Walk away with clear next step.
+            Meet with [Consultant Name] to get personalized feedback and a
+            roadmap tailored to your law school goals. Ask questions. Get expert
+            insight. Walk away with clear next step.
           </p>
-          <h5>Ideal for:</h5>
-          <ul>
-            <li>Deciding which schools to target</li>
-            <li>Quick questions about LSAT, timing, or addenda</li>
-            <li>Assessing your strengths and gaps</li>
-            <li>Getting know the coach before booking a full package</li>
-          </ul>
+          <div className="home-strategy-session-ideal">
+            <h5>Ideal for:</h5>
+            <ul>
+              <li>Deciding which schools to target</li>
+              <li>Quick questions about LSAT, timing, or addenda</li>
+              <li>Assessing your strengths and gaps</li>
+              <li>Getting to know the coach before booking a full package</li>
+            </ul>
+          </div>
           <button className="primary-button">
             See consultants available today
           </button>
