@@ -84,3 +84,9 @@
   font-size: 3rem;
   color: #808080;
 }
+
+@media (max-width: 767px) {
+  .home-simple {
+    display: none;
+  }
+}
