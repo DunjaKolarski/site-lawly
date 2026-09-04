@@ -1,4 +1,5 @@
 import "./HomeHowItWorks.css";
+import useEmblaCarousel from "embla-carousel-react";
 import restart from "../../assets/home-restart.png";
 import profile1 from "../../assets/profile1.png";
 import profile1Logo from "../../assets/profile1-logo.png";
@@ -18,20 +19,33 @@ import profile8 from "../../assets/profile8.png";
 import profile8Logo from "../../assets/profile8-logo.png";
 
 function HomeHowItWorks() {
+  const [imagesEmblaRef] = useEmblaCarousel({
+    align: "start",
+    dragFree: true,
+    containScroll: false,
+  });
+
   return (
     <section className="home-how-does-it-work">
       <h2>How Does it Work?</h2>
       <div className="home-how-work-arr">
         <div className="arr-section">
           <div>1</div>
-          <p>Find a Coach</p>
+          <p>
+            <span className="desktop-step-text">Find a Coach</span>
+            <span className="mobile-step-text">Match with a Coach</span>
+          </p>
         </div>
-        <i className="bi bi-arrow-right"></i>
+        <div className="home-step-arrow">
+          <i className="bi bi-arrow-right"></i>
+        </div>
         <div className="arr-section">
           <div>2</div>
           <p>Book Your Session</p>
         </div>
-        <i className="bi bi-arrow-right"></i>
+        <div className="home-step-arrow">
+          <i className="bi bi-arrow-right"></i>
+        </div>
         <div className="arr-section">
           <div>3</div>
           <p>Get Personalized Application Strategy</p>
@@ -41,38 +55,104 @@ function HomeHowItWorks() {
       <p className="home-refund">
         <span>Full refund</span> if you're not satisfied with your first session
       </p>
-      <div className="home-how-work-all-images">
-        <div className="home-how-work-images">
-          <img src={profile1} alt="1 profile image" className="home-how-work-images-first"/>
-          <img src={profile1Logo} alt="1 profile uni logo image" className="home-how-work-images-second"/>
-        </div>
-        <div className="home-how-work-images">
-          <img src={profile2} alt="2 profile image" className="home-how-work-images-first"/>
-          <img src={profile2Logo} alt="2 profile uni logo image" className="home-how-work-images-second" />
-        </div>
-        <div className="home-how-work-images">
-          <img src={profile3} alt="3 profile image" className="home-how-work-images-first"/>
-          <img src={profile3Logo} alt="3 profile uni logo image" className="home-how-work-images-second"/>
-        </div>
-        <div className="home-how-work-images">
-          <img src={profile4} alt="4 profile image" className="home-how-work-images-first"/>
-          <img src={profile4Logo} alt="4 profile uni logo image" className="home-how-work-images-second"/>
-        </div>
-        <div className="home-how-work-images">
-          <img src={profile5} alt="5 profile image" className="home-how-work-images-first"/>
-          <img src={profile5Logo} alt="5 profile uni logo image" className="home-how-work-images-second"/>
-        </div>
-        <div className="home-how-work-images">
-          <img src={profile6} alt="6 profile image" className="home-how-work-images-first"/>
-          <img src={profile6Logo} alt="6 profile uni logo image" className="home-how-work-images-second"/>
-        </div>
-        <div className="home-how-work-images">
-          <img src={profile7} alt="7 profile image" className="home-how-work-images-first"/>
-          <img src={profile7Logo} alt="7 profile uni logo image" className="home-how-work-images-second"/>
-        </div>
-        <div className="home-how-work-images">
-          <img src={profile8} alt="8 profile image" className="home-how-work-images-first"/>
-          <img src={profile8Logo} alt="8 profile uni logo image" className="home-how-work-images-second"/>
+      <div className="home-how-work-images-viewport" ref={imagesEmblaRef}>
+        <div className="home-how-work-all-images">
+          <div className="home-how-work-images">
+            <img
+              src={profile1}
+              alt="1 profile image"
+              className="home-how-work-images-first"
+            />
+            <img
+              src={profile1Logo}
+              alt="1 profile uni logo image"
+              className="home-how-work-images-second"
+            />
+          </div>
+          <div className="home-how-work-images">
+            <img
+              src={profile2}
+              alt="2 profile image"
+              className="home-how-work-images-first"
+            />
+            <img
+              src={profile2Logo}
+              alt="2 profile uni logo image"
+              className="home-how-work-images-second"
+            />
+          </div>
+          <div className="home-how-work-images">
+            <img
+              src={profile3}
+              alt="3 profile image"
+              className="home-how-work-images-first"
+            />
+            <img
+              src={profile3Logo}
+              alt="3 profile uni logo image"
+              className="home-how-work-images-second"
+            />
+          </div>
+          <div className="home-how-work-images">
+            <img
+              src={profile4}
+              alt="4 profile image"
+              className="home-how-work-images-first"
+            />
+            <img
+              src={profile4Logo}
+              alt="4 profile uni logo image"
+              className="home-how-work-images-second"
+            />
+          </div>
+          <div className="home-how-work-images">
+            <img
+              src={profile5}
+              alt="5 profile image"
+              className="home-how-work-images-first"
+            />
+            <img
+              src={profile5Logo}
+              alt="5 profile uni logo image"
+              className="home-how-work-images-second"
+            />
+          </div>
+          <div className="home-how-work-images">
+            <img
+              src={profile6}
+              alt="6 profile image"
+              className="home-how-work-images-first"
+            />
+            <img
+              src={profile6Logo}
+              alt="6 profile uni logo image"
+              className="home-how-work-images-second"
+            />
+          </div>
+          <div className="home-how-work-images">
+            <img
+              src={profile7}
+              alt="7 profile image"
+              className="home-how-work-images-first"
+            />
+            <img
+              src={profile7Logo}
+              alt="7 profile uni logo image"
+              className="home-how-work-images-second"
+            />
+          </div>
+          <div className="home-how-work-images">
+            <img
+              src={profile8}
+              alt="8 profile image"
+              className="home-how-work-images-first"
+            />
+            <img
+              src={profile8Logo}
+              alt="8 profile uni logo image"
+              className="home-how-work-images-second"
+            />
+          </div>
         </div>
       </div>
       <button className="primary-button">Browse Consultants</button>
