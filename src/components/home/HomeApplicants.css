@@ -98,3 +98,27 @@
   border-radius: 0.4rem;
   object-fit: cover;
 }
+
+@media (max-width: 767px) {
+  .home-applicants > p {
+    width: 80%;
+    text-align: center;
+  }
+  .home-applicants-say {
+    height: 70%;
+    gap: 1.5rem;
+  }
+  .home-applicants-row {
+    gap: 1rem;
+  }
+  .home-applicant-card {
+    width: 35rem;
+    min-width: 35rem;
+  }
+  .home-applicants-row-top {
+    margin-left: 2rem;
+  }
+  .home-applicants-row-bottom {
+    margin-left: -18rem;
+  }
+}
