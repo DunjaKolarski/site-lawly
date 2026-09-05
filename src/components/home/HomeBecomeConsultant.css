@@ -84,10 +84,12 @@
     text-align: center;
   }
   .home-consultant-paragraphs {
+    display: block;
+    text-align: center;
     width: 85%;
   }
   .home-consultant-paragraphs > p {
-    text-align: center;
+    display: inline;
   }
   .home-consultant-about {
     width: 100%;
