@@ -1,4 +1,5 @@
 import "./HomeHowItWorks.css";
+import { useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import restart from "../../assets/home-restart.png";
 import profile1 from "../../assets/profile1.png";
@@ -19,6 +20,20 @@ import profile8 from "../../assets/profile8.png";
 import profile8Logo from "../../assets/profile8-logo.png";
 
 function HomeHowItWorks() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 767);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const [imagesEmblaRef] = useEmblaCarousel({
     align: "start",
     dragFree: true,
@@ -55,7 +70,10 @@ function HomeHowItWorks() {
       <p className="home-refund">
         <span>Full refund</span> if you're not satisfied with your first session
       </p>
-      <div className="home-how-work-images-viewport" ref={imagesEmblaRef}>
+      <div
+        className="home-how-work-images-viewport"
+        ref={isMobile ? imagesEmblaRef : undefined}
+      >
         <div className="home-how-work-all-images">
           <div className="home-how-work-images">
             <img
