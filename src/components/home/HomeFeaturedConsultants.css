@@ -149,3 +149,25 @@
 .home-consultants-arrow-right {
   right: -5rem;
 }
+
+@media (max-width: 767px) {
+  .home-featured-consultants {
+    gap: 3rem;
+  }
+  .home-consultants-carousel {
+    width: 100%;
+  }
+  .home-consultants-container {
+    gap: 1rem;
+  }
+  .home-consultant-card {
+    flex: 0 0 60vw;
+    min-width: 60vw;
+  }
+  .home-consultant-image {
+    height: 18rem;
+  }
+  .home-consultants-arrow {
+    display: none;
+  }
+}
