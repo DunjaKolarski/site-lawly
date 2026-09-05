@@ -7,7 +7,10 @@ function HomePreLaw() {
       <div className="container-home">
         <div className="home-pre-law-content">
           <div className="home-pre-law-title">
-            <h4>Not applying yet? That's the perfect time to start!</h4>
+            <h4>
+              <span>Not applying yet?</span>
+              <span>That's the perfect time to start!</span>
+            </h4>
             <h2>Pre-Law Consulting</h2>
           </div>
           <div className="home-pre-law-paragraphs">

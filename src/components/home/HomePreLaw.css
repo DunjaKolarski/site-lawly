@@ -61,3 +61,53 @@
   width: 100%;
   height: auto;
 }
+
+@media (max-width: 767px) {
+  .home-pre-law {
+    height: 120vh;
+  }
+  .home-pre-law > .container-home {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+  .home-pre-law-content {
+    display: contents;
+  }
+  .home-pre-law-title {
+    order: 1;
+    width: 100%;
+    align-items: center;
+  }
+  .home-pre-law-title > h4 {
+    width: 100%;
+    text-align: center;
+  }
+  .home-pre-law-title > h4 > span {
+    display: block;
+  }
+  .home-pre-law-title > h2 {
+    text-align: center;
+  }
+  .home-pre-law-paragraphs {
+    order: 2;
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+  .home-pre-law-paragraphs > p {
+    display: inline;
+  }
+  .home-pre-law-image {
+    order: 3;
+    width: 90%;
+  }
+  .home-pre-law-topics {
+    order: 4;
+    width: fit-content;
+    align-self: center;
+  }
+  .home-pre-law-content > .primary-button {
+    order: 5;
+  }
+}
