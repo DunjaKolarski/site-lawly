@@ -66,3 +66,33 @@
   font-size: 1.2rem;
   font-weight: bold;
 }
+
+@media (max-width: 767px) {
+  .home-become-consultant > .container-home {
+    flex-direction: column;
+    justify-content: center;
+    gap: 4rem;
+  }
+  .home-become-consultant-image {
+    width: 100%;
+  }
+  .home-become-consultant-content {
+    width: 90%;
+    align-items: center;
+  }
+  .home-become-consultant-content > h2 {
+    text-align: center;
+  }
+  .home-consultant-paragraphs {
+    width: 85%;
+  }
+  .home-consultant-paragraphs > p {
+    text-align: center;
+  }
+  .home-consultant-about {
+    width: 100%;
+  }
+  .home-consultant-about-item {
+    gap: 1rem;
+  }
+}
