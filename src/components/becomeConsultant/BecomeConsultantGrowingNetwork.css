@@ -1,0 +1,29 @@
+.growing-network {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+}
+.growing-network > h2 {
+  font-size: 1.8rem;
+  color: #000d50;
+}
+.growing-network-images {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.growing-network-images > img {
+  width: calc((100% - 5rem) / 6);
+  aspect-ratio: 248 / 260;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
