@@ -4,6 +4,7 @@ import BecomeConsultantBeYourOwnBoss from "../components/becomeConsultant/Become
 import BecomeConsultantGrowingNetwork from "../components/becomeConsultant/BecomeConsultantGrowingNetwork";
 import BecomeConsultantToday from "../components/becomeConsultant/BecomeConsultantToday";
 import BecomeConsultantFeatures from "../components/becomeConsultant/BecomeConsultantFeatures";
+import BecomeConsultantFAQ from "../components/becomeConsultant/BecomeConsultantFAQ";
 import Footer from "../components/layout/Footer";
 
 function BecomeConsultant() {
@@ -17,6 +18,7 @@ function BecomeConsultant() {
         <BecomeConsultantGrowingNetwork />
         <BecomeConsultantToday />
         <BecomeConsultantFeatures />
+        <BecomeConsultantFAQ />
       </main>
 
       <Footer />
