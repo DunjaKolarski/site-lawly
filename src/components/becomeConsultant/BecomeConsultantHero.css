@@ -18,3 +18,21 @@
   font-size: 1rem;
   color: #000d50;
 }
+
+@media (max-width: 767px) {
+  .become-consultant-hero {
+    gap: 1rem;
+  }
+  .become-consultant-hero > h1 {
+    width: 65%;
+    text-align: center;
+  }
+  .become-consultant-hero > p {
+    width: 85%;
+    text-align: center;
+  }
+  .become-consultant-hero > .primary-button {
+    width: 60%;
+    margin-top: 1rem;
+  }
+}
