@@ -13,8 +13,11 @@
   font-size: 1.8rem;
   color: #000d50;
 }
-.be-your-own-boss-container {
+.be-your-own-boss-scroll {
   width: 85%;
+}
+.be-your-own-boss-container {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -48,4 +51,31 @@
   font-size: 1rem;
   color: #8f8f8f;
   text-align: center;
+}
+
+@media (max-width: 767px) {
+  .be-your-own-boss {
+    height: 90vh;
+  }
+  .be-your-own-boss > h2 {
+    width: 80%;
+    text-align: center;
+  }
+  .be-your-own-boss-scroll {
+    width: 100%;
+    overflow: hidden;
+  }
+  .be-your-own-boss-container {
+    justify-content: flex-start;
+    gap: 4rem;
+    padding: 0 3rem;
+    touch-action: pan-y pinch-zoom;
+  }
+  .be-your-own-boss-item {
+    flex: 0 0 60vw;
+    min-width: 0;
+  }
+  .be-your-own-boss-image {
+    height: 23rem;
+  }
 }
