@@ -28,3 +28,21 @@
   border-radius: 0.5rem;
   padding: 0.8rem;
 }
+
+@media (max-width: 767px) {
+  .become-consultant-today {
+    height: 35vh;
+    gap: 1rem;
+  }
+  .become-consultant-today > h2 {
+    width: 70%;
+    text-align: center;
+  }
+  .become-consultant-today > p {
+    width: 80%;
+    text-align: center;
+  }
+  .become-consultant-today > button {
+    margin-top: 1.5rem;
+  }
+}
