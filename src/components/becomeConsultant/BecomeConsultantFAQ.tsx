@@ -26,6 +26,13 @@ const questions = [
       "Verification time can vary depending on the information provided. Complete your profile and submit the requested details to help the review process move smoothly.",
   },
   {
+    id: 6,
+    question: "What is the refund policy?",
+    answer:
+      "If you have a concern about a session or payment, contact our support team with your booking details so they can help you explore the available options.",
+    mobileOnly: true,
+  },
+  {
     id: 5,
     question: "Should I offer 15 minute strategy sessions?",
     answer:
@@ -39,7 +46,10 @@ function BecomeConsultantFAQ() {
       <h2>FAQ’s</h2>
       <div className="become-consultant-faq-container">
         {questions.map((item) => (
-          <details className="become-consultant-faq-item" key={item.id}>
+          <details
+            className={`become-consultant-faq-item${item.mobileOnly ? " become-consultant-faq-mobile" : ""}`}
+            key={item.id}
+          >
             <summary>
               {item.question}
               <i className="bi bi-plus" aria-hidden="true"></i>

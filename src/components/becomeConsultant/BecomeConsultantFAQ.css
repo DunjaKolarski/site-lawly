@@ -56,3 +56,31 @@
   border-top: 1px solid var(--border-color);
   padding: 1.2rem;
 }
+.become-consultant-faq-mobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .become-consultant-faq {
+    height: auto;
+    gap: 3rem;
+    padding: 4rem 0;
+  }
+  .become-consultant-faq-container {
+    width: 95%;
+  }
+  .become-consultant-faq-mobile {
+    display: block;
+  }
+  .become-consultant-faq-item > summary {
+    gap: 2rem;
+    padding: 2.5rem 1.5rem;
+  }
+  .become-consultant-faq-item > summary > i {
+    flex-shrink: 0;
+    font-size: 1.5rem;
+  }
+  .become-consultant-faq-item > p {
+    padding: 1.5rem;
+  }
+}
