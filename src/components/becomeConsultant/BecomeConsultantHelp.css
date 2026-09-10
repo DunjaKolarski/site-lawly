@@ -20,3 +20,15 @@
   color: #000d50;
   text-align: center;
 }
+
+@media (max-width: 767px) {
+  .become-consultant-help {
+    gap: 2.5rem;
+  }
+  .become-consultant-help > h2 {
+    text-align: center;
+  }
+  .become-consultant-help > p {
+    width: 75%;
+  }
+}
