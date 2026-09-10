@@ -27,3 +27,29 @@
   object-fit: cover;
   border-radius: 0.5rem;
 }
+.growing-network-mobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .growing-network {
+    height: 70vh;
+    gap: 3rem;
+  }
+  .growing-network > h2 {
+    text-align: center;
+  }
+  .growing-network-images {
+    width: 80%;
+    gap: 0.7rem;
+  }
+  .growing-network-desktop {
+    display: none;
+  }
+  .growing-network-mobile {
+    display: flex;
+  }
+  .growing-network-images > img {
+    width: calc((100% - 1.4rem) / 3);
+  }
+}
