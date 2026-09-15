@@ -117,3 +117,29 @@
 .signup-terms > a {
   color: #000d50;
 }
+
+@media (max-width: 767px) {
+  .signup {
+    height: 70vh;
+    gap: 1.5rem;
+  }
+  .signup-heading {
+    width: 95%;
+  }
+  .signup-heading > h1 {
+    text-align: center;
+  }
+  .signup-content {
+    width: 80%;
+    gap: 1rem;
+  }
+  .signup-google {
+    width: 95%;
+  }
+  .signup-form {
+    width: 100%;
+  }
+  .signup-terms {
+    width: 80%;
+  }
+}
