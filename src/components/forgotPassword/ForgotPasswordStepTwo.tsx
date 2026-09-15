@@ -8,7 +8,14 @@ function ForgotPasswordStepTwo({ onBack }: ForgotPasswordStepTwoProps) {
   return (
     <section className="forgot-password-step-two">
       <div className="forgot-password-message">
-        <h1>Check your email</h1>
+        <h1>
+          <span className="forgot-password-desktop-title">
+            Check your email
+          </span>
+          <span className="forgot-password-mobile-title">
+            Forgot your password?
+          </span>
+        </h1>
         <p>
           It may take up to 10 minutes to arrive. If you don't receive
           instructions shortly, please check your email's spam or junk folder.
