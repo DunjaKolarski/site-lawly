@@ -1,0 +1,29 @@
+.support-hero {
+  height: 40vh;
+  width: 100%;
+  background-color: #e2eefa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+}
+.support-hero > h1 {
+  font-size: 2.3rem;
+  color: #000d50;
+}
+.support-hero > p {
+  font-size: 1rem;
+  color: #000d50;
+  text-align: center;
+}
+.support-hero-intro {
+  font-weight: bold;
+}
+.support-hero > p > a {
+  display: block;
+  color: #6b9fff;
+  text-decoration: underline;
+}
