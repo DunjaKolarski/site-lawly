@@ -27,3 +27,18 @@
   color: #6b9fff;
   text-decoration: underline;
 }
+
+@media (max-width: 767px) {
+  .support-hero {
+    gap: 1rem;
+  }
+  .support-hero-intro {
+    width: 65%;
+  }
+  .support-hero > p:last-child {
+    width: 65%;
+  }
+  .support-hero > p > a {
+    text-decoration: none;
+  }
+}
