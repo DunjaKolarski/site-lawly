@@ -43,3 +43,46 @@
 .support-question-item > p > span {
   display: block;
 }
+.support-question-item > .support-answer-mobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .support-questions {
+    padding: 3rem 0;
+  }
+  .support-questions-container {
+    width: 90%;
+    gap: 4rem;
+  }
+  .support-category {
+    gap: 1.5rem;
+  }
+  .support-category > h2 {
+    margin-bottom: 1.5rem;
+  }
+  .support-question-item {
+    gap: 0.5rem;
+  }
+  .support-question-item:nth-child(4) {
+    order: 1;
+  }
+  .support-question-item:last-child {
+    order: 2;
+  }
+  .support-question-bullet {
+    display: none;
+  }
+  .support-question-item > p {
+    padding-left: 0;
+  }
+  .support-question-item > p > span {
+    display: inline;
+  }
+  .support-question-item > .support-answer-desktop {
+    display: none;
+  }
+  .support-question-item > .support-answer-mobile {
+    display: block;
+  }
+}
