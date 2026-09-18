@@ -21,3 +21,17 @@
   color: #000d50;
   text-align: center;
 }
+
+@media (max-width: 767px) {
+  .support-help {
+    gap: 2rem;
+    margin-bottom: 6rem;
+  }
+  .support-help > h2 {
+    width: 80%;
+    text-align: center;
+  }
+  .support-help > p {
+    width: 75%;
+  }
+}
