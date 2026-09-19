@@ -1,0 +1,36 @@
+.events-list {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 1.5rem 0 4rem;
+}
+.events-list-container {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 1.5rem;
+}
+.events-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+.events-pagination > button {
+  font-size: 0.9rem;
+  color: #858484;
+  background-color: transparent;
+  border: none;
+}
+.events-pagination > .events-page-active {
+  color: #000d50;
+}
+.events-pagination > span {
+  font-size: 0.9rem;
+  color: #858484;
+}
