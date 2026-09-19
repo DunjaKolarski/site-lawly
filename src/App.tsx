@@ -5,6 +5,7 @@ import LogIn from "./pages/LogIn";
 import SignUp from "./pages/SignUp";
 import ForgotPassword from "./pages/ForgotPassword";
 import Support from "./pages/Support";
+import Events from "./pages/Events";
 
 import "./App.css";
 
@@ -17,6 +18,7 @@ function App() {
       <Route path="/register" element={<SignUp />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/support" element={<Support />} />
+      <Route path="/events" element={<Events />} />
     </Routes>
   );
 }
