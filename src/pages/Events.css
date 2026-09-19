@@ -1,0 +1,7 @@
+.events-layout {
+  width: 100%;
+  display: flex;
+}
+.events-content {
+  width: 96%;
+}
