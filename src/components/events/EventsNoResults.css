@@ -1,0 +1,18 @@
+.events-no-results {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 4rem 0 6rem;
+  text-align: center;
+}
+.events-no-results > h4 {
+  font-size: 1.4rem;
+  font-weight: normal;
+  color: #000d50;
+}
+.events-no-results > p {
+  font-size: 1rem;
+  color: #000d50;
+}

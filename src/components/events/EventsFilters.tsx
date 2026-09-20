@@ -1,12 +1,20 @@
 import "./EventsFilters.css";
+type EventsFiltersProps = {
+  category: string;
+  onCategoryChange: (value: string) => void;
+};
 
-function EventsFilters() {
+function EventsFilters({ category, onCategoryChange }: EventsFiltersProps) {
   return (
     <section className="events-filters">
       <h1>Free Consulting Events</h1>
 
       <div className="events-filters-container">
-        <select aria-label="Category" defaultValue="">
+        <select
+          aria-label="Category"
+          value={category}
+          onChange={(event) => onCategoryChange(event.target.value)}
+        >
           <option value="" disabled>
             Category
           </option>
