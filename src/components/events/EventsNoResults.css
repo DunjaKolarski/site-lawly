@@ -9,10 +9,22 @@
 }
 .events-no-results > h4 {
   font-size: 1.4rem;
-  font-weight: normal;
+  font-weight: bold;
   color: #000d50;
 }
 .events-no-results > p {
   font-size: 1rem;
   color: #000d50;
+}
+
+@media (max-width: 767px) {
+  .events-no-results {
+    padding: 2rem 0 4rem;
+  }
+  .events-no-results > h4 {
+    width: 90%;
+  }
+  .events-no-results > p {
+    width: 75%;
+  }
 }
