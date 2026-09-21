@@ -5,3 +5,9 @@
 .events-content {
   width: 96%;
 }
+
+@media (max-width: 767px) {
+  .events-content {
+    width: 100%;
+  }
+}

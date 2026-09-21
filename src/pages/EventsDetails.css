@@ -17,3 +17,9 @@
 .events-details-left {
   width: 45%;
 }
+
+@media (max-width: 767px) {
+  .events-details-content {
+    width: 100%;
+  }
+}
