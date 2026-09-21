@@ -21,6 +21,8 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
 }
 .events-registration-date > i {
   font-size: 1.4rem;
@@ -61,4 +63,29 @@
 }
 .events-registration-avatars > img + img {
   margin-left: -0.5rem;
+}
+
+@media (max-width: 767px) {
+  .events-registration {
+    width: 100%;
+    order: -1;
+  }
+  .events-registration-content {
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .events-registration-date {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .events-registration-date > p {
+    display: flex;
+    flex-direction: column;
+  }
+  .events-registration-date-divider {
+    display: none;
+  }
+  .events-registration-bottom > button {
+    display: none;
+  }
 }

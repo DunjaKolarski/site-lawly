@@ -21,5 +21,14 @@
 @media (max-width: 767px) {
   .events-details-content {
     width: 100%;
+    padding: 3rem 0 6rem;
+  }
+  .events-details-container {
+    width: 90%;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .events-details-left {
+    width: 100%;
   }
 }

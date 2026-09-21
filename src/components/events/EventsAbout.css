@@ -15,6 +15,7 @@
 }
 .events-about-host > p {
   font-size: 1.4rem;
+  font-weight: bold;
   color: #000d50;
 }
 .events-about-host > img {
@@ -43,4 +44,28 @@
 .events-about-description > p {
   font-size: 1rem;
   color: #000d50;
+}
+.events-about-register {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .events-about {
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .events-about > h1 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+  .events-about-host {
+    justify-content: center;
+  }
+  .events-about-register {
+    display: block;
+  }
+  .events-about-description {
+    width: 100%;
+    margin-top: 1rem;
+  }
 }

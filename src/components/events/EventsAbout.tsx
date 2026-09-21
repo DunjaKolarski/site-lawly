@@ -10,6 +10,9 @@ function EventsAbout() {
         <img src={hostImage} alt="Cynthia L." />
         <span>Cynthia L.</span>
       </div>
+      <button className="primary-button events-about-register" type="button">
+        Register for the event
+      </button>
       <div className="events-about-description">
         <h4>About this event</h4>
         <p>

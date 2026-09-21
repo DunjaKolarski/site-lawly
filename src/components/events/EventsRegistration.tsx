@@ -16,7 +16,11 @@ function EventsRegistration() {
       <div className="events-registration-content">
         <div className="events-registration-date">
           <i className="bi bi-calendar-event" aria-hidden="true"></i>
-          <p>April 17 | 4:00 PM EST - 4:45 PM EST</p>
+          <p>
+            <span>April 17</span>
+            <span className="events-registration-date-divider"> | </span>
+            <span>4:00 PM EST - 4:45 PM EST</span>
+          </p>
         </div>
         <div className="events-registration-bottom">
           <div className="events-registration-attendees">
