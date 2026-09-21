@@ -67,3 +67,10 @@
   font-size: 0.7rem;
   color: #858484;
 }
+
+@media (max-width: 767px) {
+  .events-card {
+    width: 100%;
+    flex-shrink: 0;
+  }
+}
