@@ -1,0 +1,19 @@
+.events-details-layout {
+  width: 100%;
+  display: flex;
+}
+.events-details-content {
+  width: 96%;
+  display: flex;
+  justify-content: center;
+  padding: 6rem 0;
+}
+.events-details-container {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.events-details-left {
+  width: 45%;
+}

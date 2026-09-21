@@ -1,16 +1,24 @@
 import "./EventsCard.css";
+import { Link } from "react-router-dom";
 import eventImage from "../../assets/events.png";
 import hostImage from "../../assets/profile2.png";
 
 function EventsCard() {
   return (
     <div className="events-card">
-      <img
-        src={eventImage}
-        alt="The Guide to Writing Law Essays: Structure, Tips, & Examples"
-      />
+      <Link className="events-card-image" to="/events/1">
+        <img
+          src={eventImage}
+          alt="The Guide to Writing Law Essays: Structure, Tips, & Examples"
+        />
+      </Link>
       <div className="events-card-content">
-        <h4>Drafting The Perfect Essay For Your Stanford Applications</h4>
+        <h4>
+          {" "}
+          <Link to="/events/1">
+            Drafting The Perfect Essay For Your Stanford Applications
+          </Link>
+        </h4>
         <div className="events-card-host">
           <p>Hosted by:</p>
           <img src={hostImage} alt="Cynthia L." />

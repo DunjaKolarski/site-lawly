@@ -1,0 +1,46 @@
+.events-about {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.events-about > h1 {
+  font-size: 2.3rem;
+  color: #000d50;
+}
+.events-about-host {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.events-about-host > p {
+  font-size: 1.4rem;
+  color: #000d50;
+}
+.events-about-host > img {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.events-about-host > span {
+  font-size: 1.4rem;
+  color: #6b9fff;
+}
+.events-about-description {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 2rem 0;
+}
+.events-about-description > h4 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #000d50;
+}
+.events-about-description > p {
+  font-size: 1rem;
+  color: #000d50;
+}

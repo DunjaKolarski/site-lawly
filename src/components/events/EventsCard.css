@@ -6,7 +6,7 @@
   border-radius: 0.5rem;
   overflow: hidden;
 }
-.events-card > img {
+.events-card-image > img {
   width: 100%;
   height: auto;
   display: block;

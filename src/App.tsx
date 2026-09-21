@@ -6,6 +6,7 @@ import SignUp from "./pages/SignUp";
 import ForgotPassword from "./pages/ForgotPassword";
 import Support from "./pages/Support";
 import Events from "./pages/Events";
+import EventsDetails from "./pages/EventsDetails";
 
 import "./App.css";
 
@@ -19,6 +20,7 @@ function App() {
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/support" element={<Support />} />
       <Route path="/events" element={<Events />} />
+      <Route path="/events/:eventId" element={<EventsDetails />} />
     </Routes>
   );
 }

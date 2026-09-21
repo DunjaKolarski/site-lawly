@@ -1,0 +1,64 @@
+.events-registration {
+  width: 43%;
+  background-color: #f7f8f9;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.events-registration > img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.events-registration-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1.5rem;
+}
+.events-registration-date {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.events-registration-date > i {
+  font-size: 1.4rem;
+  color: #6b9fff;
+}
+.events-registration-date > p {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000d50;
+}
+.events-registration-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.events-registration-attendees {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.events-registration-attendees > p {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #000d50;
+}
+.events-registration-avatars {
+  display: flex;
+  align-items: center;
+}
+.events-registration-avatars > img {
+  height: 1.3rem;
+  width: 1.3rem;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.events-registration-avatars > img + img {
+  margin-left: -0.5rem;
+}

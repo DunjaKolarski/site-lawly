@@ -1,0 +1,99 @@
+.events-host {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 2rem;
+}
+.events-host > h4 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #000d50;
+}
+.events-host-profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.events-host-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.events-host-info > img {
+  height: 2.3rem;
+  width: 2.3rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.events-host-info > span {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000d50;
+}
+.events-host-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+.events-host-rating > i {
+  font-size: 1rem;
+  color: #f5b301;
+}
+.events-host-rating > span {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000d50;
+}
+.events-host-rating > small {
+  font-size: 0.6rem;
+  color: #6b9fff;
+}
+.events-host-biography {
+  font-size: 1rem;
+  color: #000d50;
+}
+.events-host-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+.events-host-tags > p {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000d50;
+  margin-right: 0.5rem;
+}
+.events-host-tags > span {
+  font-size: 0.8rem;
+  color: #000d50;
+  background-color: #eff4f7;
+  border-radius: 0.3rem;
+  padding: 0.2rem 0.4rem;
+}
+.events-host-schools {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.events-host-schools > p {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000d50;
+}
+.events-host-schools > span {
+  font-size: 0.9rem;
+  color: #858484;
+}
+.events-host-school-logos {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.events-host-school-logos > img {
+  height: 3rem;
+  width: 3rem;
+  object-fit: contain;
+}
