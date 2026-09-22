@@ -45,6 +45,7 @@ function EventsHost() {
         <span>Environmental Law</span>
       </div>
       <div className="events-host-schools">
+        <p className="events-host-qualifications">Qualifications</p>
         <p>Advised X+ Law School Applicants</p>
         <span>Has helped clients get into these schools:</span>
         <div className="events-host-school-logos">

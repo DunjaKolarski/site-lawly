@@ -7,7 +7,7 @@
 }
 .events-host > h4 {
   font-size: 1.2rem;
-  font-weight: normal;
+  font-weight: bold;
   color: #000d50;
 }
 .events-host-profile {
@@ -96,4 +96,26 @@
   height: 3rem;
   width: 3rem;
   object-fit: contain;
+}
+.events-host-qualifications {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .events-host-profile {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .events-host-qualifications {
+    display: block;
+  }
+  .events-host-school-logos {
+    width: 18rem;
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+  .events-host-school-logos > img:nth-child(5),
+  .events-host-school-logos > img:nth-child(6) {
+    order: 1;
+  }
 }
