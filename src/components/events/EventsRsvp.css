@@ -66,3 +66,7 @@
   align-self: center;
   margin-top: 2rem;
 }
+.events-rsvp-confirmed {
+  width: 65rem;
+  padding: 0;
+}

@@ -1,0 +1,39 @@
+.events-related {
+  width: 100%;
+  background-color: #dfeffd;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+}
+.events-related > h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000d50;
+}
+.events-related .events-card-host > p {
+  font-weight: bold;
+}
+.events-related-cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.events-related .events-card-bottom {
+  margin-top: auto;
+}
+.events-related .events-card-content {
+  flex: 1;
+}
+.events-related .events-card-bottom > input {
+  height: 1.2rem;
+  width: 1.2rem;
+  flex-shrink: 0;
+  accent-color: #6b9fff;
+}
+.events-related > button {
+  align-self: flex-end;
+}
+.events-related > button:disabled {
+  opacity: 0.5;
+}

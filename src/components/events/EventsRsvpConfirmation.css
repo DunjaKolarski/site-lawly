@@ -1,0 +1,77 @@
+.events-rsvp-confirmation {
+  width: 100%;
+}
+.events-rsvp-confirmation-heading {
+  background-color: #eff4f7;
+  background-image: url("../../assets/events-confetti.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 6rem 2rem 2rem;
+}
+.events-rsvp-confirmation-heading > h4 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #000d50;
+  text-align: center;
+}
+.events-rsvp-confirmation-date {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.events-rsvp-confirmation-date > p {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000d50;
+}
+.events-rsvp-calendar {
+  position: relative;
+  font-size: 0.9rem;
+  color: #000d50;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.3rem;
+}
+.events-rsvp-calendar > summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem;
+  list-style: none;
+}
+.events-rsvp-calendar > summary::-webkit-details-marker {
+  display: none;
+}
+.events-rsvp-calendar[open] > summary > i {
+  transform: rotate(180deg);
+}
+.events-rsvp-calendar-options {
+  width: 15rem;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+}
+.events-rsvp-calendar-options > button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #000d50;
+  background-color: transparent;
+  border: none;
+  padding: 0.7rem;
+  text-align: left;
+}
