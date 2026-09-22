@@ -1,0 +1,68 @@
+.events-rsvp {
+  width: 40rem;
+  max-width: 90%;
+  max-height: 90vh;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  margin: auto;
+  padding: 3rem;
+}
+.events-rsvp::backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.events-rsvp-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1rem;
+  color: #000d50;
+  background-color: transparent;
+  border: none;
+}
+.events-rsvp-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+.events-rsvp-content > h4 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #000d50;
+  text-align: center;
+}
+.events-rsvp-form {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.events-rsvp-form > input {
+  width: 73%;
+  font-size: 0.9rem;
+  color: #000d50;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.8rem 1rem;
+}
+.events-rsvp-form > input[type="email"] {
+  width: 100%;
+}
+.events-rsvp-form > input::placeholder {
+  color: #858484;
+}
+.events-rsvp-form > p {
+  font-size: 0.8rem;
+  color: #858484;
+  text-align: center;
+}
+.events-rsvp-form > p > a {
+  text-decoration: underline;
+  color: #6b9fff;
+}
+.events-rsvp-form > button {
+  align-self: center;
+  margin-top: 2rem;
+}

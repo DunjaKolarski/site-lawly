@@ -1,4 +1,6 @@
 import "./EventsRegistration.css";
+import { useState } from "react";
+import EventsRsvp from "./EventsRsvp";
 import eventImage from "../../assets/events.png";
 import profile1 from "../../assets/profile1.png";
 import profile2 from "../../assets/profile2.png";
@@ -6,6 +8,7 @@ import profile3 from "../../assets/profile3.png";
 import profile4 from "../../assets/profile4.png";
 
 function EventsRegistration() {
+  const [isRsvpOpen, setIsRsvpOpen] = useState(false);
   return (
     <section className="events-registration">
       <img
@@ -32,11 +35,16 @@ function EventsRegistration() {
               <img src={profile4} alt="" />
             </div>
           </div>
-          <button className="primary-button" type="button">
+          <button
+            className="primary-button"
+            type="button"
+            onClick={() => setIsRsvpOpen(true)}
+          >
             Register for the event
           </button>
         </div>
       </div>
+      {isRsvpOpen && <EventsRsvp onClose={() => setIsRsvpOpen(false)} />}
     </section>
   );
 }
