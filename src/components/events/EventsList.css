@@ -42,4 +42,7 @@
     overflow-y: auto;
     align-content: flex-start;
   }
+  .events-pagination {
+    display: none;
+  }
 }

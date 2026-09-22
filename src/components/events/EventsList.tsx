@@ -1,5 +1,5 @@
 import "./EventsList.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import EventsCard from "./EventsCard";
 
 const events = Array.from({ length: 120 }, (_, index) => ({
@@ -8,9 +8,28 @@ const events = Array.from({ length: 120 }, (_, index) => ({
 
 function EventsList() {
   const [page, setPage] = useState(1);
+  const [isMobile, setIsMobile] = useState(
+    () => window.matchMedia("(max-width: 767px)").matches,
+  );
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+
+    function handleChange(event: MediaQueryListEvent) {
+      setIsMobile(event.matches);
+    }
+
+    mediaQuery.addEventListener("change", handleChange);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleChange);
+    };
+  }, []);
   const eventsPerPage = 12;
   const startIndex = (page - 1) * eventsPerPage;
-  const currentEvents = events.slice(startIndex, startIndex + eventsPerPage);
+  const currentEvents = isMobile
+    ? events
+    : events.slice(startIndex, startIndex + eventsPerPage);
 
   return (
     <section className="events-list">
