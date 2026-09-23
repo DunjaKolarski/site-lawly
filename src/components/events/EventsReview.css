@@ -1,0 +1,109 @@
+.events-review {
+  width: 58rem;
+  max-width: 90%;
+  max-height: 90vh;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  margin: auto;
+  padding: 0;
+}
+.events-review::backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.events-review-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1rem;
+  color: #000d50;
+  background-color: transparent;
+  border: none;
+}
+.events-review-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem 2rem;
+}
+.events-review-heading > h4 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #000d50;
+  text-align: center;
+}
+.events-review-host {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.events-review-host > p {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000d50;
+}
+.events-review-host > img {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.events-review-host > span {
+  font-size: 1rem;
+  color: #6b9fff;
+}
+.events-review-content {
+  background-color: #eff4f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 3rem 2rem 2rem;
+}
+.events-review-content > h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000d50;
+}
+.events-review-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+}
+.events-review-stars {
+  display: flex;
+  gap: 0.3rem;
+}
+.events-review-stars > button {
+  font-size: 3rem;
+  color: #d3d3d3;
+  background-color: transparent;
+  border: none;
+}
+.events-review-stars > .events-review-star-active {
+  color: #ff9800;
+}
+.events-review-rating > p {
+  font-size: 0.9rem;
+  color: #858484;
+}
+.events-review-anonymous {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #858484;
+}
+.events-review-anonymous > input {
+  height: 1.3rem;
+  width: 1.3rem;
+  accent-color: #6b9fff;
+}
+.events-review-content > button:disabled {
+  opacity: 0.5;
+}
+.events-review-submitted .events-review-heading {
+  background-color: #eff4f7;
+}

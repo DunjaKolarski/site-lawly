@@ -1,0 +1,45 @@
+.events-review-confirmation {
+  width: 100%;
+  background-color: #dfeffd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 3rem 2rem 6rem;
+}
+.events-review-confirmation > h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000d50;
+  text-align: center;
+}
+.events-review-confirmation-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.events-review-confirmation-links > button {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: #858484;
+  background-color: transparent;
+  border: none;
+  text-align: left;
+}
+.events-review-confirmation-links > button > span {
+  text-decoration: underline;
+}
+.events-review-confirmation-links > button > i {
+  width: 2rem;
+  font-size: 1.8rem;
+  color: #6b9fff;
+  text-align: center;
+}
+.events-review-confirmation-links > button > img {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
