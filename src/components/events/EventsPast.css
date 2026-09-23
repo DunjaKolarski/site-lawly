@@ -22,3 +22,16 @@
   text-align: center;
   padding: 2rem 1rem;
 }
+
+@media (max-width: 767px) {
+  .events-past {
+    width: 100%;
+    order: -1;
+  }
+  .events-past-card > p {
+    padding: 1.5rem 1rem;
+  }
+  .events-past > a {
+    display: none;
+  }
+}
