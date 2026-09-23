@@ -35,7 +35,11 @@ function EventsReview({ onClose }: EventsReviewProps) {
       </button>
       <div className="events-review-heading">
         <h4 id="events-review-title">
-          Thank you for joining: <strong>Drafting The Perfect Essay</strong>
+          <span>
+            Thank you for joining
+            <span className="events-review-title-colon">:</span>
+          </span>{" "}
+          <strong>Drafting The Perfect Essay</strong>
         </h4>
         <div className="events-review-host">
           <p>Hosted by:</p>

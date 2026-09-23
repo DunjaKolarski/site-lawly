@@ -43,3 +43,17 @@
   border-radius: 50%;
   object-fit: cover;
 }
+
+@media (max-width: 767px) {
+  .events-review-confirmation {
+    gap: 3rem;
+    padding: 2rem 1rem;
+  }
+  .events-review-confirmation-links {
+    width: 80%;
+  }
+  .events-review-confirmation-links > button > i,
+  .events-review-confirmation-links > button > img {
+    flex-shrink: 0;
+  }
+}

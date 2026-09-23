@@ -107,3 +107,28 @@
 .events-review-submitted .events-review-heading {
   background-color: #eff4f7;
 }
+
+@media (max-width: 767px) {
+  .events-review {
+    width: 90%;
+    height: 80vh;
+    background-color: #dfeffd;
+  }
+  .events-review-heading {
+    background-color: #eff4f7;
+    padding: 4rem 1rem 1.5rem;
+  }
+  .events-review-heading > h4 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1rem;
+  }
+  .events-review-title-colon {
+    display: none;
+  }
+  .events-review-content {
+    background-color: #dfeffd;
+    padding: 2rem 1rem;
+  }
+}
