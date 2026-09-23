@@ -75,3 +75,41 @@
   padding: 0.7rem;
   text-align: left;
 }
+
+@media (max-width: 767px) {
+  .events-rsvp-confirmation-heading {
+    gap: 0.5rem;
+    padding: 3rem 0.8rem 0.8rem;
+  }
+  .events-rsvp-confirmation-heading > h4 {
+    font-size: 1rem;
+  }
+  .events-rsvp-confirmation-heading > h4 > strong {
+    display: block;
+    margin-top: 0.5rem;
+  }
+  .events-rsvp-confirmation-date {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .events-rsvp-confirmation-date > p {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  .events-rsvp-calendar {
+    width: 15rem;
+  }
+  .events-rsvp-calendar > summary {
+    padding: 0.5rem;
+  }
+  .events-rsvp-calendar-options {
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    border: 1px solid var(--border-color);
+  }
+  .events-rsvp-calendar-options > button {
+    padding: 0.4rem;
+  }
+}

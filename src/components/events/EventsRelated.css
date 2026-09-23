@@ -37,3 +37,34 @@
 .events-related > button:disabled {
   opacity: 0.5;
 }
+
+@media (max-width: 767px) {
+  .events-related {
+    gap: 0.7rem;
+    padding: 0.7rem;
+  }
+  .events-related-cards {
+    justify-content: flex-start;
+    gap: 1rem;
+    overflow-x: auto;
+  }
+  .events-related-cards > .events-card {
+    position: relative;
+    flex: 0 0 95%;
+  }
+  .events-related .events-card-image > img {
+    height: 18vh;
+    object-fit: contain;
+    background-color: #000000;
+  }
+  .events-related .events-card-content {
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+  .events-related .events-card-host > img {
+    position: absolute;
+    top: 18vh;
+    left: 30%;
+    transform: translate(-50%, -50%);
+  }
+}

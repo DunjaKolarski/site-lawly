@@ -70,3 +70,11 @@
   width: 65rem;
   padding: 0;
 }
+
+@media (max-width: 767px) {
+  .events-rsvp-confirmed {
+    width: 90%;
+    height: 80vh;
+    background-color: #dfeffd;
+  }
+}
