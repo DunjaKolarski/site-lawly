@@ -1,0 +1,12 @@
+.articles-hero {
+  height: 25vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.articles-hero > h1 {
+  font-size: 2.3rem;
+  color: #000d50;
+  text-align: center;
+}

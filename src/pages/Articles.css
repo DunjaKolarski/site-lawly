@@ -1,0 +1,13 @@
+.articles-announcement {
+  height: 4vh;
+  width: 100%;
+  background-color: #162a3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.articles-announcement > a {
+  font-size: 0.9rem;
+  color: #ffffff;
+}
