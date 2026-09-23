@@ -1,0 +1,24 @@
+.events-past {
+  width: 43%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+.events-past-card {
+  width: 100%;
+  background-color: #f7f8f9;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.events-past-card > img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.events-past-card > p {
+  font-size: 1.2rem;
+  color: #858484;
+  text-align: center;
+  padding: 2rem 1rem;
+}

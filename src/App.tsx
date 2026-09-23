@@ -21,6 +21,7 @@ function App() {
       <Route path="/support" element={<Support />} />
       <Route path="/events" element={<Events />} />
       <Route path="/events/:eventId" element={<EventsDetails />} />
+      <Route path="/events/:eventId/past" element={<EventsDetails isPast />} />
     </Routes>
   );
 }
