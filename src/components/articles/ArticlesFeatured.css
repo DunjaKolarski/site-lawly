@@ -1,0 +1,19 @@
+.articles-featured {
+  height: 55vh;
+  width: 100%;
+  background-color: #eff4f7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+.articles-featured > h2 {
+  font-size: 1.8rem;
+  color: #000d50;
+}
+.articles-featured-cards {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}

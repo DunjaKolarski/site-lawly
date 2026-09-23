@@ -1,0 +1,52 @@
+.articles-card {
+  height: 30vh;
+  width: 24%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.articles-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+.articles-card-content > h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #858484;
+  text-align: center;
+}
+.articles-card-author {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.articles-card-author > p {
+  font-size: 0.9rem;
+  color: #858484;
+}
+.articles-card-author > img {
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.articles-card-bottom {
+  background-color: #dfeffd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem;
+}
+.articles-card-bottom > p {
+  font-size: 0.7rem;
+  color: #858484;
+}
