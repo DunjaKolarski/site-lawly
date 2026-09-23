@@ -1,7 +1,10 @@
 import "./EventsAbout.css";
+import { useState } from "react";
+import EventsRsvp from "./EventsRsvp";
 import hostImage from "../../assets/profile2.png";
 
 function EventsAbout() {
+  const [isRsvpOpen, setIsRsvpOpen] = useState(false);
   return (
     <section className="events-about">
       <h1>Drafting The Perfect Essay</h1>
@@ -10,7 +13,11 @@ function EventsAbout() {
         <img src={hostImage} alt="Cynthia L." />
         <span>Cynthia L.</span>
       </div>
-      <button className="primary-button events-about-register" type="button">
+      <button
+        className="primary-button events-about-register"
+        type="button"
+        onClick={() => setIsRsvpOpen(true)}
+      >
         Register for the event
       </button>
       <div className="events-about-description">
@@ -30,6 +37,7 @@ function EventsAbout() {
           officia deserunt mollit anim id est laborum.
         </p>
       </div>
+      {isRsvpOpen && <EventsRsvp onClose={() => setIsRsvpOpen(false)} />}
     </section>
   );
 }
