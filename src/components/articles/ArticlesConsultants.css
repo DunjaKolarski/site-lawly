@@ -132,3 +132,9 @@
   font-size: 1rem;
   color: #000d50;
 }
+
+@media (max-width: 767px) {
+  .articles-consultants {
+    display: none;
+  }
+}

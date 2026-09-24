@@ -1,5 +1,5 @@
 import "./ArticlesList.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ArticlesCard from "./ArticlesCard";
 
 const articles = Array.from({ length: 120 }, (_, index) => ({
@@ -8,12 +8,29 @@ const articles = Array.from({ length: 120 }, (_, index) => ({
 
 function ArticlesList() {
   const [page, setPage] = useState(1);
+  const [isMobile, setIsMobile] = useState(
+    () => window.matchMedia("(max-width: 767px)").matches,
+  );
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+
+    function handleChange(event: MediaQueryListEvent) {
+      setIsMobile(event.matches);
+    }
+
+    mediaQuery.addEventListener("change", handleChange);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleChange);
+    };
+  }, []);
+
   const articlesPerPage = 12;
   const startIndex = (page - 1) * articlesPerPage;
-  const currentArticles = articles.slice(
-    startIndex,
-    startIndex + articlesPerPage,
-  );
+  const currentArticles = isMobile
+    ? articles
+    : articles.slice(startIndex, startIndex + articlesPerPage);
 
   return (
     <section className="articles-list">

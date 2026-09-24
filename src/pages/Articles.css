@@ -11,3 +11,9 @@
   font-size: 0.9rem;
   color: #ffffff;
 }
+
+@media (max-width: 767px) {
+  .articles-announcement {
+    display: none;
+  }
+}

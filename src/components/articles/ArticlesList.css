@@ -29,3 +29,23 @@
 .articles-pagination > .articles-page-active {
   color: #000d50;
 }
+
+@media (max-width: 767px) {
+  .articles-list {
+    height: 80vh;
+    gap: 0;
+  }
+  .articles-list-container {
+    height: 100%;
+    width: 80%;
+    overflow-y: auto;
+    align-content: flex-start;
+    row-gap: 1rem;
+  }
+  .articles-list-container > .articles-card {
+    width: 100%;
+  }
+  .articles-pagination {
+    display: none;
+  }
+}

@@ -12,8 +12,32 @@
   font-size: 1.8rem;
   color: #000d50;
 }
-.articles-featured-cards {
+.articles-featured-scroll {
   width: 90%;
+  overflow: hidden;
+}
+.articles-featured-cards {
+  width: 100%;
   display: flex;
   justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+  .articles-featured {
+    height: 40vh;
+    gap: 1.5rem;
+  }
+  .articles-featured-scroll {
+    width: 95%;
+    align-self: flex-end;
+  }
+  .articles-featured-cards {
+    justify-content: flex-start;
+    gap: 1rem;
+    touch-action: pan-y pinch-zoom;
+  }
+  .articles-featured-cards > .articles-card {
+    flex: 0 0 85%;
+    min-width: 0;
+  }
 }

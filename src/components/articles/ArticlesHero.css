@@ -10,3 +10,12 @@
   color: #000d50;
   text-align: center;
 }
+
+@media (max-width: 767px) {
+  .articles-hero {
+    height: 20vh;
+  }
+  .articles-hero > h1 {
+    width: 90%;
+  }
+}
