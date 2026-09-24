@@ -1,0 +1,31 @@
+.articles-list {
+  height: 120vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+.articles-list-container {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 1.5rem;
+}
+.articles-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+.articles-pagination > button {
+  font-size: 0.9rem;
+  color: #858484;
+  background-color: transparent;
+  border: none;
+}
+.articles-pagination > .articles-page-active {
+  color: #000d50;
+}
