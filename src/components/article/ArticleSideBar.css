@@ -1,0 +1,33 @@
+.article-sidebar {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.article-sidebar-about {
+  height: 30vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 2rem;
+}
+.article-sidebar-about > img {
+  width: 55%;
+  height: auto;
+  display: block;
+}
+.article-sidebar-about > p {
+  font-size: 1rem;
+  color: #000d50;
+}
+.article-sidebar-socials {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.article-sidebar-socials > a {
+  font-size: 1.5rem;
+  color: #000d50;
+}

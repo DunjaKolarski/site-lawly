@@ -8,6 +8,7 @@ import Support from "./pages/Support";
 import Events from "./pages/Events";
 import EventsDetails from "./pages/EventsDetails";
 import Articles from "./pages/Articles";
+import Article from "./pages/Article";
 
 import "./App.css";
 
@@ -24,6 +25,7 @@ function App() {
       <Route path="/events/:eventId" element={<EventsDetails />} />
       <Route path="/events/:eventId/past" element={<EventsDetails isPast />} />
       <Route path="/articles" element={<Articles />} />
+      <Route path="/articles/:articleId" element={<Article />} />
     </Routes>
   );
 }

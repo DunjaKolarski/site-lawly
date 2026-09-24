@@ -1,0 +1,11 @@
+.article-image {
+  height: 55vh;
+  width: 90%;
+}
+.article-image > img {
+  height: 100%;
+  width: 100%;
+  display: block;
+  object-fit: contain;
+  object-position: top left;
+}
