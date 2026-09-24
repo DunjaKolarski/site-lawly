@@ -1,0 +1,134 @@
+.articles-consultants {
+  height: 80vh;
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+.articles-consultants > h2 {
+  font-size: 2.3rem;
+  font-weight: bold;
+  color: #000d50;
+}
+.articles-consultants-container {
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.articles-consultant-card {
+  flex: 1;
+  min-width: 0;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  border-radius: 0.6rem;
+  padding: 0.75rem;
+}
+.articles-consultant-image {
+  height: 16rem;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+.articles-consultant-image > img {
+  height: 100%;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+.articles-consultant-heart {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  font-size: 1.7rem;
+  color: #ffffffd9;
+}
+.articles-consultant-badge {
+  min-width: 5.8rem;
+  position: absolute;
+  right: 0.6rem;
+  bottom: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 1rem;
+  padding: 0.25rem 0.7rem;
+}
+.articles-consultant-badge-adcomm {
+  color: #cf7517;
+  background-color: #ffe0ad;
+}
+.articles-consultant-badge-pro {
+  color: #6b4ce6;
+  background-color: #ece5ff;
+}
+.articles-consultant-badge-insider {
+  color: #31a8a2;
+  background-color: #b7faf7;
+}
+.articles-consultant-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding-top: 0.8rem;
+}
+.articles-consultant-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+.articles-consultant-heading > h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000d50;
+}
+.articles-consultant-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+.articles-consultant-star {
+  font-size: 1.5rem;
+  color: #f5b301;
+}
+.articles-consultant-rating > strong {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #000d50;
+}
+.articles-consultant-reviews {
+  font-size: 0.7rem;
+  color: #689dc9;
+}
+.articles-consultant-background {
+  height: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.articles-consultant-background > p {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  line-height: 1.15;
+  color: #575757;
+}
+.articles-consultant-description {
+  font-size: 0.9rem;
+  line-height: 1.15;
+  color: #000d50;
+}
+.articles-consultant-price {
+  margin-top: auto;
+  font-size: 1rem;
+  color: #000d50;
+}

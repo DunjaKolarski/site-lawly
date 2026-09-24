@@ -5,6 +5,7 @@ import ArticlesHero from "../components/articles/ArticlesHero";
 import ArticlesFeatured from "../components/articles/ArticlesFeatured";
 import ArticlesFilters from "../components/articles/ArticlesFilters";
 import ArticlesList from "../components/articles/ArticlesList";
+import ArticlesConsultants from "../components/articles/ArticlesConsultants";
 import Footer from "../components/layout/Footer";
 
 function Articles() {
@@ -24,6 +25,7 @@ function Articles() {
         <ArticlesFeatured />
         <ArticlesFilters />
         <ArticlesList />
+        <ArticlesConsultants />
       </main>
 
       <Footer />
