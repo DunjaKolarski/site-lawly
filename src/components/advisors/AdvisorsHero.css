@@ -47,3 +47,35 @@
   border-radius: 0.5rem;
   box-shadow: -1rem 1rem 0 #6b9fff;
 }
+
+@media (max-width: 767px) {
+  .advisors-hero {
+    height: 100vh;
+  }
+  .advisors-hero-container {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  .advisors-hero-content {
+    display: contents;
+  }
+  .advisors-hero-content > h1 {
+    width: 90%;
+    text-align: center;
+  }
+  .advisors-hero-content > p {
+    width: 75%;
+    text-align: center;
+  }
+  .advisors-hero-image {
+    height: 35vh;
+    width: 80%;
+    order: 1;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .advisors-hero-browse {
+    order: 2;
+    font-size: 0.9rem;
+  }
+}
