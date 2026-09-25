@@ -1,4 +1,6 @@
 import "./ArticleSideBar.css";
+import ArticleResources from "./ArticleResources";
+import ArticleContents from "./ArticleContents";
 import logo from "../../assets/logo.png";
 
 function ArticleSideBar() {
@@ -22,6 +24,8 @@ function ArticleSideBar() {
           </a>
         </div>
       </div>
+      <ArticleResources />
+      <ArticleContents />
     </aside>
   );
 }
