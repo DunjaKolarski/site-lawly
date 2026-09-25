@@ -1,0 +1,49 @@
+.advisors-hero {
+  height: 90vh;
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.advisors-hero-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.advisors-hero-content {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+.advisors-hero-content > h1 {
+  font-size: 2.3rem;
+  font-weight: bold;
+  color: #000d50;
+}
+.advisors-hero-content > p {
+  font-size: 1rem;
+  color: #000d50;
+}
+.advisors-hero-browse {
+  font-size: 1rem;
+  color: #858484;
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
+}
+.advisors-hero-image {
+  height: 50vh;
+  width: 29%;
+}
+.advisors-hero-image > img {
+  height: 100%;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: -1rem 1rem 0 #6b9fff;
+}
