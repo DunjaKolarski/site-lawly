@@ -1,4 +1,5 @@
 import "./ArticlesCard.css";
+import { Link } from "react-router-dom";
 import authorImage from "../../assets/profile2.png";
 
 function ArticlesCard() {
@@ -16,9 +17,9 @@ function ArticlesCard() {
       </div>
       <div className="articles-card-bottom">
         <p>Published 12/7/25</p>
-        <button className="primary-button" type="button">
+        <Link to="/articles/1" className="primary-button">
           Read more
-        </button>
+        </Link>
       </div>
     </div>
   );
