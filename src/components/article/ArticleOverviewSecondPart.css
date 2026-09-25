@@ -1,0 +1,36 @@
+.article-overview-second-part {
+  height: 230vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem 0 12rem;
+}
+.article-overview-second-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.article-overview-second-section > h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000d50;
+}
+.article-overview-second-section > p {
+  font-size: 1rem;
+  color: #000d50;
+}
+.article-overview-second-subsection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.article-overview-second-subsection > h5 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000d50;
+}
+.article-overview-second-subsection > p {
+  font-size: 1rem;
+  color: #000d50;
+}

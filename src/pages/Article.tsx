@@ -3,6 +3,8 @@ import Header from "../components/layout/Header";
 import ArticleHero from "../components/article/ArticleHero";
 import ArticleImage from "../components/article/ArticleImage";
 import ArticleOverview from "../components/article/ArticleOverview";
+import ArticleConsultants from "../components/article/ArticleConsultants";
+import ArticleOverviewSecondPart from "../components/article/ArticleOverviewSecondPart";
 import ArticleSideBar from "../components/article/ArticleSideBar";
 import Footer from "../components/layout/Footer";
 
@@ -16,6 +18,8 @@ function Article() {
           <div className="article-main-content">
             <ArticleImage />
             <ArticleOverview />
+            <ArticleConsultants />
+            <ArticleOverviewSecondPart />
           </div>
           <ArticleSideBar />
         </div>
