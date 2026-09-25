@@ -34,3 +34,15 @@
   font-size: 1rem;
   color: #000d50;
 }
+
+@media (max-width: 767px) {
+  .article-overview-second-part {
+    height: auto;
+    justify-content: flex-start;
+    gap: 3rem;
+    padding: 1rem 0 2rem;
+  }
+  .article-overview-second-section {
+    gap: 1.5rem;
+  }
+}

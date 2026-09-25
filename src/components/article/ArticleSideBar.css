@@ -31,3 +31,9 @@
   font-size: 1.5rem;
   color: #000d50;
 }
+
+@media (max-width: 767px) {
+  .article-sidebar {
+    display: none;
+  }
+}

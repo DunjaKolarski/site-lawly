@@ -131,3 +131,24 @@
   font-size: 1rem;
   color: #000d50;
 }
+.article-consultants-scroll {
+  width: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .article-consultants {
+    height: 65vh;
+    gap: 2rem;
+  }
+  .article-consultants > h4 {
+    width: 100%;
+    text-align: left;
+  }
+  .article-consultants-container {
+    touch-action: pan-y pinch-zoom;
+  }
+  .article-consultant-card {
+    flex: 0 0 80%;
+  }
+}

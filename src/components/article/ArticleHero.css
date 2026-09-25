@@ -36,3 +36,26 @@
   font-size: 1rem;
   color: #6b9fff;
 }
+.article-hero-title-mobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .article-hero {
+    height: 20vh;
+  }
+  .article-hero-container {
+    align-items: center;
+  }
+  .article-hero-container > h1 {
+    width: 100%;
+    font-size: 1.6rem;
+    text-align: center;
+  }
+  .article-hero-title-desktop {
+    display: none;
+  }
+  .article-hero-title-mobile {
+    display: inline;
+  }
+}

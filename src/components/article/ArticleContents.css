@@ -26,3 +26,15 @@
   border-left: 2px solid #6b9fff;
   margin-left: -2px;
 }
+
+@media (max-width: 767px) {
+  .article-contents {
+    width: 90%;
+    gap: 1rem;
+    margin: 0 auto;
+  }
+  .article-contents-links > a,
+  .article-contents-links > span {
+    padding: 0.3rem 1rem;
+  }
+}

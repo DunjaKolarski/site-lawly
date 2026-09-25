@@ -6,8 +6,13 @@ function ArticleHero() {
     <section className="article-hero">
       <div className="article-hero-container">
         <h1>
-          How to Write an Outstanding and Compelling Medical School Letter of
-          Intent
+          <span className="article-hero-title-desktop">
+            How to Write an Outstanding and Compelling Medical School Letter of
+            Intent
+          </span>
+          <span className="article-hero-title-mobile">
+            High-Yield Articles, Guides, and Question Banks
+          </span>
         </h1>
         <div className="article-hero-author">
           <p>By:</p>
