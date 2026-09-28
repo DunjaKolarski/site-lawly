@@ -10,6 +10,7 @@ import EventsDetails from "./pages/EventsDetails";
 import Articles from "./pages/Articles";
 import Article from "./pages/Article";
 import Advisors from "./pages/Advisors";
+import MatchQuiz from "./pages/MatchQuiz";
 
 import "./App.css";
 
@@ -28,6 +29,7 @@ function App() {
       <Route path="/articles" element={<Articles />} />
       <Route path="/articles/:articleId" element={<Article />} />
       <Route path="/advisors" element={<Advisors />} />
+      <Route path="/match-quiz" element={<MatchQuiz />} />
     </Routes>
   );
 }

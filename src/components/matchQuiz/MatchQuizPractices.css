@@ -1,0 +1,35 @@
+.match-quiz-practices {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.match-quiz-practices > p {
+  font-size: 1rem;
+  color: #000d50;
+  text-align: center;
+}
+.match-quiz-practices > p > span {
+  color: #858484;
+  font-style: italic;
+}
+.match-quiz-practices-options {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.match-quiz-practices-options > button {
+  width: 100%;
+  font-size: 0.9rem;
+  color: #000d50;
+  background-color: #f7f8f9;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+.match-quiz-practices-options > .match-quiz-practices-selected {
+  color: #ffffff;
+  background-color: #6b9fff;
+}

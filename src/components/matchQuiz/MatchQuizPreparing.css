@@ -1,0 +1,44 @@
+.match-quiz-preparing {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding-top: 3rem;
+}
+.match-quiz-preparing > h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #000d50;
+  text-align: center;
+}
+.match-quiz-preparing-images {
+  height: 15rem;
+  width: 24rem;
+  position: relative;
+}
+.match-quiz-preparing-images > img {
+  width: 13rem;
+  position: absolute;
+  object-fit: cover;
+  border-radius: 0.3rem;
+}
+.match-quiz-preparing-left {
+  height: 14rem;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+}
+.match-quiz-preparing-center {
+  height: 15rem;
+  top: 0.4rem;
+  left: 50%;
+  z-index: 1;
+  transform: translateX(-50%);
+}
+.match-quiz-preparing-right {
+  height: 14rem;
+  top: 0;
+  right: 0;
+  opacity: 0.5;
+}

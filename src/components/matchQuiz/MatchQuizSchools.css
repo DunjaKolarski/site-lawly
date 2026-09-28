@@ -1,0 +1,123 @@
+.match-quiz-schools {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.match-quiz-schools > p {
+  font-size: 1rem;
+  color: #000d50;
+  text-align: center;
+}
+.match-quiz-schools > p > span {
+  color: #858484;
+  font-style: italic;
+}
+.match-quiz-schools-search {
+  width: 55%;
+  position: relative;
+}
+.match-quiz-schools-input {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.7rem;
+}
+.match-quiz-schools-input > i {
+  font-size: 0.9rem;
+  color: #858484;
+}
+.match-quiz-schools-input > input {
+  width: 100%;
+  min-width: 0;
+  font-size: 0.9rem;
+  color: #000d50;
+  background-color: transparent;
+  border: none;
+}
+.match-quiz-schools-input > input::placeholder {
+  color: #858484;
+}
+.match-quiz-schools-results {
+  width: 100%;
+  max-height: 25vh;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+}
+.match-quiz-schools-results > button {
+  font-size: 0.9rem;
+  color: #000d50;
+  background-color: #ffffff;
+  border: none;
+  text-align: left;
+  padding: 0.8rem;
+}
+.match-quiz-schools-results > button:hover {
+  background-color: #eff4f7;
+}
+.match-quiz-schools-results > p {
+  font-size: 0.9rem;
+  color: #858484;
+  padding: 0.8rem;
+}
+.match-quiz-schools-list {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.match-quiz-school-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.match-quiz-school-row > span {
+  width: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000d50;
+}
+.match-quiz-school {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f7f8f9;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+.match-quiz-school > span {
+  flex: 1;
+  font-size: 0.9rem;
+  color: #000d50;
+  text-align: center;
+}
+.match-quiz-school-handle,
+.match-quiz-school-remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  background-color: transparent;
+  border: none;
+  padding: 0.3rem;
+}
+.match-quiz-school-handle {
+  color: #858484;
+  cursor: grab;
+}
+.match-quiz-school-remove {
+  color: #000d50;
+}
