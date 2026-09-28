@@ -33,3 +33,9 @@
   color: #ffffff;
   background-color: #6b9fff;
 }
+
+@media (max-width: 767px) {
+  .match-quiz-background-options {
+    width: 95%;
+  }
+}

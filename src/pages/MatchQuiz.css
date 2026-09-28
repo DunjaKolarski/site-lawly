@@ -69,3 +69,38 @@
   height: 50vh;
   padding: 2rem;
 }
+
+@media (max-width: 767px) {
+  .match-quiz {
+    height: 100vh;
+    background-color: #ffffff;
+    padding-top: 3rem;
+  }
+  .match-quiz-panel {
+    height: 90vh;
+    width: 100%;
+    padding: 1rem 0 2rem;
+  }
+  .match-quiz-heading {
+    width: 90%;
+  }
+  .match-quiz-heading > h2 {
+    font-size: 1.4rem;
+  }
+  .match-quiz-progress {
+    width: 85%;
+    gap: 1rem;
+  }
+  .match-quiz-content {
+    width: 90%;
+    flex: none;
+    padding: 3rem 0;
+  }
+  .match-quiz-actions {
+    width: 90%;
+  }
+  .match-quiz-panel-ready {
+    height: 40vh;
+    padding: 1rem 0;
+  }
+}

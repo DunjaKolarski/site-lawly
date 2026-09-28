@@ -111,3 +111,9 @@
   pointer-events: auto;
   cursor: grab;
 }
+
+@media (max-width: 767px) {
+  .match-quiz-budget-chart {
+    width: 100%;
+  }
+}

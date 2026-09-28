@@ -42,3 +42,20 @@
   right: 0;
   opacity: 0.5;
 }
+
+@media (max-width: 767px) {
+  .match-quiz-preparing {
+    gap: 3rem;
+    padding-top: 2rem;
+  }
+  .match-quiz-preparing > h2 {
+    font-size: 1.4rem;
+  }
+  .match-quiz-preparing-images {
+    width: 90%;
+    max-width: 24rem;
+  }
+  .match-quiz-preparing-images > img {
+    width: 54%;
+  }
+}

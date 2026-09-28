@@ -121,3 +121,15 @@
 .match-quiz-school-remove {
   color: #000d50;
 }
+
+@media (max-width: 767px) {
+  .match-quiz-schools-search {
+    width: 80%;
+  }
+  .match-quiz-schools-list {
+    width: 100%;
+  }
+  .match-quiz-school-row {
+    gap: 0.7rem;
+  }
+}

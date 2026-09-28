@@ -14,9 +14,8 @@ function MatchQuizExperience({
   return (
     <div className="match-quiz-experience">
       <p>
-        How many years of post-college work experience will you have
-        <br />
-        when you submit your application?
+        How many years of post-college work experience will you have when you
+        submit your application?
       </p>
       <div className="match-quiz-experience-options">
         {experienceOptions.map((experience) => (
