@@ -1,0 +1,13 @@
+.find-advisors-layout {
+  width: 100%;
+  display: flex;
+}
+.find-advisors-content {
+  width: 96%;
+}
+.find-advisors-listing {
+  width: 100%;
+  display: flex;
+  margin-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}

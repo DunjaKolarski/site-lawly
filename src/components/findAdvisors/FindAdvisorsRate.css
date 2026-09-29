@@ -1,0 +1,115 @@
+.find-advisors-rate {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.find-advisors-rate > h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000d50;
+}
+.find-advisors-rate-chart {
+  width: 100%;
+}
+.find-advisors-rate-bars {
+  height: 3rem;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.15rem;
+  margin: 0 0.5rem;
+}
+.find-advisors-rate-bars > span {
+  flex: 1;
+  background-color: var(--border-color);
+}
+.find-advisors-rate-bars > .find-advisors-rate-selected {
+  background-color: #6b9fff;
+}
+.find-advisors-rate-slider {
+  height: 1rem;
+  width: 100%;
+  position: relative;
+  margin-top: -0.5rem;
+}
+.find-advisors-rate-track {
+  height: 0.2rem;
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  left: 0.5rem;
+  background-color: var(--border-color);
+  transform: translateY(-50%);
+}
+.find-advisors-rate-track > span {
+  height: 100%;
+  position: absolute;
+  background-color: #6b9fff;
+}
+.find-advisors-rate-slider > input {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  appearance: none;
+  background-color: transparent;
+  pointer-events: none;
+}
+.find-advisors-rate-slider > input:focus-visible {
+  z-index: 2;
+  outline: 2px solid #6b9fff;
+  outline-offset: 0.3rem;
+}
+.find-advisors-rate-slider > input::-webkit-slider-runnable-track {
+  height: 0.2rem;
+  background-color: transparent;
+}
+.find-advisors-rate-slider > input::-webkit-slider-thumb {
+  height: 1rem;
+  width: 1rem;
+  margin-top: -0.4rem;
+  appearance: none;
+  background-color: #eff4f7;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  pointer-events: auto;
+}
+.find-advisors-rate-slider > input::-moz-range-track {
+  height: 0.2rem;
+  background-color: transparent;
+}
+.find-advisors-rate-slider > input::-moz-range-progress {
+  background-color: transparent;
+}
+.find-advisors-rate-slider > input::-moz-range-thumb {
+  height: 1rem;
+  width: 1rem;
+  box-sizing: border-box;
+  background-color: #eff4f7;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  pointer-events: auto;
+}
+.find-advisors-rate-values {
+  display: flex;
+  justify-content: space-between;
+}
+.find-advisors-rate-values > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+.find-advisors-rate-values span {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #000d50;
+}
+.find-advisors-rate-values p {
+  font-size: 0.9rem;
+  color: #000d50;
+  background-color: #f7f8f9;
+  border-radius: 0.3rem;
+  padding: 0.3rem 0.5rem;
+}
