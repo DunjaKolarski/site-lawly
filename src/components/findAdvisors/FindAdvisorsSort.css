@@ -96,3 +96,21 @@
   color: #000d50;
   background-color: #eff4f7;
 }
+
+@media (max-width: 767px) {
+  .find-advisors-sort {
+    justify-content: space-between;
+    gap: 0.7rem;
+  }
+  .find-advisors-school-field {
+    flex: 1;
+    min-width: 0;
+  }
+  .find-advisors-sort-button {
+    flex-direction: row-reverse;
+  }
+  .find-advisors-sort-field > .find-advisors-dropdown {
+    width: 15rem;
+    max-width: calc(100vw - 2rem);
+  }
+}

@@ -65,3 +65,19 @@
   outline: 2px solid #6b9fff;
   outline-offset: 2px;
 }
+
+@media (max-width: 767px) {
+  .find-advisors-filters {
+    width: 100%;
+    order: 3;
+    display: none;
+    border-right: none;
+    padding: 1rem;
+  }
+  .find-advisors-filters-open .find-advisors-filters {
+    display: flex;
+  }
+  .find-advisors-filters > h4 {
+    display: none;
+  }
+}

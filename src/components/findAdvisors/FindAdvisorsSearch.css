@@ -49,3 +49,21 @@
   color: #000d50;
   border-bottom-color: #6b9fff;
 }
+
+@media (max-width: 767px) {
+  .find-advisors-search {
+    display: contents;
+  }
+  .find-advisors-search-field {
+    width: 100%;
+    order: 1;
+  }
+  .find-advisors-tabs {
+    order: 4;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  .find-advisors-tabs > button {
+    padding: 0.8rem 0.5rem;
+  }
+}

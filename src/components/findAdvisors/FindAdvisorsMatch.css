@@ -13,3 +13,15 @@
   color: #000d50;
   text-align: center;
 }
+
+@media (max-width: 767px) {
+  .find-advisors-match {
+    height: auto;
+    min-height: 16vh;
+    padding: 1.5rem 1rem;
+  }
+  .find-advisors-match > p {
+    width: 85%;
+    max-width: 23rem;
+  }
+}

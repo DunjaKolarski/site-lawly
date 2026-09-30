@@ -19,3 +19,19 @@
   color: #000d50;
   text-align: center;
 }
+
+@media (max-width: 767px) {
+  .find-advisors-hero {
+    height: auto;
+    min-height: 20vh;
+    gap: 1rem;
+    padding: 2rem 1rem;
+  }
+  .find-advisors-hero > h1 {
+    font-size: 1.8rem;
+  }
+  .find-advisors-hero > p {
+    width: 80%;
+    max-width: 22rem;
+  }
+}

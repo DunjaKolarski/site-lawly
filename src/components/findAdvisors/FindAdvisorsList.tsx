@@ -112,10 +112,10 @@ const allConsultants = Array.from({ length: 160 }, (_, index) => ({
 
 type FindAdvisorsListProps = {
   page: number;
+  consultantsPerPage: number;
 };
 
-function FindAdvisorsList({ page }: FindAdvisorsListProps) {
-  const consultantsPerPage = 16;
+function FindAdvisorsList({ page, consultantsPerPage }: FindAdvisorsListProps) {
   const startIndex = (page - 1) * consultantsPerPage;
   const displayedConsultants = allConsultants.slice(
     startIndex,

@@ -5,12 +5,21 @@ const bars = [
   8, 12, 18, 25, 35, 45, 60, 75, 90, 100, 95, 85, 70, 50, 35, 20, 12, 6,
 ];
 
-function FindAdvisorsRate() {
-  const [minRate, setMinRate] = useState(20);
-  const [maxRate, setMaxRate] = useState(50);
+type FindAdvisorsRateProps = {
+  isMobile: boolean;
+};
 
-  const minPercent = ((minRate - 20) / 80) * 100;
-  const maxPercent = ((maxRate - 20) / 80) * 100;
+function FindAdvisorsRate({ isMobile }: FindAdvisorsRateProps) {
+  const minimumRate = 20;
+  const maximumRate = 200;
+
+  const [minRate, setMinRate] = useState(isMobile ? 30 : 20);
+  const [maxRate, setMaxRate] = useState(isMobile ? 100 : 50);
+
+  const minPercent =
+    ((minRate - minimumRate) / (maximumRate - minimumRate)) * 100;
+  const maxPercent =
+    ((maxRate - minimumRate) / (maximumRate - minimumRate)) * 100;
 
   return (
     <div className="find-advisors-rate">
@@ -44,8 +53,8 @@ function FindAdvisorsRate() {
 
           <input
             type="range"
-            min={20}
-            max={100}
+            min={minimumRate}
+            max={maximumRate}
             step={5}
             value={minRate}
             aria-label="Minimum hourly rate"
@@ -56,8 +65,8 @@ function FindAdvisorsRate() {
           />
           <input
             type="range"
-            min={20}
-            max={100}
+            min={minimumRate}
+            max={maximumRate}
             step={5}
             value={maxRate}
             aria-label="Maximum hourly rate"

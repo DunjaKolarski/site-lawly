@@ -3,20 +3,20 @@ import "./FindAdvisorsPagination.css";
 type FindAdvisorsPaginationProps = {
   page: number;
   setPage: (page: number) => void;
+  totalPages: number;
 };
 
 function FindAdvisorsPagination({
   page,
   setPage,
+  totalPages,
 }: FindAdvisorsPaginationProps) {
-  const totalPages = 10;
+  const firstPage = Math.max(1, Math.min(page - 2, totalPages - 4));
 
-  const pages =
-    page <= 3
-      ? [1, 2, 3, 4, 5]
-      : page >= 8
-        ? [6, 7, 8, 9, 10]
-        : [page - 2, page - 1, page, page + 1, page + 2];
+  const pages = Array.from(
+    { length: Math.min(5, totalPages) },
+    (_, index) => firstPage + index,
+  );
 
   return (
     <nav className="find-advisors-pagination" aria-label="Consultants pages">

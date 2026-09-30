@@ -19,3 +19,44 @@
   gap: 1.5rem;
   padding: 2rem 1rem;
 }
+.find-advisors-filters-toggle {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .find-advisors-content {
+    width: 100%;
+  }
+  .find-advisors-listing {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem 1rem;
+  }
+  .find-advisors-results {
+    display: contents;
+  }
+  .find-advisors-filters-toggle {
+    width: 100%;
+    order: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #6b9fff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.8rem;
+    cursor: pointer;
+  }
+  .find-advisors-listing .find-advisors-sort {
+    order: 5;
+  }
+  .find-advisors-listing .find-advisors-list {
+    order: 6;
+  }
+  .find-advisors-listing .find-advisors-pagination {
+    order: 7;
+  }
+}

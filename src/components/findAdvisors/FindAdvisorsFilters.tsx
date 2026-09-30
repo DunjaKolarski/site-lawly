@@ -64,9 +64,13 @@ const filterGroups = [
   },
 ];
 
-function FindAdvisorsFilters() {
+type FindAdvisorsFiltersProps = {
+  isMobile: boolean;
+};
+
+function FindAdvisorsFilters({ isMobile }: FindAdvisorsFiltersProps) {
   return (
-    <aside className="find-advisors-filters">
+    <aside className="find-advisors-filters" id="find-advisors-filters">
       <h4>Filters</h4>
 
       {filterGroups.map((group) => (
@@ -89,7 +93,10 @@ function FindAdvisorsFilters() {
         </details>
       ))}
 
-      <FindAdvisorsRate />
+      <FindAdvisorsRate
+        key={isMobile ? "mobile" : "desktop"}
+        isMobile={isMobile}
+      />
     </aside>
   );
 }
