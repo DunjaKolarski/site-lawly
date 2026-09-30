@@ -12,6 +12,9 @@ function AdvisorsHero() {
           <Link to="/match-quiz" className="primary-button">
             Take the 30-second quiz
           </Link>
+          <Link to="/find-consultant" className="advisors-hero-browse">
+            Browse consultants on my own
+          </Link>
         </div>
         <div className="advisors-hero-image">
           <img

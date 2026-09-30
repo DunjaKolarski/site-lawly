@@ -1,0 +1,98 @@
+.find-advisors-sort {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+.find-advisors-school-field {
+  width: 32%;
+  position: relative;
+}
+.find-advisors-school-search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.7rem;
+}
+.find-advisors-school-search > i {
+  font-size: 0.9rem;
+  color: #858484;
+}
+.find-advisors-school-search > input {
+  width: 100%;
+  min-width: 0;
+  font-size: 0.9rem;
+  color: #000d50;
+  background-color: transparent;
+  border: none;
+}
+.find-advisors-school-search > input:focus {
+  outline: none;
+}
+.find-advisors-school-search > input::placeholder {
+  color: #858484;
+}
+.find-advisors-sort-field {
+  position: relative;
+  flex-shrink: 0;
+}
+.find-advisors-sort-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #000d50;
+  background-color: transparent;
+  border: none;
+  padding: 0.7rem 0;
+  cursor: pointer;
+}
+.find-advisors-sort-button > i {
+  font-size: 1rem;
+}
+.find-advisors-dropdown {
+  position: absolute;
+  top: 100%;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.3rem;
+  box-shadow: 0 2px 5px #00000014;
+  padding: 0.3rem 0;
+}
+.find-advisors-school-field > .find-advisors-dropdown {
+  width: 100%;
+  left: 0;
+}
+.find-advisors-sort-field > .find-advisors-dropdown {
+  width: 15rem;
+  right: 0;
+}
+.find-advisors-dropdown > button {
+  width: 100%;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: left;
+  color: #858484;
+  background-color: transparent;
+  border: none;
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
+}
+.find-advisors-dropdown > button:hover,
+.find-advisors-dropdown > button:focus-visible {
+  color: #000d50;
+  background-color: #eff4f7;
+}
+.find-advisors-dropdown > .find-advisors-dropdown-active {
+  color: #000d50;
+  background-color: #eff4f7;
+}

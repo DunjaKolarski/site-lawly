@@ -1,0 +1,22 @@
+.find-advisors-pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+.find-advisors-pagination > button {
+  font-size: 0.9rem;
+  color: #858484;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.find-advisors-pagination > .find-advisors-page-active {
+  color: #000d50;
+}
+.find-advisors-pagination > span {
+  font-size: 0.9rem;
+  color: #858484;
+}

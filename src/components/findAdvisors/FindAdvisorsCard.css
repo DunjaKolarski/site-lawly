@@ -1,0 +1,112 @@
+.find-advisors-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.6rem;
+  padding: 0.75rem;
+  box-shadow: 0 2px 3px #00000014;
+}
+.find-advisors-card-image {
+  width: 100%;
+  aspect-ratio: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+.find-advisors-card-image > img {
+  height: 100%;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+.find-advisors-card-heart {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1.7rem;
+  color: #ffffffd9;
+}
+.find-advisors-card-badge {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 1rem;
+  padding: 0.25rem 0.7rem;
+}
+.find-advisors-card-badge-adcomm {
+  color: #cf7517;
+  background-color: #ffe0ad;
+}
+.find-advisors-card-badge-pro {
+  color: #6b4ce6;
+  background-color: #ece5ff;
+}
+.find-advisors-card-badge-insider {
+  color: #31a8a2;
+  background-color: #b7faf7;
+}
+.find-advisors-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding-top: 0.8rem;
+}
+.find-advisors-card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.find-advisors-card-heading > h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000d50;
+}
+.find-advisors-card-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+.find-advisors-card-star {
+  font-size: 1.5rem;
+  color: #f5b301;
+}
+.find-advisors-card-rating > strong {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #000d50;
+}
+.find-advisors-card-reviews {
+  font-size: 0.7rem;
+  color: #689dc9;
+}
+.find-advisors-card-background {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.find-advisors-card-background > p {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  line-height: 1.15;
+  color: #575757;
+}
+.find-advisors-card-description {
+  font-size: 0.9rem;
+  line-height: 1.15;
+  color: #000d50;
+}
+.find-advisors-card-price {
+  margin-top: auto;
+  font-size: 1rem;
+  color: #000d50;
+}
