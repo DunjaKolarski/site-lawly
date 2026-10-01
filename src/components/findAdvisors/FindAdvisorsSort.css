@@ -31,9 +31,6 @@
   background-color: transparent;
   border: none;
 }
-.find-advisors-school-search > input:focus {
-  outline: none;
-}
 .find-advisors-school-search > input::placeholder {
   color: #858484;
 }
