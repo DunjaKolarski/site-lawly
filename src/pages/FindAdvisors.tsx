@@ -39,7 +39,9 @@ function FindAdvisors() {
     };
   }, []);
 
-  const consultantsPerPage = isMobile ? 8 : 16;
+  const hasSaved = savedConsultants.length > 0;
+  const showSaved = savedVisible && hasSaved;
+  const consultantsPerPage = hasSaved ? (isMobile ? 3 : 8) : isMobile ? 8 : 16;
   const totalPages = 10;
   function removeSavedConsultant(id: number) {
     setSavedConsultants((previous) =>
@@ -54,11 +56,14 @@ function FindAdvisors() {
         <main className="find-advisors-content">
           <FindAdvisorsHero />
           <FindAdvisorsMatch />
-          {savedVisible && savedConsultants.length > 0 && (
+          {showSaved && (
             <FindAdvisorsSaved
               consultants={savedConsultants}
               onRemove={removeSavedConsultant}
-              onClose={() => setSavedVisible(false)}
+              onClose={() => {
+                setSavedConsultants([]);
+                setSavedVisible(false);
+              }}
             />
           )}
           <div
@@ -81,14 +86,16 @@ function FindAdvisors() {
               <FindAdvisorsSearch />
               <FindAdvisorsSort />
               <FindAdvisorsList
-                page={page}
+                page={hasSaved ? 1 : page}
                 consultantsPerPage={consultantsPerPage}
               />
-              <FindAdvisorsPagination
-                page={page}
-                setPage={setPage}
-                totalPages={totalPages}
-              />
+              {!hasSaved && (
+                <FindAdvisorsPagination
+                  page={page}
+                  setPage={setPage}
+                  totalPages={totalPages}
+                />
+              )}
             </div>
           </div>
         </main>
