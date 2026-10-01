@@ -63,18 +63,25 @@ const filterGroups = [
     selected: ["Public Interest", "Corporate Law", "Litigation"],
   },
 ];
-
 type FindAdvisorsFiltersProps = {
   isMobile: boolean;
+  initiallyOpen?: boolean;
 };
 
-function FindAdvisorsFilters({ isMobile }: FindAdvisorsFiltersProps) {
+function FindAdvisorsFilters({
+  isMobile,
+  initiallyOpen = true,
+}: FindAdvisorsFiltersProps) {
   return (
     <aside className="find-advisors-filters" id="find-advisors-filters">
       <h4>Filters</h4>
 
       {filterGroups.map((group) => (
-        <details className="find-advisors-filter-group" key={group.title} open>
+        <details
+          className="find-advisors-filter-group"
+          key={group.title}
+          open={initiallyOpen}
+        >
           <summary>
             {group.title}
             <i className="bi bi-chevron-down" aria-hidden="true"></i>

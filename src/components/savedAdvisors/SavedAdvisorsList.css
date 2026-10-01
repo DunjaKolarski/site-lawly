@@ -1,0 +1,12 @@
+.saved-advisors-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+.saved-advisors-empty {
+  grid-column: 1 / -1;
+  font-size: 1rem;
+  color: #000d50;
+  padding: 2rem 0;
+}

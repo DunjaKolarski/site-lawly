@@ -1,0 +1,34 @@
+.saved-advisors-layout {
+  width: 100%;
+  display: flex;
+}
+.saved-advisors-content {
+  width: 96%;
+}
+.saved-advisors-heading {
+  height: 18vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.saved-advisors-heading > h1 {
+  font-size: 2.3rem;
+  font-weight: bold;
+  color: #000d50;
+  text-align: center;
+}
+.saved-advisors-listing {
+  min-height: 70vh;
+  width: 100%;
+  display: flex;
+  border-top: 1px solid var(--border-color);
+}
+.saved-advisors-results {
+  width: 78%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+}
