@@ -1,7 +1,7 @@
 import jeremy from "../../assets/profile9.png";
 import ari from "../../assets/profile7.png";
-import sammy from "../../assets/profile13.png";
-import peter from "../../assets/profile14.png";
+import sammy from "../../assets/profile12.png";
+import peter from "../../assets/profile13.png";
 
 export type SavedConsultant = {
   id: number;
