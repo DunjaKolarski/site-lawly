@@ -27,6 +27,12 @@
   right: 0.5rem;
   font-size: 1.7rem;
   color: #ffffffd9;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.find-advisors-card-heart.find-advisors-card-heart-saved {
+  color: #d9534f;
 }
 .find-advisors-card-badge {
   position: absolute;

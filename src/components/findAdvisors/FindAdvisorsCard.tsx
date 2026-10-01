@@ -8,6 +8,8 @@ type FindAdvisorsCardProps = {
   reviews: number;
   description: string;
   price: number;
+  isSaved?: boolean;
+  onSaveToggle?: () => void;
 };
 
 function FindAdvisorsCard({
@@ -18,15 +20,25 @@ function FindAdvisorsCard({
   reviews,
   description,
   price,
+  isSaved = false,
+  onSaveToggle,
 }: FindAdvisorsCardProps) {
   return (
     <div className="find-advisors-card">
       <div className="find-advisors-card-image">
         <img src={image} alt={name} />
-        <i
-          className="bi bi-heart find-advisors-card-heart"
-          aria-hidden="true"
-        ></i>
+        <button
+          type="button"
+          className={`find-advisors-card-heart${isSaved ? " find-advisors-card-heart-saved" : ""}`}
+          aria-label={`${isSaved ? "Remove" : "Save"} ${name}${isSaved ? " from saved consultants" : " to saved consultants"}`}
+          aria-pressed={isSaved}
+          onClick={onSaveToggle}
+        >
+          <i
+            className={`bi ${isSaved ? "bi-heart-fill" : "bi-heart"}`}
+            aria-hidden="true"
+          ></i>
+        </button>
         <span
           className={`find-advisors-card-badge find-advisors-card-badge-${badge.toLowerCase()}`}
         >
