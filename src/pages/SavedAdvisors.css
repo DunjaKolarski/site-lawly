@@ -32,3 +32,49 @@
   gap: 1.5rem;
   padding: 2rem 1rem;
 }
+.saved-advisors-filters-toggle {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .saved-advisors-content {
+    width: 100%;
+  }
+  .saved-advisors-heading {
+    height: auto;
+    padding: 2rem 1rem;
+  }
+  .saved-advisors-heading > h1 {
+    font-size: 1.8rem;
+  }
+  .saved-advisors-listing {
+    min-height: 0;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-top: none;
+    padding: 0 1rem 4rem;
+  }
+  .saved-advisors-results {
+    display: contents;
+  }
+  .saved-advisors-filters-toggle {
+    width: 100%;
+    order: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #6b9fff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.8rem;
+    cursor: pointer;
+  }
+  .saved-advisors-listing .find-advisors-sort {
+    order: 5;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.5rem;
+  }
+}
