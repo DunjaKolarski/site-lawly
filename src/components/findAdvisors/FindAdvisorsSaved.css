@@ -80,3 +80,64 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
+@media (max-width: 767px) {
+  .find-advisors-saved {
+    padding: 1.5rem 1rem;
+  }
+  .find-advisors-saved-content {
+    width: 100%;
+  }
+  .find-advisors-saved-close,
+  .find-advisors-saved-arrow {
+    display: none;
+  }
+  .find-advisors-saved-slide {
+    flex: 0 0 58%;
+  }
+  .find-advisors-saved .find-advisors-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-content: start;
+    gap: 0.4rem;
+  }
+  .find-advisors-saved .find-advisors-card-image {
+    display: contents;
+  }
+  .find-advisors-saved .find-advisors-card-image > img {
+    height: auto;
+    width: 100%;
+    aspect-ratio: 1;
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .find-advisors-saved .find-advisors-card-heart {
+    top: 0.9rem;
+    right: 0.9rem;
+    font-size: 1.7rem;
+  }
+  .find-advisors-saved .find-advisors-card-content {
+    display: contents;
+  }
+  .find-advisors-saved .find-advisors-card-heading {
+    grid-column: 1;
+    grid-row: 2;
+    justify-content: space-between;
+    padding-right: 0;
+  }
+  .find-advisors-saved .find-advisors-card-badge {
+    position: static;
+    grid-column: 1;
+    grid-row: 3;
+    justify-self: start;
+  }
+  .find-advisors-saved .find-advisors-card-background {
+    grid-column: 1;
+    grid-row: 4;
+    padding-top: 0.5rem;
+  }
+  .find-advisors-saved .find-advisors-card-description,
+  .find-advisors-saved .find-advisors-card-price {
+    display: none;
+  }
+}
