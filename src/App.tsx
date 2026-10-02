@@ -13,6 +13,7 @@ import Advisors from "./pages/Advisors";
 import MatchQuiz from "./pages/MatchQuiz";
 import FindAdvisors from "./pages/FindAdvisors";
 import SavedAdvisors from "./pages/SavedAdvisors";
+import ConsultantProfile from "./pages/ConsultantProfile";
 
 import "./App.css";
 
@@ -34,6 +35,10 @@ function App() {
       <Route path="/match-quiz" element={<MatchQuiz />} />
       <Route path="/find-consultant" element={<FindAdvisors />} />
       <Route path="/saved-consultants" element={<SavedAdvisors />} />
+      <Route
+        path="/consultants/:consultantId"
+        element={<ConsultantProfile />}
+      />
     </Routes>
   );
 }

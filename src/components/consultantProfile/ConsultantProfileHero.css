@@ -1,0 +1,120 @@
+.consultant-profile-hero {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+.consultant-profile-image {
+  width: 35%;
+  flex-shrink: 0;
+  aspect-ratio: 1;
+  position: relative;
+}
+.consultant-profile-image > img {
+  height: 100%;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+.consultant-profile-image > span {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #6b4ce6;
+  background-color: #ece5ff;
+  border-radius: 1rem;
+  padding: 0.2rem 0.8rem;
+}
+.consultant-profile-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.consultant-profile-name {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  padding-right: 3.5rem;
+}
+.consultant-profile-name > h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #000d50;
+}
+.consultant-profile-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+.consultant-profile-rating > span {
+  font-size: 1.5rem;
+  color: #f5b301;
+}
+.consultant-profile-rating > strong {
+  font-size: 1rem;
+  color: #000d50;
+}
+.consultant-profile-rating > small {
+  font-size: 0.7rem;
+  color: #689dc9;
+}
+.consultant-profile-price {
+  font-size: 1.2rem;
+  color: #000d50;
+}
+.consultant-profile-background {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+}
+.consultant-profile-background > p {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: #858484;
+}
+.consultant-profile-services {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-top: 1rem;
+}
+.consultant-profile-services > strong {
+  font-size: 0.9rem;
+  color: #000d50;
+}
+.consultant-profile-services > span {
+  font-size: 0.9rem;
+  color: #6b9fff;
+  background-color: #eff4f7;
+  border-radius: 1rem;
+  padding: 0.4rem 0.7rem;
+}
+.consultant-profile-services > i {
+  font-size: 0.9rem;
+  color: #000d50;
+}
+.consultant-profile-actions {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  gap: 0.5rem;
+}
+.consultant-profile-actions > button {
+  font-size: 1.2rem;
+  color: #858484;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

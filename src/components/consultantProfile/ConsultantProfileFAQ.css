@@ -1,0 +1,59 @@
+.consultant-profile-faq {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 0 2rem;
+}
+.consultant-profile-faq > h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000d50;
+}
+.consultant-profile-faq-container {
+  width: 80%;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem 0.5rem 0 0;
+  overflow: hidden;
+}
+.consultant-profile-faq-item {
+  border-bottom: 1px solid var(--border-color);
+}
+.consultant-profile-faq-item:last-child {
+  border-bottom: none;
+}
+.consultant-profile-faq-item > summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1rem;
+  color: #000d50;
+  list-style: none;
+  padding: 1.2rem;
+  cursor: pointer;
+}
+.consultant-profile-faq-item > summary::-webkit-details-marker {
+  display: none;
+}
+.consultant-profile-faq-item > summary > i {
+  flex-shrink: 0;
+  font-size: 1.2rem;
+}
+.consultant-profile-faq-item > summary > .bi-dash {
+  display: none;
+}
+.consultant-profile-faq-item[open] > summary > .bi-plus {
+  display: none;
+}
+.consultant-profile-faq-item[open] > summary > .bi-dash {
+  display: block;
+}
+.consultant-profile-faq-item > p {
+  font-size: 1rem;
+  color: #858484;
+  background-color: #eff4f7;
+  border-top: 1px solid var(--border-color);
+  padding: 1.2rem;
+}

@@ -1,0 +1,55 @@
+.consultant-profile-booking {
+  width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+}
+.consultant-profile-availability {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 1.5rem;
+}
+.consultant-profile-availability > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.consultant-profile-availability strong {
+  font-size: 0.9rem;
+  color: #000d50;
+}
+.consultant-profile-availability p {
+  font-size: 0.9rem;
+  color: #858484;
+}
+.consultant-profile-availability-dot {
+  height: 1rem;
+  width: 1rem;
+  flex-shrink: 0;
+  background-color: #329c64;
+  border: 3px solid #dff3e7;
+  border-radius: 50%;
+}
+.consultant-profile-booking-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 1.5rem;
+}
+.consultant-profile-booking-actions > .primary-button {
+  width: 85%;
+}
+.consultant-profile-message {
+  width: 85%;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000d50;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+  cursor: pointer;
+}

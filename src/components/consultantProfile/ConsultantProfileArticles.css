@@ -1,0 +1,58 @@
+.consultant-profile-articles {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.consultant-profile-articles > h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000d50;
+}
+.consultant-profile-articles-carousel {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.consultant-profile-articles-viewport {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+.consultant-profile-articles-track {
+  display: flex;
+  gap: 1rem;
+  touch-action: pan-y pinch-zoom;
+}
+.consultant-profile-articles-slide {
+  flex: 0 0 calc((100% - 2rem) / 3);
+  min-width: 0;
+  display: flex;
+}
+.consultant-profile-articles-slide > .articles-card {
+  height: auto;
+  min-height: 12rem;
+  width: 100%;
+}
+.consultant-profile-articles .articles-card-author {
+  display: none;
+}
+.consultant-profile-articles .articles-card-bottom > .primary-button {
+  font-size: 0.9rem;
+  padding: 0.5rem 0.7rem;
+}
+.consultant-profile-articles-next {
+  height: 1.8rem;
+  width: 1.8rem;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #000d50;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  cursor: pointer;
+}

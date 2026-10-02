@@ -1,0 +1,96 @@
+.consultant-profile-consulting {
+  width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-top: 1.5rem;
+}
+.consultant-profile-consulting-label {
+  width: 45%;
+  display: block;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #ffffff;
+  background-color: #6b9fff;
+  border-bottom-right-radius: 0.5rem;
+  padding: 0.6rem;
+}
+.consultant-profile-consulting-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+.consultant-profile-consulting-content > h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000d50;
+}
+.consultant-profile-consulting-content > p {
+  font-size: 1rem;
+  color: #000d50;
+}
+.consultant-profile-consulting-content > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 1rem;
+  color: #000d50;
+  padding-left: 1.2rem;
+}
+.consultant-profile-consulting-prices {
+  display: flex;
+  flex-direction: column;
+}
+.consultant-profile-consulting-prices > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+.consultant-profile-consulting-prices > div:first-child {
+  border-bottom: 1px solid var(--border-color);
+}
+.consultant-profile-consulting-prices > div > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.consultant-profile-consulting-prices p {
+  font-size: 1rem;
+  color: #000d50;
+}
+.consultant-profile-consulting-prices span {
+  font-size: 0.9rem;
+  color: #000d50;
+}
+.consultant-profile-consulting-content
+  > .consultant-profile-consulting-availability {
+  font-size: 0.9rem;
+}
+.consultant-profile-consulting-availability > span {
+  color: #6b9fff;
+}
+.consultant-profile-consulting-actions {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+.consultant-profile-consulting-calendar {
+  width: 2.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #000d50;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.consultant-profile-consulting-content > .consultant-profile-consulting-refund {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+}
