@@ -1,0 +1,98 @@
+.consultant-profile-resume {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+.consultant-profile-resume > h2 {
+  font-size: 1.2rem;
+  color: #000d50;
+}
+.consultant-profile-resume-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.consultant-profile-resume-school {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.consultant-profile-resume-school > img {
+  height: 2.2rem;
+  width: 2.2rem;
+  object-fit: contain;
+}
+.consultant-profile-resume-school > h3 {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #000d50;
+}
+.consultant-profile-resume-details {
+  font-size: 0.9rem;
+  color: #575757;
+}
+.consultant-profile-resume-description {
+  font-size: 0.9rem;
+  color: #858484;
+}
+.consultant-profile-resume-accepted {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.consultant-profile-resume-accepted > p {
+  font-size: 0.9rem;
+  color: #858484;
+}
+.consultant-profile-resume-accepted > ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+}
+.consultant-profile-resume-accepted li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #858484;
+}
+.consultant-profile-resume-accepted li > img {
+  height: 1.4rem;
+  width: 1.4rem;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.consultant-profile-resume-work {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+.consultant-profile-resume-work > h2 {
+  font-size: 1.2rem;
+  color: #000d50;
+}
+.consultant-profile-resume-position {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.consultant-profile-resume-position > img {
+  height: 2.2rem;
+  width: 2.2rem;
+  object-fit: contain;
+}
+.consultant-profile-resume-position > h3 {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #000d50;
+}
+.consultant-profile-resume-accepted li + li {
+  border-left: 1px solid var(--border-color);
+  padding-left: 1rem;
+}

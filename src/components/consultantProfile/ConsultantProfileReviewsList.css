@@ -1,0 +1,162 @@
+.consultant-profile-reviews-list {
+  display: flex;
+  flex-direction: column;
+}
+.consultant-profile-reviews-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  padding-bottom: 1rem;
+}
+.consultant-profile-reviews-search-group {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.consultant-profile-reviews-search {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.7rem;
+}
+.consultant-profile-reviews-search > i {
+  font-size: 0.9rem;
+  color: #858484;
+}
+.consultant-profile-reviews-search > input {
+  width: 100%;
+  min-width: 0;
+  font-size: 0.9rem;
+  color: #000d50;
+  background-color: transparent;
+  border: none;
+}
+.consultant-profile-reviews-search > input::placeholder {
+  color: #858484;
+}
+.consultant-profile-reviews-filter {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #000d50;
+}
+.consultant-profile-reviews-filter > button {
+  font-size: 0.75rem;
+  color: #000d50;
+  background-color: #eff4f7;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.2rem 0.4rem;
+  cursor: pointer;
+}
+.consultant-profile-reviews-service {
+  width: 40%;
+  position: relative;
+}
+.consultant-profile-reviews-service > select {
+  width: 100%;
+  font-size: 0.9rem;
+  color: #000d50;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.3rem;
+  padding: 0.7rem;
+  cursor: pointer;
+}
+.consultant-profile-reviews-service > select:focus {
+  outline: none;
+}
+.consultant-profile-reviews-entries {
+  border-top: 1px solid var(--border-color);
+}
+.consultant-profile-reviews-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+.consultant-profile-reviews-entry-heading {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+.consultant-profile-reviews-entry-heading > h3 {
+  font-size: 1rem;
+  color: #000d50;
+}
+.consultant-profile-reviews-entry-heading > span {
+  font-size: 1.2rem;
+  color: #f5b301;
+}
+.consultant-profile-reviews-entry-meta {
+  font-size: 0.9rem;
+  color: #858484;
+}
+.consultant-profile-reviews-entry-text {
+  font-size: 1rem;
+  color: #000d50;
+  padding-top: 0.3rem;
+}
+.consultant-profile-reviews-entry-schools {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+.consultant-profile-reviews-entry-schools > p {
+  font-size: 0.75rem;
+  color: #858484;
+}
+.consultant-profile-reviews-entry-schools > ul {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+}
+.consultant-profile-reviews-entry-schools li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: #858484;
+}
+.consultant-profile-reviews-entry-schools li + li {
+  border-left: 1px solid var(--border-color);
+  padding-left: 1rem;
+}
+.consultant-profile-reviews-entry-schools li > img {
+  height: 1.4rem;
+  width: 1.4rem;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+.consultant-profile-reviews-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 0 0;
+}
+.consultant-profile-reviews-pagination > button {
+  font-size: 0.9rem;
+  color: #858484;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.consultant-profile-reviews-pagination > button[aria-current="page"] {
+  color: #000d50;
+}
+.consultant-profile-reviews-pagination > span {
+  font-size: 0.9rem;
+  color: #858484;
+}

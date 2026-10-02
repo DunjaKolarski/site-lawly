@@ -13,6 +13,8 @@ import ConsultantProfilePackage from "../components/consultantProfile/Consultant
 import ConsultantProfileEvents from "../components/consultantProfile/ConsultantProfileEvents";
 import ConsultantProfileArticles from "../components/consultantProfile/ConsultantProfileArticles";
 import ConsultantProfileFAQ from "../components/consultantProfile/ConsultantProfileFAQ";
+import ConsultantProfileResume from "../components/consultantProfile/ConsultantProfileResume";
+import ConsultantProfileReviews from "../components/consultantProfile/ConsultantProfileReviews";
 import Footer from "../components/layout/Footer";
 
 function ConsultantProfile() {
@@ -52,6 +54,8 @@ function ConsultantProfile() {
                   />
                 </>
               )}
+              {activeTab === "Resume" && <ConsultantProfileResume />}
+              {activeTab === "Reviews" && <ConsultantProfileReviews />}
             </div>
             <div className="consultant-profile-offers">
               <ConsultantProfileBooking />
