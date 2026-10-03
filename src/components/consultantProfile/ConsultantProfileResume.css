@@ -96,3 +96,81 @@
   border-left: 1px solid var(--border-color);
   padding-left: 1rem;
 }
+.consultant-profile-resume-more {
+  display: none;
+}
+@media (max-width: 767px) {
+  .consultant-profile-resume {
+    gap: 2rem;
+    border-bottom: none;
+  }
+  .consultant-profile-resume-item {
+    gap: 0.6rem;
+  }
+  .consultant-profile-resume-school > img,
+  .consultant-profile-resume-position > img {
+    flex-shrink: 0;
+  }
+  .consultant-profile-resume-description {
+    font-size: 1rem;
+    color: #000d50;
+  }
+  .consultant-profile-resume-education-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .consultant-profile-resume-education-text
+    > p:not(.consultant-profile-resume-harvard-expanded) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+  }
+  .consultant-profile-resume-more {
+    display: block;
+    align-self: flex-start;
+    font-size: 0.9rem;
+    color: #6b9fff;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  .consultant-profile-resume-accepted {
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  .consultant-profile-resume-accepted > ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem 0.5rem;
+  }
+  .consultant-profile-resume-accepted li {
+    min-width: 0;
+    gap: 0.4rem;
+  }
+  .consultant-profile-resume-accepted li + li {
+    border-left: none;
+    padding-left: 0;
+  }
+  .consultant-profile-resume-accepted li:nth-child(even) {
+    border-left: 1px solid var(--border-color);
+    padding-left: 0.5rem;
+  }
+  .consultant-profile-resume-school-list > li:nth-child(4) {
+    grid-column: 1 / -1;
+    order: 1;
+    border-left: none;
+    padding-left: 0;
+  }
+  .consultant-profile-resume-school-list > li:nth-child(5) {
+    border-left: 1px solid var(--border-color);
+    padding-left: 0.5rem;
+  }
+  .consultant-profile-resume-work {
+    gap: 2rem;
+  }
+  .consultant-profile-resume-work > .consultant-profile-resume-accepted {
+    margin-top: 1.5rem;
+  }
+}

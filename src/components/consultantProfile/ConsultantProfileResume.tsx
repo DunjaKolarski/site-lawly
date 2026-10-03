@@ -1,4 +1,5 @@
 import "./ConsultantProfileResume.css";
+import { useState } from "react";
 import harvard from "../../assets/harvard-resume.png";
 import newJersey from "../../assets/new-jersey-resume.png";
 import columbia from "../../assets/columbia-resume.png";
@@ -14,6 +15,8 @@ import cahill from "../../assets/cahill-resume.png";
 import baker from "../../assets/baker-resume.png";
 
 function ConsultantProfileResume() {
+  const [educationExpanded, setEducationExpanded] = useState(false);
+
   return (
     <section className="consultant-profile-resume">
       <h2>Education</h2>
@@ -28,13 +31,32 @@ function ConsultantProfileResume() {
           J.D. · June 2022 - Present
         </p>
 
-        <p className="consultant-profile-resume-description">
-          I earned my Juris Doctorate (J.D.) degree from Harvard Law School. I
-          applied to law school with no career coaching, LSAT classes/tutoring,
-          pre-law program/consultants, or mentors. I navigated the law school
-          application process on my own and want to help the next generation get
-          admitted into their dream schools!
-        </p>
+        <div className="consultant-profile-resume-education-text">
+          <p
+            id="consultant-profile-resume-harvard-description"
+            className={
+              educationExpanded
+                ? "consultant-profile-resume-description consultant-profile-resume-harvard-description consultant-profile-resume-harvard-expanded"
+                : "consultant-profile-resume-description consultant-profile-resume-harvard-description"
+            }
+          >
+            I earned my Juris Doctorate (J.D.) degree from Harvard Law School. I
+            applied to law school with no career coaching, LSAT
+            classes/tutoring, pre-law program/consultants, or mentors. I
+            navigated the law school application process on my own and want to
+            help the next generation get admitted into their dream schools!
+          </p>
+
+          <button
+            type="button"
+            className="consultant-profile-resume-more"
+            aria-expanded={educationExpanded}
+            aria-controls="consultant-profile-resume-harvard-description"
+            onClick={() => setEducationExpanded(!educationExpanded)}
+          >
+            {educationExpanded ? "Less" : "More"}
+          </button>
+        </div>
       </div>
 
       <div className="consultant-profile-resume-item">
@@ -52,10 +74,10 @@ function ConsultantProfileResume() {
         </p>
       </div>
 
-      <div className="consultant-profile-resume-accepted">
+      <div className="consultant-profile-resume-accepted consultant-profile-resume-accepted-schools">
         <p>Cynthia was also accepted to:</p>
 
-        <ul>
+        <ul className="consultant-profile-resume-school-list">
           <li>
             <img src={columbia} alt="" />
             Columbia Law School
