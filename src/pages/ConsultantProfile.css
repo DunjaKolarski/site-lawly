@@ -59,3 +59,67 @@
 .consultant-profile-resources > .consultant-profile-events {
   width: 80%;
 }
+.consultant-profile-resources-mobile-label {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .consultant-profile-content {
+    width: 100%;
+  }
+  .consultant-profile-top {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+  .consultant-profile-main,
+  .consultant-profile-offers {
+    display: contents;
+  }
+  .consultant-profile-top .consultant-profile-hero {
+    order: 1;
+  }
+  .consultant-profile-top .consultant-profile-booking {
+    order: 2;
+    margin-top: 2rem;
+  }
+  .consultant-profile-tabs {
+    order: 4;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .consultant-profile-top .consultant-profile-bio,
+  .consultant-profile-top .consultant-profile-resume,
+  .consultant-profile-top .consultant-profile-reviews {
+    order: 5;
+  }
+  .consultant-profile-top .consultant-profile-qualifications {
+    order: 6;
+  }
+  .consultant-profile-top .consultant-profile-client-reviews {
+    order: 7;
+  }
+  .consultant-profile-offers > .consultant-profile-strategy,
+  .consultant-profile-offers > .consultant-profile-consulting,
+  .consultant-profile-offers > .consultant-profile-package {
+    display: none;
+  }
+  .consultant-profile-resources {
+    align-items: flex-start;
+    gap: 2.5rem;
+    padding: 2.5rem 1rem;
+  }
+  .consultant-profile-resources > h2 {
+    font-size: 1.2rem;
+    text-align: left;
+  }
+  .consultant-profile-resources > .consultant-profile-events {
+    width: 100%;
+  }
+  .consultant-profile-resources-desktop-label {
+    display: none;
+  }
+  .consultant-profile-resources-mobile-label {
+    display: inline;
+  }
+}

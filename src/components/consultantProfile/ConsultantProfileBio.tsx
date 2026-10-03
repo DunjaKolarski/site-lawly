@@ -1,11 +1,20 @@
 import "./ConsultantProfileBio.css";
+import { useState } from "react";
 
 function ConsultantProfileBio() {
+  const [expanded, setExpanded] = useState(false);
   return (
     <div className="consultant-profile-bio">
       <h2>About me</h2>
 
-      <div className="consultant-profile-bio-text">
+      <div
+        id="consultant-profile-bio-text"
+        className={
+          expanded
+            ? "consultant-profile-bio-text consultant-profile-bio-text-expanded"
+            : "consultant-profile-bio-text"
+        }
+      >
         <p>
           Hi, I'm Cynthia, a practicing lawyer and proud Harvard Law School
           graduate. My journey through law school and into the legal profession
@@ -23,6 +32,16 @@ function ConsultantProfileBio() {
           you every step of the way.
         </p>
       </div>
+
+      <button
+        type="button"
+        className="consultant-profile-bio-more"
+        aria-expanded={expanded}
+        aria-controls="consultant-profile-bio-text"
+        onClick={() => setExpanded(!expanded)}
+      >
+        {expanded ? "Less" : "More"}
+      </button>
 
       <div className="consultant-profile-bio-tags">
         <div>

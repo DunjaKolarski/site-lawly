@@ -1,4 +1,5 @@
 import "./ConsultantProfileHero.css";
+import { useState } from "react";
 import cynthia from "../../assets/profile2.png";
 
 const services = [
@@ -9,6 +10,7 @@ const services = [
 ];
 
 function ConsultantProfileHero() {
+  const [servicesExpanded, setServicesExpanded] = useState(false);
   return (
     <div className="consultant-profile-hero">
       <div className="consultant-profile-image">
@@ -19,6 +21,13 @@ function ConsultantProfileHero() {
       <div className="consultant-profile-info">
         <div className="consultant-profile-name">
           <h1>Cynthia</h1>
+          <button
+            type="button"
+            className="consultant-profile-link"
+            aria-label="Copy profile link"
+          >
+            <i className="bi bi-link-45deg" aria-hidden="true"></i>
+          </button>
           <div className="consultant-profile-rating">
             <span>★</span>
             <strong>5.0</strong>
@@ -38,22 +47,48 @@ function ConsultantProfileHero() {
             Sullivan Cromwell
           </p>
         </div>
-
-        <div className="consultant-profile-services">
+        <div
+          className={
+            servicesExpanded
+              ? "consultant-profile-services consultant-profile-services-expanded"
+              : "consultant-profile-services"
+          }
+        >
           <strong>Services I Offer:</strong>
+
           {services.map((service) => (
             <span key={service}>{service}</span>
           ))}
-          <i className="bi bi-chevron-down" aria-hidden="true"></i>
+
+          <button
+            type="button"
+            className="consultant-profile-services-toggle"
+            aria-label={
+              servicesExpanded ? "Show fewer services" : "Show all services"
+            }
+            aria-expanded={servicesExpanded}
+            onClick={() => setServicesExpanded(!servicesExpanded)}
+          >
+            <i
+              className={
+                servicesExpanded ? "bi bi-chevron-up" : "bi bi-chevron-down"
+              }
+              aria-hidden="true"
+            ></i>
+          </button>
         </div>
       </div>
 
       <div className="consultant-profile-actions">
         <button type="button" aria-label="Save Cynthia">
-          <i className="bi bi-heart-fill" aria-hidden="true"></i>
-        </button>
-        <button type="button" aria-label="Copy profile link">
-          <i className="bi bi-link-45deg" aria-hidden="true"></i>
+          <i
+            className="bi bi-heart-fill consultant-profile-heart-desktop"
+            aria-hidden="true"
+          ></i>
+          <i
+            className="bi bi-heart consultant-profile-heart-mobile"
+            aria-hidden="true"
+          ></i>
         </button>
       </div>
     </div>

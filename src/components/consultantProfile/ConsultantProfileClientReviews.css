@@ -85,3 +85,24 @@
   border-radius: 0.5rem;
   cursor: pointer;
 }
+
+@media (max-width: 767px) {
+  .consultant-profile-client-reviews {
+    gap: 0.7rem;
+  }
+  .consultant-profile-see-reviews {
+    align-self: flex-start;
+  }
+  .consultant-profile-review-carousel {
+    margin-top: 0.5rem;
+  }
+  .consultant-profile-review-slide {
+    flex: 0 0 70%;
+  }
+  .consultant-profile-review-card {
+    padding: 1rem;
+  }
+  .consultant-profile-review-next {
+    display: none;
+  }
+}

@@ -43,3 +43,35 @@
   border-radius: 0.3rem;
   padding: 0.3rem 0.5rem;
 }
+.consultant-profile-bio-more {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .consultant-profile-bio {
+    gap: 1.5rem;
+    border-bottom: none;
+  }
+  .consultant-profile-bio-text:not(.consultant-profile-bio-text-expanded)
+    > p:first-child {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+  }
+  .consultant-profile-bio-text:not(.consultant-profile-bio-text-expanded)
+    > p
+    + p {
+    display: none;
+  }
+  .consultant-profile-bio-more {
+    display: block;
+    align-self: flex-start;
+    margin-top: -0.7rem;
+    font-size: 0.9rem;
+    color: #6b9fff;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,59 @@
+.consultant-profile-upcoming {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .consultant-profile-upcoming {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    order: 3;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+  }
+  .consultant-profile-upcoming > h2 {
+    font-size: 0.9rem;
+    font-weight: normal;
+    color: #000d50;
+  }
+  .consultant-profile-upcoming-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 1rem;
+    background-color: #f7f8f9;
+    border-radius: 0.5rem;
+  }
+  .consultant-profile-upcoming-card > h3 {
+    font-size: 0.9rem;
+    font-weight: normal;
+    color: #000d50;
+  }
+  .consultant-profile-upcoming-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+  }
+  .consultant-profile-upcoming-details > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .consultant-profile-upcoming-details p {
+    font-size: 0.75rem;
+    color: #858484;
+  }
+  .consultant-profile-upcoming-details > span {
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    color: #ffffff;
+    background-color: #e88a0c;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.7rem;
+  }
+}

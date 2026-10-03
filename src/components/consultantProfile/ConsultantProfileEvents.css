@@ -78,3 +78,56 @@
 .consultant-profile-event > .primary-button {
   flex-shrink: 0;
 }
+.consultant-profile-events-viewport {
+  width: 100%;
+}
+.consultant-profile-events-mobile-title {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .consultant-profile-events-desktop-title {
+    display: none;
+  }
+  .consultant-profile-events-mobile-title {
+    display: inline;
+  }
+  .consultant-profile-events-viewport {
+    overflow: hidden;
+  }
+  .consultant-profile-events-list {
+    flex-direction: row;
+    align-items: stretch;
+    touch-action: pan-y pinch-zoom;
+  }
+  .consultant-profile-event {
+    flex: 0 0 60%;
+    min-width: 0;
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 0.8rem;
+  }
+  .consultant-profile-event-image {
+    width: 100%;
+  }
+  .consultant-profile-event-content {
+    width: 100%;
+    gap: 0.5rem;
+    padding: 0;
+    text-align: center;
+  }
+  .consultant-profile-event-content > h4 {
+    font-size: 0.9rem;
+  }
+  .consultant-profile-event-content > p {
+    font-size: 0.75rem;
+  }
+  .consultant-profile-event-attendees {
+    display: none;
+  }
+  .consultant-profile-event > .primary-button {
+    margin-top: auto;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+}

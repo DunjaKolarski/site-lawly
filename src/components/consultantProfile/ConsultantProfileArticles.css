@@ -56,3 +56,35 @@
   border-radius: 0.5rem;
   cursor: pointer;
 }
+
+@media (max-width: 767px) {
+  .consultant-profile-articles {
+    width: 100%;
+  }
+  .consultant-profile-articles-slide {
+    flex: 0 0 65%;
+  }
+  .consultant-profile-articles-slide > .articles-card {
+    min-height: 11rem;
+  }
+  .consultant-profile-articles .articles-card-content {
+    padding: 1rem 0.7rem;
+  }
+  .consultant-profile-articles .articles-card-content > h4 {
+    font-size: 0.9rem;
+    font-weight: normal;
+  }
+  .consultant-profile-articles .articles-card-bottom {
+    justify-content: center;
+    padding: 0.8rem;
+  }
+  .consultant-profile-articles .articles-card-bottom > p {
+    display: none;
+  }
+  .consultant-profile-articles .articles-card-bottom > .primary-button {
+    padding: 0.6rem 1rem;
+  }
+  .consultant-profile-articles-next {
+    display: none;
+  }
+}

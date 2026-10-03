@@ -15,6 +15,7 @@ import ConsultantProfileArticles from "../components/consultantProfile/Consultan
 import ConsultantProfileFAQ from "../components/consultantProfile/ConsultantProfileFAQ";
 import ConsultantProfileResume from "../components/consultantProfile/ConsultantProfileResume";
 import ConsultantProfileReviews from "../components/consultantProfile/ConsultantProfileReviews";
+import ConsultantProfileUpcoming from "../components/consultantProfile/ConsultantProfileUpcoming";
 import Footer from "../components/layout/Footer";
 
 function ConsultantProfile() {
@@ -59,13 +60,22 @@ function ConsultantProfile() {
             </div>
             <div className="consultant-profile-offers">
               <ConsultantProfileBooking />
+              <ConsultantProfileUpcoming />
               <ConsultantProfileStrategy />
               <ConsultantProfileConsulting />
               <ConsultantProfilePackage />
             </div>
           </div>
           <div className="consultant-profile-resources">
-            <h2>Cynthia's Free Events &amp; Articles</h2>
+            <h2>
+              Cynthia's Free Events &amp;{" "}
+              <span className="consultant-profile-resources-desktop-label">
+                Articles
+              </span>
+              <span className="consultant-profile-resources-mobile-label">
+                Resources
+              </span>
+            </h2>
             <ConsultantProfileEvents />
             <ConsultantProfileArticles />
           </div>
