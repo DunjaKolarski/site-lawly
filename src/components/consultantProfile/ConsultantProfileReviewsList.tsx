@@ -36,18 +36,39 @@ const allReviews = Array.from({ length: 30 }, (_, index) => ({
   id: index + 1,
 }));
 
-function ConsultantProfileReviewsList() {
+const ownReview = {
+  id: 0,
+  name: "Natasha",
+  date: "March 2025",
+  service: "Received help with: Personal Statement",
+  text: "Fantastic session! We focused only on the items I needed to improve before my interview. I highly recommend Cynthia!",
+  accepted: true,
+};
+
+type ConsultantProfileReviewsListProps = {
+  reviewStatus: "no-session" | "can-review" | "reviewed";
+};
+
+function ConsultantProfileReviewsList({
+  reviewStatus,
+}: ConsultantProfileReviewsListProps) {
   const [page, setPage] = useState(1);
   const [showFilter, setShowFilter] = useState(true);
+  const [visibleCount, setVisibleCount] = useState(3);
+  const usePagination = reviewStatus === "no-session";
+
+  const reviewsForStatus =
+    reviewStatus === "reviewed"
+      ? [ownReview, ...allReviews.slice(0, 29)]
+      : allReviews;
 
   const reviewsPerPage = 3;
-  const totalPages = Math.ceil(allReviews.length / reviewsPerPage);
+  const totalPages = Math.ceil(reviewsForStatus.length / reviewsPerPage);
   const startIndex = (page - 1) * reviewsPerPage;
-  const displayedReviews = allReviews.slice(
-    startIndex,
-    startIndex + reviewsPerPage,
-  );
 
+  const displayedReviews = usePagination
+    ? reviewsForStatus.slice(startIndex, startIndex + reviewsPerPage)
+    : reviewsForStatus.slice(0, visibleCount);
   const firstPage = Math.max(1, Math.min(page - 2, totalPages - 4));
   const pages = Array.from(
     { length: Math.min(5, totalPages) },
@@ -90,10 +111,25 @@ function ConsultantProfileReviewsList() {
 
       <div className="consultant-profile-reviews-entries">
         {displayedReviews.map((review) => (
-          <article key={review.id} className="consultant-profile-reviews-entry">
+          <article
+            key={review.id}
+            className={
+              review.id === 0
+                ? "consultant-profile-reviews-entry consultant-profile-reviews-entry-own"
+                : "consultant-profile-reviews-entry"
+            }
+          >
             <div className="consultant-profile-reviews-entry-heading">
               <h3>{review.name}</h3>
               <span aria-label="5 out of 5 stars">★★★★★</span>
+              {review.id === 0 && (
+                <button
+                  type="button"
+                  className="consultant-profile-reviews-edit"
+                >
+                  Edit
+                </button>
+              )}
             </div>
 
             <p className="consultant-profile-reviews-entry-meta">
@@ -125,59 +161,74 @@ function ConsultantProfileReviewsList() {
         ))}
       </div>
 
-      <nav
-        className="consultant-profile-reviews-pagination"
-        aria-label="Reviews pages"
-      >
-        {page > 1 && (
-          <button
-            type="button"
-            aria-label="Previous page"
-            onClick={() => setPage(page - 1)}
-          >
-            <i className="bi bi-chevron-left" aria-hidden="true"></i>
-          </button>
-        )}
-
-        {firstPage > 1 && (
-          <>
-            <button type="button" onClick={() => setPage(1)}>
-              1
+      {usePagination && (
+        <nav
+          className="consultant-profile-reviews-pagination"
+          aria-label="Reviews pages"
+        >
+          {page > 1 && (
+            <button
+              type="button"
+              aria-label="Previous page"
+              onClick={() => setPage(page - 1)}
+            >
+              <i className="bi bi-chevron-left" aria-hidden="true"></i>
             </button>
-            {firstPage > 2 && <span>...</span>}
-          </>
-        )}
+          )}
 
-        {pages.map((number) => (
-          <button
-            key={number}
-            type="button"
-            aria-current={page === number ? "page" : undefined}
-            onClick={() => setPage(number)}
-          >
-            {number}
-          </button>
-        ))}
+          {firstPage > 1 && (
+            <>
+              <button type="button" onClick={() => setPage(1)}>
+                1
+              </button>
+              {firstPage > 2 && <span>...</span>}
+            </>
+          )}
 
-        {pages[pages.length - 1] < totalPages && (
-          <>
-            {pages[pages.length - 1] < totalPages - 1 && <span>...</span>}
-            <button type="button" onClick={() => setPage(totalPages)}>
-              {totalPages}
+          {pages.map((number) => (
+            <button
+              key={number}
+              type="button"
+              aria-current={page === number ? "page" : undefined}
+              onClick={() => setPage(number)}
+            >
+              {number}
             </button>
-          </>
-        )}
+          ))}
 
-        {page < totalPages && (
-          <button
-            type="button"
-            aria-label="Next page"
-            onClick={() => setPage(page + 1)}
-          >
-            <i className="bi bi-chevron-right" aria-hidden="true"></i>
-          </button>
-        )}
-      </nav>
+          {pages[pages.length - 1] < totalPages && (
+            <>
+              {pages[pages.length - 1] < totalPages - 1 && <span>...</span>}
+              <button type="button" onClick={() => setPage(totalPages)}>
+                {totalPages}
+              </button>
+            </>
+          )}
+
+          {page < totalPages && (
+            <button
+              type="button"
+              aria-label="Next page"
+              onClick={() => setPage(page + 1)}
+            >
+              <i className="bi bi-chevron-right" aria-hidden="true"></i>
+            </button>
+          )}
+        </nav>
+      )}
+      {!usePagination && visibleCount < reviewsForStatus.length && (
+        <button
+          type="button"
+          className="consultant-profile-reviews-view-more"
+          onClick={() =>
+            setVisibleCount((count) =>
+              Math.min(count + 3, reviewsForStatus.length),
+            )
+          }
+        >
+          View More
+        </button>
+      )}
     </div>
   );
 }

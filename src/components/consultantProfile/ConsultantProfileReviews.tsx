@@ -15,11 +15,27 @@ const categories = [
   { name: "Responsiveness", icon: "bi-chat-left-text", rating: "4.8" },
   { name: "Supportiveness", icon: "bi-heart", rating: "5.0" },
 ];
+type ReviewStatus = "no-session" | "can-review" | "reviewed";
+
+const reviewStatus: ReviewStatus = "reviewed";
 
 function ConsultantProfileReviews() {
   return (
     <section className="consultant-profile-reviews">
-      <h2>Ratings &amp; Reviews</h2>
+      <div className="consultant-profile-reviews-heading">
+        <h2>Ratings &amp; Reviews</h2>
+
+        {reviewStatus !== "no-session" && (
+          <button
+            type="button"
+            className="primary-button consultant-profile-reviews-action"
+          >
+            {reviewStatus === "reviewed"
+              ? "Edit your review"
+              : "Leave a review"}
+          </button>
+        )}
+      </div>
 
       <div className="consultant-profile-reviews-summary">
         <div className="consultant-profile-reviews-score">
@@ -60,7 +76,10 @@ function ConsultantProfileReviews() {
           </div>
         </div>
       </div>
-      <ConsultantProfileReviewsList />
+      <ConsultantProfileReviewsList
+        key={reviewStatus}
+        reviewStatus={reviewStatus}
+      />
     </section>
   );
 }

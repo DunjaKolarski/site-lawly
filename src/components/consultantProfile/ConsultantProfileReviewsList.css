@@ -160,3 +160,29 @@
   font-size: 0.9rem;
   color: #858484;
 }
+.consultant-profile-reviews-view-more {
+  align-self: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #858484;
+  text-decoration: underline;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.consultant-profile-reviews-entry-own {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #eff4f7;
+  border-bottom: none;
+  border-radius: 0.5rem;
+}
+.consultant-profile-reviews-edit {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: #6b9fff;
+  text-decoration: underline;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

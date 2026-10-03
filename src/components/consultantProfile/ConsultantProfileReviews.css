@@ -4,9 +4,21 @@
   gap: 2rem;
   padding: 2rem 0;
 }
-.consultant-profile-reviews > h2 {
+.consultant-profile-reviews-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.consultant-profile-reviews-heading > h2 {
   font-size: 1.2rem;
   color: #000d50;
+}
+.consultant-profile-reviews-action {
+  flex-shrink: 0;
+  font-size: 0.9rem;
+  font-weight: normal;
+  padding: 0.7rem 1rem;
 }
 .consultant-profile-reviews-summary {
   display: flex;
