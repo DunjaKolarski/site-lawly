@@ -1,0 +1,56 @@
+.consultant-profile-sticky-space {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .consultant-profile-sticky-space {
+    height: calc(6rem + env(safe-area-inset-bottom, 0px));
+    display: block;
+  }
+  .consultant-profile-sticky-bar {
+    height: calc(6rem + env(safe-area-inset-bottom, 0px));
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1.5rem;
+    padding-bottom: calc(0.8rem + env(safe-area-inset-bottom, 0px));
+    background-color: #ffffff;
+    border-top: 1px solid var(--border-color);
+  }
+  .consultant-profile-sticky-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .consultant-profile-sticky-info > strong {
+    font-size: 1.5rem;
+    color: #000d50;
+  }
+  .consultant-profile-sticky-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: 1rem;
+    color: #858484;
+  }
+  .consultant-profile-sticky-rating > span:first-child {
+    color: #f5b301;
+  }
+  .consultant-profile-sticky-rating > small {
+    font-size: 0.7rem;
+    color: #689dc9;
+  }
+  .consultant-profile-sticky-bar > .primary-button {
+    width: 53%;
+    flex-shrink: 0;
+    font-size: 1.2rem;
+    padding: 1rem 0.5rem;
+    cursor: pointer;
+  }
+}

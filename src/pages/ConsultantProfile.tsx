@@ -17,6 +17,7 @@ import ConsultantProfileResume from "../components/consultantProfile/ConsultantP
 import ConsultantProfileReviews from "../components/consultantProfile/ConsultantProfileReviews";
 import ConsultantProfileUpcoming from "../components/consultantProfile/ConsultantProfileUpcoming";
 import Footer from "../components/layout/Footer";
+import ConsultantProfileStickyBar from "../components/consultantProfile/ConsultantProfileStickyBar";
 
 function ConsultantProfile() {
   const [activeTab, setActiveTab] = useState("Bio");
@@ -84,6 +85,7 @@ function ConsultantProfile() {
         </main>
       </div>
       <Footer />
+      <ConsultantProfileStickyBar />
     </>
   );
 }
