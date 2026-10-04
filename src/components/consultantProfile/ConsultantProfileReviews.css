@@ -94,3 +94,62 @@
   align-items: center;
   gap: 0.4rem;
 }
+.consultant-profile-reviews-category-score > i {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .consultant-profile-reviews-heading {
+    flex-wrap: wrap;
+  }
+  .consultant-profile-reviews-summary {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 1.5rem 1rem;
+    align-items: start;
+  }
+  .consultant-profile-reviews-breakdown {
+    display: contents;
+  }
+  .consultant-profile-reviews-bars {
+    width: 100%;
+  }
+  .consultant-profile-reviews-categories {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+  }
+  .consultant-profile-reviews-category {
+    min-width: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    padding: 0 0.4rem;
+  }
+  .consultant-profile-reviews-category:first-child {
+    padding-left: 0;
+  }
+  .consultant-profile-reviews-category + .consultant-profile-reviews-category {
+    border-left: 1px solid var(--border-color);
+  }
+  .consultant-profile-reviews-category-name {
+    font-size: 0.7rem;
+    overflow-wrap: anywhere;
+  }
+  .consultant-profile-reviews-category-name > i {
+    display: none;
+  }
+  .consultant-profile-reviews-category-score {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 1rem;
+  }
+  .consultant-profile-reviews-category-score > i {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: normal;
+  }
+}

@@ -17,7 +17,7 @@ const categories = [
 ];
 type ReviewStatus = "no-session" | "can-review" | "reviewed";
 
-const reviewStatus: ReviewStatus = "reviewed";
+const reviewStatus: ReviewStatus = "no-session";
 
 function ConsultantProfileReviews() {
   return (
@@ -66,11 +66,15 @@ function ConsultantProfileReviews() {
                 key={category.name}
                 className="consultant-profile-reviews-category"
               >
-                <span>
+                <span className="consultant-profile-reviews-category-name">
                   <i className={`bi ${category.icon}`} aria-hidden="true"></i>
                   {category.name}
                 </span>
-                <strong>{category.rating}</strong>
+
+                <strong className="consultant-profile-reviews-category-score">
+                  <i className={`bi ${category.icon}`} aria-hidden="true"></i>
+                  {category.rating}
+                </strong>
               </div>
             ))}
           </div>
