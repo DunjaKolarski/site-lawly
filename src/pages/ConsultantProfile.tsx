@@ -18,9 +18,11 @@ import ConsultantProfileReviews from "../components/consultantProfile/Consultant
 import ConsultantProfileUpcoming from "../components/consultantProfile/ConsultantProfileUpcoming";
 import Footer from "../components/layout/Footer";
 import ConsultantProfileStickyBar from "../components/consultantProfile/ConsultantProfileStickyBar";
+import BookingStrategy from "../components/booking/BookingStrategy";
 
 function ConsultantProfile() {
   const [activeTab, setActiveTab] = useState("Bio");
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
   return (
     <>
       <EventsHeader />
@@ -60,32 +62,44 @@ function ConsultantProfile() {
               {activeTab === "Reviews" && <ConsultantProfileReviews />}
             </div>
             <div className="consultant-profile-offers">
-              <ConsultantProfileBooking />
-              <ConsultantProfileUpcoming />
-              <ConsultantProfileStrategy />
-              <ConsultantProfileConsulting />
-              <ConsultantProfilePackage />
+              {isBookingOpen ? (
+                <BookingStrategy onBack={() => setIsBookingOpen(false)} />
+              ) : (
+                <>
+                  <ConsultantProfileBooking />
+                  <ConsultantProfileUpcoming />
+                  <ConsultantProfileStrategy
+                    onSeeTimes={() => setIsBookingOpen(true)}
+                  />
+                  <ConsultantProfileConsulting />
+                  <ConsultantProfilePackage />
+                </>
+              )}
             </div>
           </div>
-          <div className="consultant-profile-resources">
-            <h2>
-              Cynthia's Free Events &amp;{" "}
-              <span className="consultant-profile-resources-desktop-label">
-                Articles
-              </span>
-              <span className="consultant-profile-resources-mobile-label">
-                Resources
-              </span>
-            </h2>
-            <ConsultantProfileEvents />
-            <ConsultantProfileArticles />
-          </div>
+          {!isBookingOpen && (
+            <>
+              <div className="consultant-profile-resources">
+                <h2>
+                  Cynthia's Free Events &amp;{" "}
+                  <span className="consultant-profile-resources-desktop-label">
+                    Articles
+                  </span>
+                  <span className="consultant-profile-resources-mobile-label">
+                    Resources
+                  </span>
+                </h2>
+                <ConsultantProfileEvents />
+                <ConsultantProfileArticles />
+              </div>
 
-          <ConsultantProfileFAQ />
+              <ConsultantProfileFAQ />
+            </>
+          )}
         </main>
       </div>
       <Footer />
-      <ConsultantProfileStickyBar />
+      {!isBookingOpen && <ConsultantProfileStickyBar />}
     </>
   );
 }

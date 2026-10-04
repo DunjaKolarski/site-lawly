@@ -1,7 +1,13 @@
 import "./ConsultantProfileStrategy.css";
 import logo from "../../assets/logo.png";
 
-function ConsultantProfileStrategy() {
+type ConsultantProfileStrategyProps = {
+  onSeeTimes: () => void;
+};
+
+function ConsultantProfileStrategy({
+  onSeeTimes,
+}: ConsultantProfileStrategyProps) {
   return (
     <div className="consultant-profile-strategy">
       <div className="consultant-profile-powered">
@@ -36,10 +42,16 @@ function ConsultantProfileStrategy() {
               type="button"
               className="consultant-profile-strategy-calendar"
               aria-label="Open strategy session calendar"
+              onClick={onSeeTimes}
             >
               <i className="bi bi-calendar-week" aria-hidden="true"></i>
             </button>
-            <button type="button" className="primary-button">
+
+            <button
+              type="button"
+              className="primary-button"
+              onClick={onSeeTimes}
+            >
               See times
             </button>
           </div>
