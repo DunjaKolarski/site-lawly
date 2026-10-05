@@ -63,124 +63,125 @@ function BookingStrategy({ onBack }: BookingStrategyProps) {
       >
         <i className="bi bi-chevron-left" aria-hidden="true"></i>
       </button>
+      <div className="booking-strategy-body">
+        <div className="booking-powered">
+          <span>Powered by</span>
+          <img src={logo} alt="Lawly" />
+        </div>
 
-      <div className="booking-powered">
-        <span>Powered by</span>
-        <img src={logo} alt="Lawly" />
-      </div>
+        <div className="booking-strategy-heading">
+          <h2 id="booking-strategy-heading">Book a 15-Min Strategy Session</h2>
+          <p>
+            Your Strategy Session price of $X will be credited to any future
+            purchase from Cynthia.
+          </p>
+        </div>
 
-      <div className="booking-strategy-heading">
-        <h2 id="booking-strategy-heading">Book a 15-Min Strategy Session</h2>
-        <p>
-          Your Strategy Session price of $X will be credited to any future
-          purchase from Cynthia.
-        </p>
-      </div>
+        <div
+          ref={datesRef}
+          className="booking-strategy-dates"
+          role="region"
+          aria-label="Available strategy session times"
+          tabIndex={0}
+          onPointerDown={(event) => {
+            if (
+              event.pointerType !== "mouse" ||
+              event.button !== 0 ||
+              window.matchMedia("(max-width: 767px)").matches
+            ) {
+              return;
+            }
 
-      <div
-        ref={datesRef}
-        className="booking-strategy-dates"
-        role="region"
-        aria-label="Available strategy session times"
-        tabIndex={0}
-        onPointerDown={(event) => {
-          if (
-            event.pointerType !== "mouse" ||
-            event.button !== 0 ||
-            window.matchMedia("(max-width: 767px)").matches
-          ) {
-            return;
-          }
+            drag.current = {
+              active: true,
+              moved: false,
+              startY: event.clientY,
+              startScroll: event.currentTarget.scrollTop,
+            };
+          }}
+          onPointerMove={(event) => {
+            if (!drag.current.active) return;
 
-          drag.current = {
-            active: true,
-            moved: false,
-            startY: event.clientY,
-            startScroll: event.currentTarget.scrollTop,
-          };
-        }}
-        onPointerMove={(event) => {
-          if (!drag.current.active) return;
+            const distance = event.clientY - drag.current.startY;
 
-          const distance = event.clientY - drag.current.startY;
+            if (!drag.current.moved && Math.abs(distance) < 5) return;
 
-          if (!drag.current.moved && Math.abs(distance) < 5) return;
+            if (!drag.current.moved) {
+              drag.current.moved = true;
+              event.currentTarget.setPointerCapture(event.pointerId);
+              event.currentTarget.classList.add("booking-strategy-dragging");
+            }
 
-          if (!drag.current.moved) {
-            drag.current.moved = true;
-            event.currentTarget.setPointerCapture(event.pointerId);
-            event.currentTarget.classList.add("booking-strategy-dragging");
-          }
-
-          event.currentTarget.scrollTop = drag.current.startScroll - distance;
-        }}
-        onPointerUp={(event) => {
-          drag.current.active = false;
-          event.currentTarget.classList.remove("booking-strategy-dragging");
-
-          if (event.currentTarget.hasPointerCapture(event.pointerId)) {
-            event.currentTarget.releasePointerCapture(event.pointerId);
-          }
-        }}
-        onPointerCancel={(event) => {
-          drag.current.active = false;
-          drag.current.moved = false;
-          event.currentTarget.classList.remove("booking-strategy-dragging");
-        }}
-        onLostPointerCapture={(event) => {
-          drag.current.active = false;
-          event.currentTarget.classList.remove("booking-strategy-dragging");
-        }}
-        onPointerLeave={() => {
-          if (!drag.current.moved) {
+            event.currentTarget.scrollTop = drag.current.startScroll - distance;
+          }}
+          onPointerUp={(event) => {
             drag.current.active = false;
-          }
-        }}
-        onClickCapture={(event) => {
-          if (drag.current.moved && event.detail > 0) {
-            event.preventDefault();
-            event.stopPropagation();
+            event.currentTarget.classList.remove("booking-strategy-dragging");
+
+            if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+              event.currentTarget.releasePointerCapture(event.pointerId);
+            }
+          }}
+          onPointerCancel={(event) => {
+            drag.current.active = false;
             drag.current.moved = false;
-          }
-        }}
-      >
-        {availableDays.map((day) => (
-          <div key={day.id} className="booking-strategy-day">
-            <h3>{day.label}</h3>
+            event.currentTarget.classList.remove("booking-strategy-dragging");
+          }}
+          onLostPointerCapture={(event) => {
+            drag.current.active = false;
+            event.currentTarget.classList.remove("booking-strategy-dragging");
+          }}
+          onPointerLeave={() => {
+            if (!drag.current.moved) {
+              drag.current.active = false;
+            }
+          }}
+          onClickCapture={(event) => {
+            if (drag.current.moved && event.detail > 0) {
+              event.preventDefault();
+              event.stopPropagation();
+              drag.current.moved = false;
+            }
+          }}
+        >
+          {availableDays.map((day) => (
+            <div key={day.id} className="booking-strategy-day">
+              <h3>{day.label}</h3>
 
-            <div className="booking-strategy-times">
-              {day.times.map((time) => {
-                const isSelected =
-                  selectedSlot?.dayId === day.id && selectedSlot.time === time;
+              <div className="booking-strategy-times">
+                {day.times.map((time) => {
+                  const isSelected =
+                    selectedSlot?.dayId === day.id &&
+                    selectedSlot.time === time;
 
-                return (
-                  <button
-                    key={time}
-                    type="button"
-                    className={
-                      isSelected
-                        ? "booking-strategy-time booking-strategy-time-selected"
-                        : "booking-strategy-time"
-                    }
-                    aria-label={`${day.label} at ${time}`}
-                    aria-pressed={isSelected}
-                    onClick={() =>
-                      setSelectedSlot({
-                        dayId: day.id,
-                        dayLabel: day.label,
-                        time,
-                      })
-                    }
-                  >
-                    {time}
-                  </button>
-                );
-              })}
+                  return (
+                    <button
+                      key={time}
+                      type="button"
+                      className={
+                        isSelected
+                          ? "booking-strategy-time booking-strategy-time-selected"
+                          : "booking-strategy-time"
+                      }
+                      aria-label={`${day.label} at ${time}`}
+                      aria-pressed={isSelected}
+                      onClick={() =>
+                        setSelectedSlot({
+                          dayId: day.id,
+                          dayLabel: day.label,
+                          time,
+                        })
+                      }
+                    >
+                      {time}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-
       <div className="booking-strategy-summary">
         <p>
           Your Strategy Session price of $X will be credited to any future

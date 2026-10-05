@@ -122,4 +122,16 @@
   .consultant-profile-resources-mobile-label {
     display: inline;
   }
+
+  .consultant-profile-top-booking {
+    padding: 1rem 0 0;
+  }
+  .consultant-profile-top-booking > .consultant-profile-main {
+    display: none;
+  }
+  .consultant-profile-top-booking > .consultant-profile-offers {
+    width: 100%;
+    display: block;
+    padding-left: 0;
+  }
 }

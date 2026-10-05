@@ -29,7 +29,13 @@ function ConsultantProfile() {
       <div className="consultant-profile-layout">
         <EventsSideBar />
         <main className="consultant-profile-content">
-          <div className="consultant-profile-top">
+          <div
+            className={
+              isBookingOpen
+                ? "consultant-profile-top consultant-profile-top-booking"
+                : "consultant-profile-top"
+            }
+          >
             <div className="consultant-profile-main">
               <ConsultantProfileHero />
 

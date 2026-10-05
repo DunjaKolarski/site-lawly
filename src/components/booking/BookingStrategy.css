@@ -138,3 +138,49 @@
   padding: 0.6rem 0.8rem;
   cursor: pointer;
 }
+.booking-strategy-body {
+  display: contents;
+}
+
+@media (max-width: 767px) {
+  .booking-strategy {
+    gap: 1.5rem;
+  }
+  .booking-strategy-back {
+    margin-left: 1rem;
+  }
+  .booking-strategy-body {
+    height: 28rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow-y: auto;
+    scrollbar-width: none;
+    padding: 0 1rem;
+  }
+  .booking-strategy-body::-webkit-scrollbar {
+    display: none;
+  }
+  .booking-strategy-body > * {
+    flex-shrink: 0;
+  }
+  .booking-strategy-dates {
+    max-height: none;
+    overflow: visible;
+    cursor: auto;
+    user-select: auto;
+  }
+  .booking-strategy-times {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .booking-strategy-summary {
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .booking-strategy-actions > .primary-button {
+    min-width: 5rem;
+  }
+  .booking-strategy-scroll {
+    display: none;
+  }
+}
