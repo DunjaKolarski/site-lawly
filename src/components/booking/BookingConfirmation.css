@@ -1,0 +1,276 @@
+.booking-confirmation {
+  width: 100%;
+  display: flex;
+  padding: 3rem 2rem;
+}
+.booking-confirmation-details {
+  width: 60%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-right: 1px solid var(--border-color);
+  padding: 2rem 4rem 5rem 2rem;
+}
+.booking-confirmation-details > h1 {
+  font-size: 1.5rem;
+  color: #000d50;
+}
+.booking-confirmation-session {
+  width: 100%;
+  max-width: 22rem;
+  display: flex;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-top: 2.5rem;
+}
+.booking-confirmation-session-day {
+  width: 28%;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #cf7517;
+  background-color: #eff4f7;
+  border-right: 1px solid var(--border-color);
+  padding: 0.8rem 0.5rem;
+}
+.booking-confirmation-session-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: #000d50;
+  padding: 0.8rem;
+}
+.booking-confirmation-session-info > span {
+  font-size: 0.75rem;
+  color: #575757;
+}
+.booking-confirmation-calendar {
+  width: 15rem;
+  max-width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-top: 1.5rem;
+}
+.booking-confirmation-calendar-toggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: #000d50;
+  background-color: #ffffff;
+  border: none;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+}
+.booking-confirmation-calendar-options {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border-color);
+}
+.booking-confirmation-calendar-options > button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  text-align: left;
+  color: #000d50;
+  background-color: #ffffff;
+  border: none;
+  padding: 0.7rem;
+  cursor: pointer;
+}
+.booking-confirmation-calendar-options > button:hover {
+  background-color: #eff4f7;
+}
+.booking-confirmation-reminder {
+  width: 100%;
+  max-width: 28rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+.booking-confirmation-reminder > h2 {
+  font-size: 1.2rem;
+  color: #000d50;
+}
+.booking-confirmation-reminder > p {
+  font-size: 0.9rem;
+  color: #858484;
+}
+.booking-confirmation-phone-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.booking-confirmation-phone-form > label {
+  font-size: 0.9rem;
+  color: #000d50;
+}
+.booking-confirmation-phone-fields {
+  display: flex;
+  align-items: stretch;
+  gap: 0.7rem;
+}
+.booking-confirmation-phone-fields > select {
+  width: 30%;
+  min-width: 0;
+  font-size: 0.9rem;
+  color: #575757;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.7rem 0.5rem;
+}
+.booking-confirmation-phone-fields > input {
+  min-width: 0;
+  flex: 1;
+  font-size: 0.9rem;
+  color: #000d50;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.7rem;
+}
+.booking-confirmation-phone-form > small {
+  font-size: 0.75rem;
+  text-align: center;
+  color: #858484;
+}
+.booking-confirmation-phone-form > .primary-button {
+  align-self: flex-end;
+  font-size: 0.9rem;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+}
+.booking-confirmation-later {
+  align-self: flex-end;
+  font-size: 0.75rem;
+  text-decoration: underline;
+  color: #858484;
+  background-color: transparent;
+  border: none;
+  padding: 0.2rem 1rem;
+  cursor: pointer;
+}
+.booking-confirmation-preparation {
+  width: 40%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem 0 0 2rem;
+}
+.booking-confirmation-preparation > h2 {
+  font-size: 1.2rem;
+  color: #000d50;
+}
+.booking-confirmation-preparation > p {
+  font-size: 1rem;
+  color: #858484;
+}
+.booking-confirmation-tips {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  list-style: none;
+  margin-top: 1rem;
+}
+.booking-confirmation-tips > li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  font-size: 1rem;
+  color: #858484;
+}
+.booking-confirmation-tips > li > i {
+  flex-shrink: 0;
+  color: #000d50;
+}
+.booking-confirmation-tips > li > button {
+  font-size: 1rem;
+  text-align: left;
+  color: #858484;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.booking-confirmation-message-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+.booking-confirmation-message-form > label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #000d50;
+}
+.booking-confirmation-message-form > textarea {
+  min-height: 10rem;
+  width: 100%;
+  font-size: 0.9rem;
+  font-family: Arial, sans-serif;
+  color: #000d50;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  resize: vertical;
+}
+.booking-confirmation-message-form > textarea::placeholder {
+  color: #858484;
+}
+.booking-confirmation-message-form > .primary-button {
+  align-self: flex-end;
+  font-size: 0.9rem;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+}
+.booking-confirmation-message-form > .primary-button:disabled {
+  color: #575757;
+  background-color: #d5d5d5;
+  cursor: default;
+}
+.booking-confirmation-help {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+.booking-confirmation-help > h2 {
+  font-size: 0.9rem;
+  color: #000d50;
+}
+.booking-confirmation-help > p {
+  font-size: 0.9rem;
+  color: #858484;
+}
+.booking-confirmation-help > .primary-button {
+  font-size: 0.9rem;
+  padding: 0.7rem 1rem;
+  margin-top: 0.7rem;
+  cursor: pointer;
+}
+.booking-confirmation-notice {
+  font-size: 0.75rem;
+  color: #575757;
+}
+.booking-confirmation-notice:empty {
+  display: none;
+}

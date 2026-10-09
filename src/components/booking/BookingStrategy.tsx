@@ -1,5 +1,5 @@
 import "./BookingStrategy.css";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import logo from "../../assets/logo.png";
 
 const times = [
@@ -31,17 +31,25 @@ const availableDays = [
   { id: "june-5", label: "Tuesday 6/5", times },
 ];
 
-type SelectedSlot = {
+export type SelectedSlot = {
   dayId: string;
   dayLabel: string;
   time: string;
 };
+
 type BookingStrategyProps = {
+  selectedSlot: SelectedSlot | null;
+  onSelectSlot: (slot: SelectedSlot) => void;
   onBack: () => void;
+  onNext: () => void;
 };
 
-function BookingStrategy({ onBack }: BookingStrategyProps) {
-  const [selectedSlot, setSelectedSlot] = useState<SelectedSlot | null>(null);
+function BookingStrategy({
+  selectedSlot,
+  onSelectSlot,
+  onBack,
+  onNext,
+}: BookingStrategyProps) {
   const datesRef = useRef<HTMLDivElement>(null);
   const drag = useRef({
     active: false,
@@ -166,7 +174,7 @@ function BookingStrategy({ onBack }: BookingStrategyProps) {
                       aria-label={`${day.label} at ${time}`}
                       aria-pressed={isSelected}
                       onClick={() =>
-                        setSelectedSlot({
+                        onSelectSlot({
                           dayId: day.id,
                           dayLabel: day.label,
                           time,
@@ -201,6 +209,7 @@ function BookingStrategy({ onBack }: BookingStrategyProps) {
             type="button"
             className="primary-button"
             disabled={!selectedSlot}
+            onClick={onNext}
           >
             Next
           </button>
