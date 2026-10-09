@@ -1,6 +1,7 @@
 import "./BookingCheckout.css";
 import logo from "../../assets/logo.png";
 import profileImage from "../../assets/profile2.png";
+import { useState } from "react";
 
 type BookingCheckoutProps = {
   selectedSlot: {
@@ -16,6 +17,14 @@ function BookingCheckout({
   onBack,
   onBook,
 }: BookingCheckoutProps) {
+  const [discountCode, setDiscountCode] = useState("");
+  const [discountStatus, setDiscountStatus] = useState<
+    "idle" | "applied" | "invalid"
+  >("idle");
+
+  const subtotal = 25;
+  const discount = discountStatus === "applied" ? subtotal * 0.2 : 0;
+  const total = subtotal - discount;
   return (
     <section className="booking-checkout">
       <div className="booking-checkout-overview">
@@ -73,7 +82,7 @@ function BookingCheckout({
         <div className="booking-checkout-price">
           <div className="booking-checkout-price-row">
             <span>Subtotal</span>
-            <span>$25</span>
+            <span>${subtotal}</span>
           </div>
 
           <div className="booking-checkout-price-row booking-checkout-fee">
@@ -81,19 +90,53 @@ function BookingCheckout({
             <span>$0</span>
           </div>
 
-          <div className="booking-checkout-discount">
-            <input
-              type="text"
-              aria-label="Discount code or gift card"
-              placeholder="Discount code or gift card"
-            />
-            <button type="button">Apply</button>
-          </div>
+          <form
+            className="booking-checkout-discount-form"
+            onSubmit={(event) => {
+              event.preventDefault();
+
+              const code = discountCode.trim().toUpperCase();
+
+              setDiscountStatus(code === "CYNTHIA" ? "applied" : "invalid");
+            }}
+          >
+            <div className="booking-checkout-discount">
+              <input
+                type="text"
+                aria-label="Discount code or gift card"
+                aria-invalid={discountStatus === "invalid"}
+                aria-describedby="booking-discount-status"
+                placeholder="Discount code or gift card"
+                value={discountCode}
+                onChange={(event) => {
+                  setDiscountCode(event.target.value);
+                  setDiscountStatus("idle");
+                }}
+              />
+
+              <button type="submit">Apply</button>
+            </div>
+
+            <div id="booking-discount-status" role="status">
+              {discountStatus === "applied" && (
+                <p className="booking-checkout-discount-success">
+                  <span>Discount code “CYNTHIA” applied (20%)</span>
+                  <span>-${discount}</span>
+                </p>
+              )}
+
+              {discountStatus === "invalid" && (
+                <p className="booking-checkout-discount-error">
+                  Discount code invalid
+                </p>
+              )}
+            </div>
+          </form>
 
           <div className="booking-checkout-total">
             <div className="booking-checkout-price-row">
               <strong>Total</strong>
-              <strong>$25</strong>
+              <strong>${total}</strong>
             </div>
 
             <p>

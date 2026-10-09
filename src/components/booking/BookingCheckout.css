@@ -269,6 +269,30 @@
 .booking-checkout-expiration {
   display: none;
 }
+.booking-checkout-discount-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.booking-checkout-discount-form > div:empty {
+  display: none;
+}
+.booking-checkout-discount-success {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #6b9fff;
+}
+.booking-checkout-discount-success > span:last-child {
+  flex-shrink: 0;
+  color: #000d50;
+}
+.booking-checkout-discount-error {
+  font-size: 0.75rem;
+  color: #d9534f;
+}
 
 @media (max-width: 767px) {
   .booking-checkout {
