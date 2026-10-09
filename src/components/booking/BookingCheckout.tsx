@@ -2,6 +2,7 @@ import "./BookingCheckout.css";
 import logo from "../../assets/logo.png";
 import profileImage from "../../assets/profile2.png";
 import { useState } from "react";
+import { getSessionTimeRange } from "./bookingTime";
 
 type BookingCheckoutProps = {
   selectedSlot: {
@@ -61,8 +62,7 @@ function BookingCheckout({
 
               <div className="booking-checkout-session-info">
                 <p>15-Minute Consulting Session with Cynthia</p>
-                <strong>{selectedSlot.time}</strong>
-                <span>15 minutes</span>
+                <strong>{getSessionTimeRange(selectedSlot.time)}</strong>
               </div>
             </div>
           </div>

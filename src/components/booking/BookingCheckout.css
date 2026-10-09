@@ -115,10 +115,6 @@
 .booking-checkout-session-info > strong {
   font-size: 0.9rem;
 }
-.booking-checkout-session-info > span {
-  font-size: 0.75rem;
-  color: #575757;
-}
 .booking-checkout-payment {
   width: 40%;
   min-width: 0;

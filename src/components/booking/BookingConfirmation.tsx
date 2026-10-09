@@ -1,6 +1,7 @@
 import "./BookingConfirmation.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { getSessionTimeRange } from "./bookingTime";
 
 type BookingConfirmationProps = {
   selectedSlot: {
@@ -43,8 +44,7 @@ function BookingConfirmation({
 
           <div className="booking-confirmation-session-info">
             <p>15-Minute Consulting Session with Cynthia</p>
-            <strong>{selectedSlot.time}</strong>
-            <span>15 minutes</span>
+            <strong>{getSessionTimeRange(selectedSlot.time)}</strong>
           </div>
         </div>
 
