@@ -1,5 +1,6 @@
 import "./BookingConfirmation.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 type BookingConfirmationProps = {
   selectedSlot: {
@@ -155,7 +156,7 @@ function BookingConfirmation({
 
               <small>
                 We'll send you a text to confirm your number. Standard message
-                and data rates apply.
+                and data rates apply. <Link to="/privacy">Privacy Policy</Link>
               </small>
 
               <button type="submit" className="primary-button">

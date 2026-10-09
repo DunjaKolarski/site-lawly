@@ -277,6 +277,9 @@
 .booking-confirmation-back {
   display: none;
 }
+.booking-confirmation-phone-form > small > a {
+  text-decoration: underline;
+}
 
 @media (max-width: 767px) {
   .booking-confirmation {
