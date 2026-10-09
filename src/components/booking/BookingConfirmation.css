@@ -274,3 +274,90 @@
 .booking-confirmation-notice:empty {
   display: none;
 }
+.booking-confirmation-back {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .booking-confirmation {
+    flex-direction: column;
+    padding: 2rem 1rem 5rem;
+  }
+  .booking-confirmation-details {
+    width: 100%;
+    border-right: none;
+    padding: 0 0 2rem;
+  }
+  .booking-confirmation-details > h1 {
+    font-size: 1.2rem;
+  }
+  .booking-confirmation-session {
+    max-width: none;
+    margin-top: 2rem;
+  }
+  .booking-confirmation-calendar {
+    margin-top: 1rem;
+  }
+  .booking-confirmation-reminder {
+    max-width: none;
+    gap: 1rem;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    margin-top: 2rem;
+    padding-top: 2rem;
+  }
+  .booking-confirmation-reminder > h2 {
+    font-size: 1rem;
+  }
+  .booking-confirmation-phone-form {
+    margin-top: 0;
+  }
+  .booking-confirmation-phone-fields > select {
+    width: 35%;
+  }
+  .booking-confirmation-phone-form > .primary-button,
+  .booking-confirmation-later {
+    align-self: center;
+  }
+  .booking-confirmation-preparation {
+    width: 100%;
+    border-top: 1px solid var(--border-color);
+    padding: 2rem 0 0;
+  }
+  .booking-confirmation-preparation > h2 {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .booking-confirmation-preparation > p {
+    text-align: center;
+  }
+  .booking-confirmation-tips {
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .booking-confirmation-message-form {
+    margin-top: 2.5rem;
+  }
+  .booking-confirmation-message-form > label {
+    text-align: center;
+  }
+  .booking-confirmation-message-form > textarea {
+    min-height: 12rem;
+  }
+  .booking-confirmation-help {
+    margin-top: 2rem;
+  }
+  .booking-confirmation-back {
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-start;
+    color: #000d50;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 2rem;
+    cursor: pointer;
+  }
+}

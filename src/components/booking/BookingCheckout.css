@@ -266,3 +266,78 @@
   background-color: #d5d5d5;
   cursor: default;
 }
+.booking-checkout-expiration {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .booking-checkout {
+    position: relative;
+    flex-direction: column;
+    padding: 5rem 1rem 4rem;
+  }
+  .booking-checkout-overview {
+    width: 100%;
+    justify-content: flex-start;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 0 2rem;
+  }
+  .booking-checkout-overview-content {
+    max-width: none;
+  }
+  .booking-checkout-overview-content > h1 {
+    margin-top: 0.7rem;
+  }
+  .booking-checkout-photo {
+    display: none;
+  }
+  .booking-checkout-consultant {
+    gap: 0.5rem;
+    margin-top: 0.3rem;
+  }
+  .booking-checkout-consultant > h2 {
+    font-size: 1.2rem;
+  }
+  .booking-checkout-session {
+    max-width: none;
+    margin-top: 2rem;
+  }
+  .booking-checkout-session > h2 {
+    font-size: 1rem;
+  }
+  .booking-checkout-payment {
+    width: 100%;
+    padding: 0;
+  }
+  .booking-checkout-back {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+  .booking-checkout-price {
+    width: 100%;
+    max-width: none;
+    margin-top: 2rem;
+  }
+  .booking-checkout-fee {
+    display: none;
+  }
+  .booking-checkout-total {
+    gap: 1.5rem;
+    padding-top: 2rem;
+  }
+  .booking-checkout-form {
+    margin-top: 2.5rem;
+  }
+  .booking-checkout-form > h2 {
+    font-size: 1rem;
+  }
+  .booking-checkout-card-fields {
+    gap: 0.4rem;
+    padding: 0.6rem;
+  }
+  .booking-checkout-expiration {
+    display: block;
+  }
+}

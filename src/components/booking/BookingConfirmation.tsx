@@ -24,6 +24,14 @@ function BookingConfirmation({
 
   return (
     <section className="booking-confirmation">
+      <button
+        type="button"
+        className="booking-confirmation-back"
+        aria-label="Back to consultant profile"
+        onClick={onViewProfile}
+      >
+        <i className="bi bi-chevron-left" aria-hidden="true"></i>
+      </button>
       <div className="booking-confirmation-details">
         <h1>Your session was scheduled</h1>
 

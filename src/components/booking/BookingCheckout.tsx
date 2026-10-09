@@ -175,7 +175,7 @@ function BookingCheckout({
             Credit can be issued if the order has not expired yet.
           </p>
 
-          <p>
+          <p className="booking-checkout-expiration">
             Expiration terms: consulting is valid for X days before expiring.
           </p>
         </div>
