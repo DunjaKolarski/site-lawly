@@ -29,6 +29,9 @@ function ConsultantProfile() {
     "profile" | "times" | "checkout" | "confirmation"
   >("profile");
   const [selectedSlot, setSelectedSlot] = useState<SelectedSlot | null>(null);
+  const [bookingType, setBookingType] = useState<"strategy" | "hourly">(
+    "strategy",
+  );
 
   const isBookingOpen = bookingStep !== "profile";
 
@@ -101,6 +104,7 @@ function ConsultantProfile() {
                 <div className="consultant-profile-offers">
                   {bookingStep === "times" ? (
                     <BookingStrategy
+                      bookingType={bookingType}
                       selectedSlot={selectedSlot}
                       onSelectSlot={setSelectedSlot}
                       onBack={() => setBookingStep("profile")}
@@ -115,9 +119,20 @@ function ConsultantProfile() {
                       <ConsultantProfileBooking />
                       <ConsultantProfileUpcoming />
                       <ConsultantProfileStrategy
-                        onSeeTimes={() => setBookingStep("times")}
+                        onSeeTimes={() => {
+                          setBookingType("strategy");
+                          setSelectedSlot(null);
+                          setBookingStep("times");
+                        }}
                       />
-                      <ConsultantProfileConsulting />
+
+                      <ConsultantProfileConsulting
+                        onSeeTimes={() => {
+                          setBookingType("hourly");
+                          setSelectedSlot(null);
+                          setBookingStep("times");
+                        }}
+                      />
                       <ConsultantProfilePackage />
                     </>
                   )}

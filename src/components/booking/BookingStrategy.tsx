@@ -38,6 +38,7 @@ export type SelectedSlot = {
 };
 
 type BookingStrategyProps = {
+  bookingType: "strategy" | "hourly";
   selectedSlot: SelectedSlot | null;
   onSelectSlot: (slot: SelectedSlot) => void;
   onBack: () => void;
@@ -45,6 +46,7 @@ type BookingStrategyProps = {
 };
 
 function BookingStrategy({
+  bookingType,
   selectedSlot,
   onSelectSlot,
   onBack,
@@ -78,7 +80,11 @@ function BookingStrategy({
         </div>
 
         <div className="booking-strategy-heading">
-          <h2 id="booking-strategy-heading">Book a 15-Min Strategy Session</h2>
+          <h2 id="booking-strategy-heading">
+            {bookingType === "strategy"
+              ? "Book a 15-Min Strategy Session"
+              : "Book Your First Consulting Session"}
+          </h2>
           <p>
             Your Strategy Session price of $X will be credited to any future
             purchase from Cynthia.
@@ -89,7 +95,7 @@ function BookingStrategy({
           ref={datesRef}
           className="booking-strategy-dates"
           role="region"
-          aria-label="Available strategy session times"
+          aria-label="Available session times"
           tabIndex={0}
           onPointerDown={(event) => {
             if (
@@ -208,7 +214,7 @@ function BookingStrategy({
           <button
             type="button"
             className="primary-button"
-            disabled={!selectedSlot}
+            disabled={!selectedSlot || bookingType === "hourly"}
             onClick={onNext}
           >
             Next

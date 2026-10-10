@@ -1,6 +1,12 @@
 import "./ConsultantProfileConsulting.css";
 
-function ConsultantProfileConsulting() {
+type ConsultantProfileConsultingProps = {
+  onSeeTimes: () => void;
+};
+
+function ConsultantProfileConsulting({
+  onSeeTimes,
+}: ConsultantProfileConsultingProps) {
   return (
     <div className="consultant-profile-consulting">
       <span className="consultant-profile-consulting-label">
@@ -44,10 +50,12 @@ function ConsultantProfileConsulting() {
             type="button"
             className="consultant-profile-consulting-calendar"
             aria-label="Open consulting session calendar"
+            onClick={onSeeTimes}
           >
             <i className="bi bi-calendar-week" aria-hidden="true"></i>
           </button>
-          <button type="button" className="primary-button">
+
+          <button type="button" className="primary-button" onClick={onSeeTimes}>
             See times
           </button>
         </div>
