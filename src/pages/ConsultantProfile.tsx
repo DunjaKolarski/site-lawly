@@ -18,9 +18,9 @@ import ConsultantProfileReviews from "../components/consultantProfile/Consultant
 import ConsultantProfileUpcoming from "../components/consultantProfile/ConsultantProfileUpcoming";
 import Footer from "../components/layout/Footer";
 import ConsultantProfileStickyBar from "../components/consultantProfile/ConsultantProfileStickyBar";
-import BookingStrategy from "../components/booking/BookingStrategy";
+import BookingSession from "../components/booking/BookingSession";
 import BookingCheckout from "../components/booking/BookingCheckout";
-import type { SelectedSlot } from "../components/booking/BookingStrategy";
+import type { SelectedSlot } from "../components/booking/BookingSession";
 import BookingConfirmation from "../components/booking/BookingConfirmation";
 
 function ConsultantProfile() {
@@ -32,6 +32,7 @@ function ConsultantProfile() {
   const [bookingType, setBookingType] = useState<"strategy" | "hourly">(
     "strategy",
   );
+  const [sessionDuration, setSessionDuration] = useState(15);
 
   const isBookingOpen = bookingStep !== "profile";
 
@@ -103,8 +104,10 @@ function ConsultantProfile() {
 
                 <div className="consultant-profile-offers">
                   {bookingStep === "times" ? (
-                    <BookingStrategy
+                    <BookingSession
                       bookingType={bookingType}
+                      sessionDuration={sessionDuration}
+                      onDurationChange={setSessionDuration}
                       selectedSlot={selectedSlot}
                       onSelectSlot={setSelectedSlot}
                       onBack={() => setBookingStep("profile")}
@@ -122,6 +125,7 @@ function ConsultantProfile() {
                         onSeeTimes={() => {
                           setBookingType("strategy");
                           setSelectedSlot(null);
+                          setSessionDuration(15);
                           setBookingStep("times");
                         }}
                       />
@@ -130,6 +134,7 @@ function ConsultantProfile() {
                         onSeeTimes={() => {
                           setBookingType("hourly");
                           setSelectedSlot(null);
+                          setSessionDuration(15);
                           setBookingStep("times");
                         }}
                       />

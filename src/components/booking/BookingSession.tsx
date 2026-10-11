@@ -1,4 +1,4 @@
-import "./BookingStrategy.css";
+import "./BookingSession.css";
 import { useRef } from "react";
 import logo from "../../assets/logo.png";
 
@@ -37,21 +37,25 @@ export type SelectedSlot = {
   time: string;
 };
 
-type BookingStrategyProps = {
+type BookingSessionProps = {
   bookingType: "strategy" | "hourly";
+  sessionDuration: number;
+  onDurationChange: (duration: number) => void;
   selectedSlot: SelectedSlot | null;
   onSelectSlot: (slot: SelectedSlot) => void;
   onBack: () => void;
   onNext: () => void;
 };
 
-function BookingStrategy({
+function BookingSession({
   bookingType,
+  sessionDuration,
+  onDurationChange,
   selectedSlot,
   onSelectSlot,
   onBack,
   onNext,
-}: BookingStrategyProps) {
+}: BookingSessionProps) {
   const datesRef = useRef<HTMLDivElement>(null);
   const drag = useRef({
     active: false,
@@ -62,38 +66,66 @@ function BookingStrategy({
 
   return (
     <section
-      className="booking-strategy"
-      aria-labelledby="booking-strategy-heading"
+      className="booking-session"
+      aria-labelledby="booking-session-heading"
     >
       <button
         type="button"
-        className="booking-strategy-back"
+        className="booking-session-back"
         aria-label="Back to offerings"
         onClick={onBack}
       >
         <i className="bi bi-chevron-left" aria-hidden="true"></i>
       </button>
-      <div className="booking-strategy-body">
+      <div className="booking-session-body">
         <div className="booking-powered">
           <span>Powered by</span>
           <img src={logo} alt="Lawly" />
         </div>
 
-        <div className="booking-strategy-heading">
-          <h2 id="booking-strategy-heading">
+        <div className="booking-session-heading">
+          <h2 id="booking-session-heading">
             {bookingType === "strategy"
               ? "Book a 15-Min Strategy Session"
               : "Book Your First Consulting Session"}
           </h2>
-          <p>
+          <p
+            className={
+              bookingType === "hourly"
+                ? "booking-session-hourly-description"
+                : ""
+            }
+          >
             Your Strategy Session price of $X will be credited to any future
             purchase from Cynthia.
           </p>
         </div>
+        {bookingType === "hourly" && (
+          <div className="booking-session-duration">
+            <h3>Session length</h3>
 
+            <div className="booking-session-duration-options">
+              {[15, 30, 45, 60].map((duration) => (
+                <button
+                  key={duration}
+                  type="button"
+                  className={
+                    sessionDuration === duration
+                      ? "booking-session-duration-active"
+                      : ""
+                  }
+                  aria-pressed={sessionDuration === duration}
+                  onClick={() => onDurationChange(duration)}
+                >
+                  {duration === 60 ? "1 hour" : `${duration} min`}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
         <div
           ref={datesRef}
-          className="booking-strategy-dates"
+          className="booking-session-dates"
           role="region"
           aria-label="Available session times"
           tabIndex={0}
@@ -123,14 +155,14 @@ function BookingStrategy({
             if (!drag.current.moved) {
               drag.current.moved = true;
               event.currentTarget.setPointerCapture(event.pointerId);
-              event.currentTarget.classList.add("booking-strategy-dragging");
+              event.currentTarget.classList.add("booking-session-dragging");
             }
 
             event.currentTarget.scrollTop = drag.current.startScroll - distance;
           }}
           onPointerUp={(event) => {
             drag.current.active = false;
-            event.currentTarget.classList.remove("booking-strategy-dragging");
+            event.currentTarget.classList.remove("booking-session-dragging");
 
             if (event.currentTarget.hasPointerCapture(event.pointerId)) {
               event.currentTarget.releasePointerCapture(event.pointerId);
@@ -139,11 +171,11 @@ function BookingStrategy({
           onPointerCancel={(event) => {
             drag.current.active = false;
             drag.current.moved = false;
-            event.currentTarget.classList.remove("booking-strategy-dragging");
+            event.currentTarget.classList.remove("booking-session-dragging");
           }}
           onLostPointerCapture={(event) => {
             drag.current.active = false;
-            event.currentTarget.classList.remove("booking-strategy-dragging");
+            event.currentTarget.classList.remove("booking-session-dragging");
           }}
           onPointerLeave={() => {
             if (!drag.current.moved) {
@@ -159,10 +191,10 @@ function BookingStrategy({
           }}
         >
           {availableDays.map((day) => (
-            <div key={day.id} className="booking-strategy-day">
+            <div key={day.id} className="booking-session-day">
               <h3>{day.label}</h3>
 
-              <div className="booking-strategy-times">
+              <div className="booking-session-times">
                 {day.times.map((time) => {
                   const isSelected =
                     selectedSlot?.dayId === day.id &&
@@ -174,8 +206,8 @@ function BookingStrategy({
                       type="button"
                       className={
                         isSelected
-                          ? "booking-strategy-time booking-strategy-time-selected"
-                          : "booking-strategy-time"
+                          ? "booking-session-time booking-session-time-selected"
+                          : "booking-session-time"
                       }
                       aria-label={`${day.label} at ${time}`}
                       aria-pressed={isSelected}
@@ -196,20 +228,28 @@ function BookingStrategy({
           ))}
         </div>
       </div>
-      <div className="booking-strategy-summary">
+      <div className="booking-session-summary">
         <p>
           Your Strategy Session price of $X will be credited to any future
           purchase from Cynthia.
         </p>
 
         {selectedSlot && (
-          <p className="booking-strategy-selection">
+          <p className="booking-session-selection">
             {selectedSlot.dayLabel} at {selectedSlot.time}
           </p>
         )}
 
-        <div className="booking-strategy-actions">
-          <strong>$25 • 15 minutes</strong>
+        <div className="booking-session-actions">
+          <strong>
+            {bookingType === "strategy"
+              ? "$25 • 15 minutes"
+              : `$66 / hour • ${
+                  sessionDuration === 60
+                    ? "1 hour"
+                    : `${sessionDuration} minutes`
+                }`}
+          </strong>
 
           <button
             type="button"
@@ -223,7 +263,7 @@ function BookingStrategy({
       </div>
       <button
         type="button"
-        className="booking-strategy-scroll"
+        className="booking-session-scroll"
         onClick={() =>
           datesRef.current?.scrollBy({
             top: 200,
@@ -238,4 +278,4 @@ function BookingStrategy({
   );
 }
 
-export default BookingStrategy;
+export default BookingSession;
