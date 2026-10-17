@@ -3,8 +3,13 @@ import logo from "../../assets/logo.png";
 import profileImage from "../../assets/profile2.png";
 import { useState } from "react";
 import { getSessionTimeRange } from "./bookingTime";
+import { getConsultingPrice } from "./bookingPrice";
 
 type BookingCheckoutProps = {
+  bookingType?: "strategy" | "hourly";
+  sessionDuration?: number;
+  selectedHours?: number;
+  consultantCredit?: number;
   selectedSlot: {
     dayLabel: string;
     time: string;
@@ -14,6 +19,10 @@ type BookingCheckoutProps = {
 };
 
 function BookingCheckout({
+  bookingType = "strategy",
+  sessionDuration = 15,
+  selectedHours = 1,
+  consultantCredit = 0,
   selectedSlot,
   onBack,
   onBook,
@@ -23,9 +32,14 @@ function BookingCheckout({
     "idle" | "applied" | "invalid"
   >("idle");
 
-  const subtotal = 25;
+  const subtotal =
+    bookingType === "hourly" ? getConsultingPrice(selectedHours) : 25;
   const discount = discountStatus === "applied" ? subtotal * 0.2 : 0;
-  const total = subtotal - discount;
+  const appliedCredit =
+    bookingType === "hourly"
+      ? Math.min(consultantCredit, subtotal - discount)
+      : 0;
+  const total = subtotal - discount - appliedCredit;
   return (
     <section className="booking-checkout">
       <div className="booking-checkout-overview">
@@ -35,7 +49,11 @@ function BookingCheckout({
             <img src={logo} alt="Lawly" />
           </div>
 
-          <h1>15-Minute Strategy Session with</h1>
+          <h1>
+            {bookingType === "hourly"
+              ? "Hourly Consulting with"
+              : "15-Minute Strategy Session with"}
+          </h1>
 
           <div className="booking-checkout-photo">
             <img src={profileImage} alt="Cynthia" />
@@ -54,17 +72,25 @@ function BookingCheckout({
 
           <div className="booking-checkout-session">
             <h2>Session Details</h2>
-
             <div className="booking-checkout-session-card">
               <div className="booking-checkout-session-day">
                 <span>{selectedSlot.dayLabel}</span>
               </div>
-
               <div className="booking-checkout-session-info">
-                <p>15-Minute Consulting Session with Cynthia</p>
-                <strong>{getSessionTimeRange(selectedSlot.time)}</strong>
+                <p>{sessionDuration}-Minute Consulting Session with Cynthia</p>
+                <strong>
+                  {getSessionTimeRange(selectedSlot.time, sessionDuration)}
+                </strong>
               </div>
             </div>
+            {bookingType === "hourly" && (
+              <p className="booking-checkout-note">
+                Session balances cover both live sessions and offline work
+                performed by your consultant, including document edits and
+                written feedback. Offline work time will be deducted from the
+                remaining balance.
+              </p>
+            )}
           </div>
         </div>
       </div>
@@ -89,7 +115,12 @@ function BookingCheckout({
             <span>Processing Fee</span>
             <span>$0</span>
           </div>
-
+          {appliedCredit > 0 && (
+            <div className="booking-checkout-price-row">
+              <span>Consultant Credit</span>
+              <span>${appliedCredit.toFixed(2)}</span>
+            </div>
+          )}
           <form
             className="booking-checkout-discount-form"
             onSubmit={(event) => {
@@ -121,7 +152,7 @@ function BookingCheckout({
               {discountStatus === "applied" && (
                 <p className="booking-checkout-discount-success">
                   <span>Discount code “CYNTHIA” applied (20%)</span>
-                  <span>-${discount}</span>
+                  <span>-${discount.toFixed(2)}</span>
                 </p>
               )}
 
@@ -136,13 +167,15 @@ function BookingCheckout({
           <div className="booking-checkout-total">
             <div className="booking-checkout-price-row">
               <strong>Total</strong>
-              <strong>${total}</strong>
+              <strong>${total.toFixed(2)}</strong>
             </div>
 
-            <p>
-              Your Strategy Session price of $25 will be credited to any future
-              purchase from Cynthia.
-            </p>
+            {bookingType === "strategy" && (
+              <p>
+                Your Strategy Session price of $25 will be credited to any
+                future purchase from Cynthia.
+              </p>
+            )}
           </div>
         </div>
 

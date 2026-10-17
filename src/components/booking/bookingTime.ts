@@ -1,9 +1,9 @@
-export function getSessionTimeRange(time: string) {
+export function getSessionTimeRange(time: string, duration = 15) {
   const [clock, period, timezone] = time.split(" ");
   const [hours, minutes] = clock.split(":").map(Number);
 
   const startHour = (hours % 12) + (period === "PM" ? 12 : 0);
-  const endMinutes = (startHour * 60 + minutes + 15) % (24 * 60);
+  const endMinutes = (startHour * 60 + minutes + duration) % (24 * 60);
 
   const endHour = Math.floor(endMinutes / 60);
   const endMinute = String(endMinutes % 60).padStart(2, "0");

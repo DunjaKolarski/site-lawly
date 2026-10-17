@@ -22,17 +22,19 @@ import BookingSession from "../components/booking/BookingSession";
 import BookingCheckout from "../components/booking/BookingCheckout";
 import type { SelectedSlot } from "../components/booking/BookingSession";
 import BookingConfirmation from "../components/booking/BookingConfirmation";
+import BookingHours from "../components/booking/BookingHours";
 
 function ConsultantProfile() {
   const [activeTab, setActiveTab] = useState("Bio");
   const [bookingStep, setBookingStep] = useState<
-    "profile" | "times" | "checkout" | "confirmation"
+    "profile" | "times" | "hours" | "checkout" | "confirmation"
   >("profile");
   const [selectedSlot, setSelectedSlot] = useState<SelectedSlot | null>(null);
   const [bookingType, setBookingType] = useState<"strategy" | "hourly">(
     "strategy",
   );
   const [sessionDuration, setSessionDuration] = useState(15);
+  const [selectedHours, setSelectedHours] = useState(1);
 
   const isBookingOpen = bookingStep !== "profile";
 
@@ -44,8 +46,19 @@ function ConsultantProfile() {
         <EventsSideBar />
 
         <main className="consultant-profile-content">
-          {bookingStep === "confirmation" && selectedSlot ? (
+          {bookingStep === "hours" && selectedSlot ? (
+            <BookingHours
+              selectedSlot={selectedSlot}
+              sessionDuration={sessionDuration}
+              selectedHours={selectedHours}
+              onSelectHours={setSelectedHours}
+              onBack={() => setBookingStep("times")}
+              onNext={() => setBookingStep("checkout")}
+            />
+          ) : bookingStep === "confirmation" && selectedSlot ? (
             <BookingConfirmation
+              bookingType={bookingType}
+              sessionDuration={sessionDuration}
               selectedSlot={selectedSlot}
               onViewProfile={() => {
                 setActiveTab("Bio");
@@ -54,8 +67,14 @@ function ConsultantProfile() {
             />
           ) : bookingStep === "checkout" && selectedSlot ? (
             <BookingCheckout
+              bookingType={bookingType}
+              sessionDuration={sessionDuration}
+              selectedHours={selectedHours}
+              consultantCredit={bookingType === "hourly" ? 25 : 0}
               selectedSlot={selectedSlot}
-              onBack={() => setBookingStep("times")}
+              onBack={() =>
+                setBookingStep(bookingType === "hourly" ? "hours" : "times")
+              }
               onBook={() => setBookingStep("confirmation")}
             />
           ) : (
@@ -113,7 +132,9 @@ function ConsultantProfile() {
                       onBack={() => setBookingStep("profile")}
                       onNext={() => {
                         if (selectedSlot) {
-                          setBookingStep("checkout");
+                          setBookingStep(
+                            bookingType === "hourly" ? "hours" : "checkout",
+                          );
                         }
                       }}
                     />
@@ -135,6 +156,7 @@ function ConsultantProfile() {
                           setBookingType("hourly");
                           setSelectedSlot(null);
                           setSessionDuration(15);
+                          setSelectedHours(1);
                           setBookingStep("times");
                         }}
                       />

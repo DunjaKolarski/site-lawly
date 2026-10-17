@@ -254,7 +254,7 @@ function BookingSession({
           <button
             type="button"
             className="primary-button"
-            disabled={!selectedSlot || bookingType === "hourly"}
+            disabled={!selectedSlot}
             onClick={onNext}
           >
             Next

@@ -289,6 +289,13 @@
   font-size: 0.75rem;
   color: #d9534f;
 }
+.booking-checkout-note {
+  font-size: 0.75rem;
+  color: #cf7517;
+  background-color: #fff2d9;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
 
 @media (max-width: 767px) {
   .booking-checkout {

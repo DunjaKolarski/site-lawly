@@ -276,6 +276,58 @@
 .booking-confirmation-phone-form > small > a {
   text-decoration: underline;
 }
+.booking-confirmation-hourly {
+  flex-wrap: wrap;
+}
+.booking-confirmation-heading {
+  width: 100%;
+  position: relative;
+  padding: 0 3rem;
+  margin-bottom: 4rem;
+}
+.booking-confirmation-heading > h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #000d50;
+}
+.booking-confirmation-close {
+  height: 2rem;
+  width: 2rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  color: #000d50;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.booking-confirmation-hourly > .booking-confirmation-details {
+  width: 50%;
+  align-items: flex-end;
+  padding: 0 2rem 5rem;
+}
+.booking-confirmation-hourly > .booking-confirmation-preparation {
+  width: 50%;
+  padding: 0 2rem;
+}
+.booking-confirmation-hourly .booking-confirmation-session {
+  margin-top: 0;
+}
+.booking-confirmation-hourly .booking-confirmation-calendar {
+  align-self: flex-end;
+  margin-right: min(7rem, max(0px, calc(100% - 15rem)));
+}
+.booking-confirmation-hourly .booking-confirmation-message-form {
+  width: 100%;
+  max-width: 22rem;
+}
+.booking-confirmation-hourly .booking-confirmation-reminder {
+  margin-top: 0;
+}
 
 @media (max-width: 767px) {
   .booking-confirmation {

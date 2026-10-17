@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { getSessionTimeRange } from "./bookingTime";
 
 type BookingConfirmationProps = {
+  bookingType?: "strategy" | "hourly";
+  sessionDuration?: number;
   selectedSlot: {
     dayLabel: string;
     time: string;
@@ -12,6 +14,8 @@ type BookingConfirmationProps = {
 };
 
 function BookingConfirmation({
+  bookingType = "strategy",
+  sessionDuration = 15,
   selectedSlot,
   onViewProfile,
 }: BookingConfirmationProps) {
@@ -24,8 +28,134 @@ function BookingConfirmation({
   const [messageNotice, setMessageNotice] = useState("");
   const [calendarNotice, setCalendarNotice] = useState("");
 
+  const reminderContent = showReminder && (
+    <div className="booking-confirmation-reminder">
+      <h2>Get reminded about your sessions</h2>
+
+      <p>
+        Don't miss your consulting sessions! If you live in a supported country,
+        we'll send you SMS reminders before they're about to start.
+      </p>
+
+      <form
+        className="booking-confirmation-phone-form"
+        onSubmit={(event) => {
+          event.preventDefault();
+          setReminderNotice(
+            "This is a demo. No verification code has been sent.",
+          );
+        }}
+      >
+        <label htmlFor="booking-phone">Add your phone number</label>
+
+        <div className="booking-confirmation-phone-fields">
+          <select
+            aria-label="Country calling code"
+            value={country}
+            onChange={(event) => {
+              setCountry(event.target.value);
+              setReminderNotice("");
+            }}
+            required
+          >
+            <option value="">Country</option>
+            <option value="us">US (+1)</option>
+            <option value="ca">Canada (+1)</option>
+            <option value="gb">UK (+44)</option>
+            <option value="rs">Serbia (+381)</option>
+          </select>
+
+          <input
+            id="booking-phone"
+            type="tel"
+            autoComplete="tel-national"
+            value={phone}
+            onChange={(event) => {
+              setPhone(event.target.value);
+              setReminderNotice("");
+            }}
+            required
+          />
+        </div>
+
+        <small>
+          We'll send you a text to confirm your number. Standard message and
+          data rates apply. <Link to="/privacy">Privacy Policy</Link>
+        </small>
+
+        <button type="submit" className="primary-button">
+          Send a code
+        </button>
+
+        <p className="booking-confirmation-notice" role="status">
+          {reminderNotice}
+        </p>
+
+        <button
+          type="button"
+          className="booking-confirmation-later"
+          onClick={() => setShowReminder(false)}
+        >
+          I'll do this later
+        </button>
+      </form>
+    </div>
+  );
+  const messageContent = (
+    <form
+      className="booking-confirmation-message-form"
+      onSubmit={(event) => {
+        event.preventDefault();
+        setMessageNotice("This is a demo. Your message has not been sent.");
+      }}
+    >
+      <label htmlFor="booking-message">What would you like to discuss?</label>
+
+      <textarea
+        id="booking-message"
+        placeholder="Write Cynthia a message."
+        value={message}
+        onChange={(event) => {
+          setMessage(event.target.value);
+          setMessageNotice("");
+        }}
+        required
+      />
+
+      <button
+        type="submit"
+        className="primary-button"
+        disabled={!message.trim()}
+      >
+        Send
+      </button>
+
+      <p className="booking-confirmation-notice" role="status">
+        {messageNotice}
+      </p>
+    </form>
+  );
   return (
-    <section className="booking-confirmation">
+    <section
+      className={
+        bookingType === "hourly"
+          ? "booking-confirmation booking-confirmation-hourly"
+          : "booking-confirmation"
+      }
+    >
+      {bookingType === "hourly" && (
+        <div className="booking-confirmation-heading">
+          <h1>Your Session with Cynthia was Scheduled!</h1>
+          <button
+            type="button"
+            className="booking-confirmation-close"
+            aria-label="Close confirmation and return to profile"
+            onClick={onViewProfile}
+          >
+            <i className="bi bi-x-lg" aria-hidden="true"></i>
+          </button>
+        </div>
+      )}
       <button
         type="button"
         className="booking-confirmation-back"
@@ -34,8 +164,9 @@ function BookingConfirmation({
       >
         <i className="bi bi-chevron-left" aria-hidden="true"></i>
       </button>
+
       <div className="booking-confirmation-details">
-        <h1>Your session was scheduled</h1>
+        {bookingType === "strategy" && <h1>Your session was scheduled</h1>}
 
         <div className="booking-confirmation-session">
           <div className="booking-confirmation-session-day">
@@ -43,8 +174,10 @@ function BookingConfirmation({
           </div>
 
           <div className="booking-confirmation-session-info">
-            <p>15-Minute Consulting Session with Cynthia</p>
-            <strong>{getSessionTimeRange(selectedSlot.time)}</strong>
+            <p>{sessionDuration}-Minute Consulting Session with Cynthia</p>
+            <strong>
+              {getSessionTimeRange(selectedSlot.time, sessionDuration)}
+            </strong>
           </div>
         </div>
 
@@ -103,162 +236,65 @@ function BookingConfirmation({
           {calendarNotice}
         </p>
 
-        {showReminder && (
-          <div className="booking-confirmation-reminder">
-            <h2>Get reminded about your sessions</h2>
-
-            <p>
-              Don't miss your consulting sessions! If you live in a supported
-              country, we'll send you SMS reminders before they're about to
-              start.
-            </p>
-
-            <form
-              className="booking-confirmation-phone-form"
-              onSubmit={(event) => {
-                event.preventDefault();
-                setReminderNotice(
-                  "This is a demo. No verification code has been sent.",
-                );
-              }}
-            >
-              <label htmlFor="booking-phone">Add your phone number</label>
-
-              <div className="booking-confirmation-phone-fields">
-                <select
-                  aria-label="Country calling code"
-                  value={country}
-                  onChange={(event) => {
-                    setCountry(event.target.value);
-                    setReminderNotice("");
-                  }}
-                  required
-                >
-                  <option value="">Country</option>
-                  <option value="us">US (+1)</option>
-                  <option value="ca">Canada (+1)</option>
-                  <option value="gb">UK (+44)</option>
-                  <option value="rs">Serbia (+381)</option>
-                </select>
-
-                <input
-                  id="booking-phone"
-                  type="tel"
-                  autoComplete="tel-national"
-                  value={phone}
-                  onChange={(event) => {
-                    setPhone(event.target.value);
-                    setReminderNotice("");
-                  }}
-                  required
-                />
-              </div>
-
-              <small>
-                We'll send you a text to confirm your number. Standard message
-                and data rates apply. <Link to="/privacy">Privacy Policy</Link>
-              </small>
-
-              <button type="submit" className="primary-button">
-                Send a code
-              </button>
-
-              <p className="booking-confirmation-notice" role="status">
-                {reminderNotice}
-              </p>
-
-              <button
-                type="button"
-                className="booking-confirmation-later"
-                onClick={() => setShowReminder(false)}
-              >
-                I'll do this later
-              </button>
-            </form>
-          </div>
-        )}
+        {bookingType === "strategy" && reminderContent}
+        {bookingType === "hourly" && messageContent}
       </div>
 
       <div className="booking-confirmation-preparation">
-        <h2>Make the most out of your strategy call with Cynthia</h2>
+        {bookingType === "hourly" && reminderContent}
 
-        <p>
-          Use this 15-minute strategy session to decide whether Cynthia is a
-          good fit for you. Here are a few tips to help you prepare for the
-          call.
-        </p>
+        {bookingType === "strategy" && (
+          <>
+            <h2>Make the most out of your strategy call with Cynthia</h2>
 
-        <ul className="booking-confirmation-tips">
-          <li>
-            <i className="bi bi-person-circle" aria-hidden="true"></i>
-            <button type="button" onClick={onViewProfile}>
-              Take a look at Cynthia's profile &amp; coaching offerings
+            <p>
+              Use this 15-minute strategy session to decide whether Cynthia is a
+              good fit for you. Here are a few tips to help you prepare for the
+              call.
+            </p>
+
+            <ul className="booking-confirmation-tips">
+              <li>
+                <i className="bi bi-person-circle" aria-hidden="true"></i>
+                <button type="button" onClick={onViewProfile}>
+                  Take a look at Cynthia's profile &amp; coaching offerings
+                </button>
+              </li>
+
+              <li>
+                <i className="bi bi-chat-dots" aria-hidden="true"></i>
+                <span>Bring some questions</span>
+              </li>
+
+              <li>
+                <i className="bi bi-star" aria-hidden="true"></i>
+                <span>Come ready to share your goals and challenges</span>
+              </li>
+            </ul>
+          </>
+        )}
+
+        {bookingType === "strategy" && messageContent}
+
+        {bookingType === "strategy" && (
+          <div className="booking-confirmation-help">
+            <h2>Looking for help right away?</h2>
+
+            <p>
+              15-minute strategy sessions aren't coaching sessions. If you have
+              specific advice-oriented questions for Cynthia, book a coaching
+              session instead.
+            </p>
+
+            <button
+              type="button"
+              className="primary-button"
+              onClick={onViewProfile}
+            >
+              Book a consulting session
             </button>
-          </li>
-
-          <li>
-            <i className="bi bi-chat-dots" aria-hidden="true"></i>
-            <span>Bring some questions</span>
-          </li>
-
-          <li>
-            <i className="bi bi-star" aria-hidden="true"></i>
-            <span>Come ready to share your goals and challenges</span>
-          </li>
-        </ul>
-
-        <form
-          className="booking-confirmation-message-form"
-          onSubmit={(event) => {
-            event.preventDefault();
-            setMessageNotice("This is a demo. Your message has not been sent.");
-          }}
-        >
-          <label htmlFor="booking-message">
-            What would you like to discuss?
-          </label>
-
-          <textarea
-            id="booking-message"
-            placeholder="Write Cynthia a message."
-            value={message}
-            onChange={(event) => {
-              setMessage(event.target.value);
-              setMessageNotice("");
-            }}
-            required
-          />
-
-          <button
-            type="submit"
-            className="primary-button"
-            disabled={!message.trim()}
-          >
-            Send
-          </button>
-
-          <p className="booking-confirmation-notice" role="status">
-            {messageNotice}
-          </p>
-        </form>
-
-        <div className="booking-confirmation-help">
-          <h2>Looking for help right away?</h2>
-
-          <p>
-            15-minute strategy sessions aren't coaching sessions. If you have
-            specific advice-oriented questions for Cynthia, book a coaching
-            session instead.
-          </p>
-
-          <button
-            type="button"
-            className="primary-button"
-            onClick={onViewProfile}
-          >
-            Book a consulting session
-          </button>
-        </div>
+          </div>
+        )}
       </div>
     </section>
   );
