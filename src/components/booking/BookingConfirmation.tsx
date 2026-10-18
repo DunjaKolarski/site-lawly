@@ -145,7 +145,14 @@ function BookingConfirmation({
     >
       {bookingType === "hourly" && (
         <div className="booking-confirmation-heading">
-          <h1>Your Session with Cynthia was Scheduled!</h1>
+          <h1>
+            <span className="booking-confirmation-title-desktop">
+              Your Session with Cynthia was Scheduled!
+            </span>
+            <span className="booking-confirmation-title-mobile">
+              Your session was scheduled
+            </span>
+          </h1>
           <button
             type="button"
             className="booking-confirmation-close"
@@ -167,7 +174,11 @@ function BookingConfirmation({
 
       <div className="booking-confirmation-details">
         {bookingType === "strategy" && <h1>Your session was scheduled</h1>}
-
+        {bookingType === "hourly" && (
+          <h2 className="booking-confirmation-session-label">
+            Session Details
+          </h2>
+        )}
         <div className="booking-confirmation-session">
           <div className="booking-confirmation-session-day">
             <span>{selectedSlot.dayLabel}</span>

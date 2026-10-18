@@ -367,4 +367,11 @@
   .booking-checkout-expiration {
     display: block;
   }
+
+  .booking-checkout-hourly .booking-checkout-fee {
+    display: flex;
+  }
+  .booking-checkout-hourly .booking-checkout-note {
+    display: none;
+  }
 }

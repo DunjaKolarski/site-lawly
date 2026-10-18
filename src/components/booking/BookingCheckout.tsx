@@ -41,7 +41,13 @@ function BookingCheckout({
       : 0;
   const total = subtotal - discount - appliedCredit;
   return (
-    <section className="booking-checkout">
+    <section
+      className={
+        bookingType === "hourly"
+          ? "booking-checkout booking-checkout-hourly"
+          : "booking-checkout"
+      }
+    >
       <div className="booking-checkout-overview">
         <div className="booking-checkout-overview-content">
           <div className="booking-powered">

@@ -328,6 +328,10 @@
 .booking-confirmation-hourly .booking-confirmation-reminder {
   margin-top: 0;
 }
+.booking-confirmation-title-mobile,
+.booking-confirmation-session-label {
+  display: none;
+}
 
 @media (max-width: 767px) {
   .booking-confirmation {
@@ -410,5 +414,65 @@
     border: none;
     margin-bottom: 2rem;
     cursor: pointer;
+  }
+
+  .booking-confirmation-hourly {
+    flex-wrap: nowrap;
+  }
+  .booking-confirmation-hourly > .booking-confirmation-details,
+  .booking-confirmation-hourly > .booking-confirmation-preparation {
+    display: contents;
+  }
+  .booking-confirmation-hourly > .booking-confirmation-back {
+    order: 0;
+  }
+  .booking-confirmation-hourly > .booking-confirmation-heading {
+    order: 1;
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+  .booking-confirmation-heading > h1 {
+    font-size: 1.2rem;
+    text-align: left;
+  }
+  .booking-confirmation-close {
+    display: none;
+  }
+  .booking-confirmation-hourly .booking-confirmation-session {
+    order: 2;
+  }
+  .booking-confirmation-hourly .booking-confirmation-calendar {
+    order: 3;
+    align-self: flex-start;
+    margin-right: 0;
+  }
+  .booking-confirmation-hourly
+    .booking-confirmation-details
+    > .booking-confirmation-notice {
+    order: 4;
+  }
+  .booking-confirmation-hourly .booking-confirmation-reminder {
+    order: 5;
+    margin-top: 2rem;
+  }
+  .booking-confirmation-hourly .booking-confirmation-message-form {
+    order: 6;
+    max-width: none;
+    border-top: 1px solid var(--border-color);
+    margin-top: 2rem;
+    padding-top: 2rem;
+  }
+  .booking-confirmation-title-desktop {
+    display: none;
+  }
+  .booking-confirmation-title-mobile {
+    display: inline;
+  }
+  .booking-confirmation-session-label {
+    display: block;
+    order: 2;
+    font-size: 1rem;
+    color: #000d50;
+    margin-bottom: 0.7rem;
   }
 }

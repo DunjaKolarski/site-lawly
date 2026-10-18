@@ -177,6 +177,24 @@
 .booking-session-hourly-description {
   display: none;
 }
+.booking-session-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+}
+.booking-session-contact > p {
+  font-size: 0.75rem;
+  color: #858484;
+}
+.booking-session-contact > button {
+  font-size: 0.75rem;
+  color: #689dc9;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
 
 @media (max-width: 767px) {
   .booking-session {
@@ -218,5 +236,12 @@
   }
   .booking-session-scroll {
     display: none;
+  }
+
+  .booking-session-hourly-description {
+    display: block;
+  }
+  .booking-session-hourly .booking-session-times {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }

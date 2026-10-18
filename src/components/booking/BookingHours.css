@@ -208,3 +208,39 @@
   background-color: #d5d5d5;
   cursor: default;
 }
+.booking-hours-mobile-powered,
+.booking-hours-mobile-description {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .booking-hours {
+    padding: 1rem 1rem 5rem;
+  }
+  .booking-hours-overview {
+    display: none;
+  }
+  .booking-hours-selection {
+    width: 100%;
+    padding: 0;
+  }
+  .booking-hours-mobile-powered {
+    display: block;
+    margin-top: 2rem;
+  }
+  .booking-hours-options {
+    margin-top: 1rem;
+  }
+  .booking-hours-options > legend {
+    margin-bottom: 0.7rem;
+  }
+  .booking-hours-mobile-description {
+    display: block;
+    font-size: 0.9rem;
+    color: #000d50;
+    margin-bottom: 1.5rem;
+  }
+  .booking-hours-option {
+    gap: 0.7rem;
+  }
+}

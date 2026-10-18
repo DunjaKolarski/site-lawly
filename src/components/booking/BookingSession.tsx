@@ -66,7 +66,11 @@ function BookingSession({
 
   return (
     <section
-      className="booking-session"
+      className={
+        bookingType === "hourly"
+          ? "booking-session booking-session-hourly"
+          : "booking-session"
+      }
       aria-labelledby="booking-session-heading"
     >
       <button
@@ -233,7 +237,12 @@ function BookingSession({
           Your Strategy Session price of $X will be credited to any future
           purchase from Cynthia.
         </p>
-
+        {bookingType === "hourly" && (
+          <div className="booking-session-contact">
+            <p>Looking for a time not listed?</p>
+            <button type="button">Send a message to Cynthia</button>
+          </div>
+        )}
         {selectedSlot && (
           <p className="booking-session-selection">
             {selectedSlot.dayLabel} at {selectedSlot.time}

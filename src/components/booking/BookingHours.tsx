@@ -83,9 +83,18 @@ function BookingHours({
         >
           <i className="bi bi-chevron-left" aria-hidden="true"></i>
         </button>
-
+        <div className="booking-hours-mobile-powered">
+          <div className="booking-powered">
+            <span>Powered by</span>
+            <img src={logo} alt="Lawly" />
+          </div>
+        </div>
         <fieldset className="booking-hours-options">
           <legend>Select a quantity of consulting time</legend>
+          <p className="booking-hours-mobile-description">
+            Your Strategy Session price of $X will be credited to your purchase
+            with Cynthia.
+          </p>
 
           {[1, 2, 3, 4, 5, 6, 7, 8].map((hours) => (
             <label key={hours} className="booking-hours-option">
