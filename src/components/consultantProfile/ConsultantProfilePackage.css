@@ -9,7 +9,7 @@
 .consultant-profile-package-card {
   width: 100%;
   border: 1px solid var(--border-color);
-  border-radius: 0.5rem 0.5rem 0 0;
+  border-radius: 0.5rem;
   overflow: hidden;
 }
 .consultant-profile-package-label {
@@ -22,21 +22,43 @@
   border-bottom-right-radius: 0.5rem;
   padding: 0.6rem;
 }
-.consultant-profile-package-card > h2 > button {
-  width: 100%;
-  display: block;
+.consultant-profile-package-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+.consultant-profile-package-content > h2 {
   font-size: 1.2rem;
   font-weight: bold;
-  text-align: left;
   color: #000d50;
-  background-color: transparent;
-  border: none;
-  padding: 1.5rem;
+}
+.consultant-profile-package-content > p {
+  font-size: 1rem;
+  color: #000d50;
+}
+.consultant-profile-package-actions {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+.consultant-profile-package-calendar {
+  width: 2.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #000d50;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
   cursor: pointer;
 }
-.consultant-profile-package-card > h2 > button:focus-visible {
-  outline: 2px solid #6b9fff;
-  outline-offset: -2px;
+.consultant-profile-package-content > .consultant-profile-package-refund {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
 }
 .consultant-profile-package-more {
   display: flex;
@@ -49,4 +71,23 @@
   border-radius: 0.5rem;
   padding: 0.6rem 0.8rem;
   cursor: pointer;
+}
+.consultant-profile-package-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.consultant-profile-package-features > li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #000d50;
+}
+.consultant-profile-package-features > li > i {
+  flex-shrink: 0;
+  color: #6b9fff;
 }

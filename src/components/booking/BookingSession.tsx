@@ -1,7 +1,7 @@
 import "./BookingSession.css";
 import { useRef } from "react";
 import logo from "../../assets/logo.png";
-import { bookingPackage } from "./bookingPackage";
+import type { BookingPackage } from "./bookingPackage";
 
 const times = [
   "12:00 PM EST",
@@ -40,6 +40,7 @@ export type SelectedSlot = {
 
 type BookingSessionProps = {
   bookingType: "strategy" | "hourly" | "package";
+  selectedPackage: BookingPackage;
   sessionDuration: number;
   onDurationChange: (duration: number) => void;
   selectedSlot: SelectedSlot | null;
@@ -50,6 +51,7 @@ type BookingSessionProps = {
 
 function BookingSession({
   bookingType,
+  selectedPackage,
   sessionDuration,
   onDurationChange,
   selectedSlot,
@@ -263,12 +265,12 @@ function BookingSession({
           </p>
         )}
         {bookingType === "package" && (
-          <p className="booking-session-package-name">{bookingPackage.name}</p>
+          <p className="booking-session-package-name">{selectedPackage.name}</p>
         )}
         <div className="booking-session-actions">
           <strong>
             {bookingType === "package"
-              ? `$${bookingPackage.price}`
+              ? `$${selectedPackage.price}`
               : bookingType === "strategy"
                 ? "$25 • 15 minutes"
                 : `$66 / hour • ${

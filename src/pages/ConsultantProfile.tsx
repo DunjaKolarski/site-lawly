@@ -23,6 +23,8 @@ import BookingCheckout from "../components/booking/BookingCheckout";
 import type { SelectedSlot } from "../components/booking/BookingSession";
 import BookingConfirmation from "../components/booking/BookingConfirmation";
 import BookingHours from "../components/booking/BookingHours";
+import { bookingPackages } from "../components/booking/bookingPackage";
+import type { BookingPackage } from "../components/booking/bookingPackage";
 
 function ConsultantProfile() {
   const [activeTab, setActiveTab] = useState("Bio");
@@ -35,6 +37,9 @@ function ConsultantProfile() {
   >("strategy");
   const [sessionDuration, setSessionDuration] = useState(15);
   const [selectedHours, setSelectedHours] = useState(1);
+  const [selectedPackage, setSelectedPackage] = useState<BookingPackage>(
+    bookingPackages[0],
+  );
 
   const isBookingOpen = bookingStep !== "profile";
 
@@ -68,6 +73,7 @@ function ConsultantProfile() {
           ) : bookingStep === "checkout" && selectedSlot ? (
             <BookingCheckout
               bookingType={bookingType}
+              selectedPackage={selectedPackage}
               sessionDuration={sessionDuration}
               selectedHours={selectedHours}
               consultantCredit={bookingType !== "strategy" ? 25 : 0}
@@ -125,6 +131,7 @@ function ConsultantProfile() {
                   {bookingStep === "times" ? (
                     <BookingSession
                       bookingType={bookingType}
+                      selectedPackage={selectedPackage}
                       sessionDuration={sessionDuration}
                       onDurationChange={setSessionDuration}
                       selectedSlot={selectedSlot}
@@ -161,7 +168,8 @@ function ConsultantProfile() {
                         }}
                       />
                       <ConsultantProfilePackage
-                        onSeeTimes={() => {
+                        onSeeTimes={(item) => {
+                          setSelectedPackage(item);
                           setBookingType("package");
                           setSelectedSlot(null);
                           setSessionDuration(30);

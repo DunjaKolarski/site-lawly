@@ -4,11 +4,12 @@ import profileImage from "../../assets/profile2.png";
 import { useState } from "react";
 import { getSessionTimeRange } from "./bookingTime";
 import { getConsultingPrice } from "./bookingPrice";
-import { bookingPackage } from "./bookingPackage";
+import type { BookingPackage } from "./bookingPackage";
 import linkVisaCard from "../../assets/link-visa-card.png";
 
 type BookingCheckoutProps = {
   bookingType?: "strategy" | "hourly" | "package";
+  selectedPackage: BookingPackage;
   sessionDuration?: number;
   selectedHours?: number;
   consultantCredit?: number;
@@ -22,6 +23,7 @@ type BookingCheckoutProps = {
 
 function BookingCheckout({
   bookingType = "strategy",
+  selectedPackage,
   sessionDuration = 15,
   selectedHours = 1,
   consultantCredit = 0,
@@ -36,7 +38,7 @@ function BookingCheckout({
 
   const subtotal =
     bookingType === "package"
-      ? bookingPackage.price
+      ? selectedPackage.price
       : bookingType === "hourly"
         ? getConsultingPrice(selectedHours)
         : 25;
@@ -63,7 +65,7 @@ function BookingCheckout({
 
           <h1>
             {bookingType === "package"
-              ? bookingPackage.name
+              ? selectedPackage.name
               : bookingType === "hourly"
                 ? "Hourly Consulting with"
                 : "15-Minute Strategy Session with"}
