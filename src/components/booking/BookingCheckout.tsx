@@ -5,6 +5,7 @@ import { useState } from "react";
 import { getSessionTimeRange } from "./bookingTime";
 import { getConsultingPrice } from "./bookingPrice";
 import { bookingPackage } from "./bookingPackage";
+import linkVisaCard from "../../assets/link-visa-card.png";
 
 type BookingCheckoutProps = {
   bookingType?: "strategy" | "hourly" | "package";
@@ -201,9 +202,10 @@ function BookingCheckout({
         >
           <h2>Card Details</h2>
 
-          <p className="booking-checkout-demo">
-            Demo booking — use test details only. No payment will be taken.
-          </p>
+          <label className="booking-checkout-saved-card">
+            <input type="checkbox" aria-label="Select saved card preview" />
+            <img src={linkVisaCard} alt="Link Visa ending in 0316" />
+          </label>
 
           <div className="booking-checkout-card-fields">
             <i className="bi bi-credit-card" aria-hidden="true"></i>
