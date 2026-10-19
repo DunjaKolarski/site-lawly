@@ -1,6 +1,7 @@
 import "./BookingSession.css";
 import { useRef } from "react";
 import logo from "../../assets/logo.png";
+import { bookingPackage } from "./bookingPackage";
 
 const times = [
   "12:00 PM EST",
@@ -38,7 +39,7 @@ export type SelectedSlot = {
 };
 
 type BookingSessionProps = {
-  bookingType: "strategy" | "hourly";
+  bookingType: "strategy" | "hourly" | "package";
   sessionDuration: number;
   onDurationChange: (duration: number) => void;
   selectedSlot: SelectedSlot | null;
@@ -67,9 +68,11 @@ function BookingSession({
   return (
     <section
       className={
-        bookingType === "hourly"
-          ? "booking-session booking-session-hourly"
-          : "booking-session"
+        bookingType === "package"
+          ? "booking-session booking-session-package"
+          : bookingType === "hourly"
+            ? "booking-session booking-session-hourly"
+            : "booking-session"
       }
       aria-labelledby="booking-session-heading"
     >
@@ -89,9 +92,20 @@ function BookingSession({
 
         <div className="booking-session-heading">
           <h2 id="booking-session-heading">
-            {bookingType === "strategy"
-              ? "Book a 15-Min Strategy Session"
-              : "Book Your First Consulting Session"}
+            {bookingType === "package" ? (
+              <>
+                <span className="booking-session-package-title-desktop">
+                  ad
+                </span>
+                <span className="booking-session-package-title-mobile">
+                  Book Your First Consulting Session
+                </span>
+              </>
+            ) : bookingType === "strategy" ? (
+              "Book a 15-Min Strategy Session"
+            ) : (
+              "Book Your First Consulting Session"
+            )}
           </h2>
           <p
             className={
@@ -104,7 +118,7 @@ function BookingSession({
             purchase from Cynthia.
           </p>
         </div>
-        {bookingType === "hourly" && (
+        {bookingType !== "strategy" && (
           <div className="booking-session-duration">
             <h3>Session length</h3>
 
@@ -237,7 +251,7 @@ function BookingSession({
           Your Strategy Session price of $X will be credited to any future
           purchase from Cynthia.
         </p>
-        {bookingType === "hourly" && (
+        {bookingType !== "strategy" && (
           <div className="booking-session-contact">
             <p>Looking for a time not listed?</p>
             <button type="button">Send a message to Cynthia</button>
@@ -248,16 +262,20 @@ function BookingSession({
             {selectedSlot.dayLabel} at {selectedSlot.time}
           </p>
         )}
-
+        {bookingType === "package" && (
+          <p className="booking-session-package-name">{bookingPackage.name}</p>
+        )}
         <div className="booking-session-actions">
           <strong>
-            {bookingType === "strategy"
-              ? "$25 • 15 minutes"
-              : `$66 / hour • ${
-                  sessionDuration === 60
-                    ? "1 hour"
-                    : `${sessionDuration} minutes`
-                }`}
+            {bookingType === "package"
+              ? `$${bookingPackage.price}`
+              : bookingType === "strategy"
+                ? "$25 • 15 minutes"
+                : `$66 / hour • ${
+                    sessionDuration === 60
+                      ? "1 hour"
+                      : `${sessionDuration} minutes`
+                  }`}
           </strong>
 
           <button

@@ -30,9 +30,9 @@ function ConsultantProfile() {
     "profile" | "times" | "hours" | "checkout" | "confirmation"
   >("profile");
   const [selectedSlot, setSelectedSlot] = useState<SelectedSlot | null>(null);
-  const [bookingType, setBookingType] = useState<"strategy" | "hourly">(
-    "strategy",
-  );
+  const [bookingType, setBookingType] = useState<
+    "strategy" | "hourly" | "package"
+  >("strategy");
   const [sessionDuration, setSessionDuration] = useState(15);
   const [selectedHours, setSelectedHours] = useState(1);
 
@@ -70,7 +70,7 @@ function ConsultantProfile() {
               bookingType={bookingType}
               sessionDuration={sessionDuration}
               selectedHours={selectedHours}
-              consultantCredit={bookingType === "hourly" ? 25 : 0}
+              consultantCredit={bookingType !== "strategy" ? 25 : 0}
               selectedSlot={selectedSlot}
               onBack={() =>
                 setBookingStep(bookingType === "hourly" ? "hours" : "times")
@@ -160,7 +160,14 @@ function ConsultantProfile() {
                           setBookingStep("times");
                         }}
                       />
-                      <ConsultantProfilePackage />
+                      <ConsultantProfilePackage
+                        onSeeTimes={() => {
+                          setBookingType("package");
+                          setSelectedSlot(null);
+                          setSessionDuration(30);
+                          setBookingStep("times");
+                        }}
+                      />
                     </>
                   )}
                 </div>

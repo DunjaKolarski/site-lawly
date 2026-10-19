@@ -332,6 +332,9 @@
 .booking-confirmation-session-label {
   display: none;
 }
+.booking-confirmation-message-label-mobile {
+  display: none;
+}
 
 @media (max-width: 767px) {
   .booking-confirmation {
@@ -474,5 +477,11 @@
     font-size: 1rem;
     color: #000d50;
     margin-bottom: 0.7rem;
+  }
+  .booking-confirmation-message-label-desktop {
+    display: none;
+  }
+  .booking-confirmation-message-label-mobile {
+    display: inline;
   }
 }

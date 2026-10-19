@@ -195,6 +195,17 @@
   padding: 0;
   cursor: pointer;
 }
+.booking-session-summary > .booking-session-package-name {
+  font-size: 0.75rem;
+  color: #858484;
+}
+.booking-session-package .booking-session-duration,
+.booking-session-package .booking-session-contact {
+  display: none;
+}
+.booking-session-package-title-mobile {
+  display: none;
+}
 
 @media (max-width: 767px) {
   .booking-session {
@@ -241,7 +252,18 @@
   .booking-session-hourly-description {
     display: block;
   }
-  .booking-session-hourly .booking-session-times {
+  .booking-session-hourly .booking-session-times,
+  .booking-session-package .booking-session-times {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .booking-session-package .booking-session-duration,
+  .booking-session-package .booking-session-contact {
+    display: flex;
+  }
+  .booking-session-package-title-desktop {
+    display: none;
+  }
+  .booking-session-package-title-mobile {
+    display: inline;
   }
 }

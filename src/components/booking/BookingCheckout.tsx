@@ -4,9 +4,10 @@ import profileImage from "../../assets/profile2.png";
 import { useState } from "react";
 import { getSessionTimeRange } from "./bookingTime";
 import { getConsultingPrice } from "./bookingPrice";
+import { bookingPackage } from "./bookingPackage";
 
 type BookingCheckoutProps = {
-  bookingType?: "strategy" | "hourly";
+  bookingType?: "strategy" | "hourly" | "package";
   sessionDuration?: number;
   selectedHours?: number;
   consultantCredit?: number;
@@ -33,17 +34,21 @@ function BookingCheckout({
   >("idle");
 
   const subtotal =
-    bookingType === "hourly" ? getConsultingPrice(selectedHours) : 25;
+    bookingType === "package"
+      ? bookingPackage.price
+      : bookingType === "hourly"
+        ? getConsultingPrice(selectedHours)
+        : 25;
   const discount = discountStatus === "applied" ? subtotal * 0.2 : 0;
   const appliedCredit =
-    bookingType === "hourly"
+    bookingType !== "strategy"
       ? Math.min(consultantCredit, subtotal - discount)
       : 0;
   const total = subtotal - discount - appliedCredit;
   return (
     <section
       className={
-        bookingType === "hourly"
+        bookingType !== "strategy"
           ? "booking-checkout booking-checkout-hourly"
           : "booking-checkout"
       }
@@ -56,9 +61,11 @@ function BookingCheckout({
           </div>
 
           <h1>
-            {bookingType === "hourly"
-              ? "Hourly Consulting with"
-              : "15-Minute Strategy Session with"}
+            {bookingType === "package"
+              ? bookingPackage.name
+              : bookingType === "hourly"
+                ? "Hourly Consulting with"
+                : "15-Minute Strategy Session with"}
           </h1>
 
           <div className="booking-checkout-photo">
@@ -89,7 +96,7 @@ function BookingCheckout({
                 </strong>
               </div>
             </div>
-            {bookingType === "hourly" && (
+            {bookingType !== "strategy" && (
               <p className="booking-checkout-note">
                 Session balances cover both live sessions and offline work
                 performed by your consultant, including document edits and

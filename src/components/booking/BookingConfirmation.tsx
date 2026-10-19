@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { getSessionTimeRange } from "./bookingTime";
 
 type BookingConfirmationProps = {
-  bookingType?: "strategy" | "hourly";
+  bookingType?: "strategy" | "hourly" | "package";
   sessionDuration?: number;
   selectedSlot: {
     dayLabel: string;
@@ -25,6 +25,7 @@ function BookingConfirmation({
   const [country, setCountry] = useState("");
   const [message, setMessage] = useState("");
   const [reminderNotice, setReminderNotice] = useState("");
+  const isConsultingBooking = bookingType !== "strategy";
   const [messageNotice, setMessageNotice] = useState("");
   const [calendarNotice, setCalendarNotice] = useState("");
 
@@ -109,7 +110,20 @@ function BookingConfirmation({
         setMessageNotice("This is a demo. Your message has not been sent.");
       }}
     >
-      <label htmlFor="booking-message">What would you like to discuss?</label>
+      <label htmlFor="booking-message">
+        {bookingType === "package" ? (
+          <>
+            <span className="booking-confirmation-message-label-desktop">
+              What would you like to discuss?
+            </span>
+            <span className="booking-confirmation-message-label-mobile">
+              Send a message to Cynthia
+            </span>
+          </>
+        ) : (
+          "What would you like to discuss?"
+        )}
+      </label>
 
       <textarea
         id="booking-message"
@@ -138,12 +152,12 @@ function BookingConfirmation({
   return (
     <section
       className={
-        bookingType === "hourly"
+        isConsultingBooking
           ? "booking-confirmation booking-confirmation-hourly"
           : "booking-confirmation"
       }
     >
-      {bookingType === "hourly" && (
+      {isConsultingBooking && (
         <div className="booking-confirmation-heading">
           <h1>
             <span className="booking-confirmation-title-desktop">
@@ -248,11 +262,11 @@ function BookingConfirmation({
         </p>
 
         {bookingType === "strategy" && reminderContent}
-        {bookingType === "hourly" && messageContent}
+        {isConsultingBooking && messageContent}
       </div>
 
       <div className="booking-confirmation-preparation">
-        {bookingType === "hourly" && reminderContent}
+        {isConsultingBooking && reminderContent}
 
         {bookingType === "strategy" && (
           <>
