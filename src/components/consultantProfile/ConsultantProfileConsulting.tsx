@@ -41,6 +41,14 @@ function ConsultantProfileConsulting({
           </div>
         </div>
 
+        <div className="consultant-profile-consulting-mobile-price">
+          <div>
+            <span>Hourly Consulting</span>
+            <strong>$66 / hour</strong>
+          </div>
+          <span>(Discounts on 3+ hours)</span>
+        </div>
+
         <p className="consultant-profile-consulting-availability">
           Next available <span>12:00PM EST on 5/18</span>
         </p>

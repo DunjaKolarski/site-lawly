@@ -1,6 +1,11 @@
 import "./ConsultantProfileStickyBar.css";
+type ConsultantProfileStickyBarProps = {
+  onSeeOfferings: () => void;
+};
 
-function ConsultantProfileStickyBar() {
+function ConsultantProfileStickyBar({
+  onSeeOfferings,
+}: ConsultantProfileStickyBarProps) {
   return (
     <div className="consultant-profile-sticky-space">
       <div className="consultant-profile-sticky-bar">
@@ -14,7 +19,11 @@ function ConsultantProfileStickyBar() {
           </div>
         </div>
 
-        <button type="button" className="primary-button">
+        <button
+          type="button"
+          className="primary-button"
+          onClick={onSeeOfferings}
+        >
           See Offerings
         </button>
       </div>

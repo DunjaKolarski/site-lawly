@@ -9,12 +9,15 @@ import type { BookingPackage } from "../booking/bookingPackage";
 
 type ConsultantProfilePackageProps = {
   onSeeTimes: (selectedPackage: BookingPackage) => void;
+  collapsibleDescriptions?: boolean;
 };
 
 function ConsultantProfilePackage({
   onSeeTimes,
+  collapsibleDescriptions = false,
 }: ConsultantProfilePackageProps) {
   const [selectedTier, setSelectedTier] = useState(applicationPackageTiers[0]);
+  const [expandedPackages, setExpandedPackages] = useState<string[]>([]);
 
   function handleSeeTimes(item: BookingPackage) {
     if (item.id === "full-application") {
@@ -51,7 +54,14 @@ function ConsultantProfilePackage({
 
             <ul className="consultant-profile-package-features">
               {packageFeatures
-                .slice(0, item.id === "personal-statement" ? 7 : 8)
+                .slice(
+                  0,
+                  collapsibleDescriptions && !expandedPackages.includes(item.id)
+                    ? 2
+                    : item.id === "personal-statement"
+                      ? 7
+                      : 8,
+                )
                 .map((feature) => (
                   <li key={feature}>
                     <i
@@ -62,6 +72,22 @@ function ConsultantProfilePackage({
                   </li>
                 ))}
             </ul>
+            {collapsibleDescriptions && (
+              <button
+                type="button"
+                className="consultant-profile-package-toggle"
+                aria-expanded={expandedPackages.includes(item.id)}
+                onClick={() => {
+                  setExpandedPackages((previous) =>
+                    previous.includes(item.id)
+                      ? previous.filter((id) => id !== item.id)
+                      : [...previous, item.id],
+                  );
+                }}
+              >
+                {expandedPackages.includes(item.id) ? "See Less" : "See More"}
+              </button>
+            )}
             {item.id !== "full-application" && (
               <p className="consultant-profile-package-time">
                 Consulting Time X+ Hrs

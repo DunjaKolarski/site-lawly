@@ -25,11 +25,12 @@ import BookingConfirmation from "../components/booking/BookingConfirmation";
 import BookingHours from "../components/booking/BookingHours";
 import { bookingPackages } from "../components/booking/bookingPackage";
 import type { BookingPackage } from "../components/booking/bookingPackage";
+import ConsultantProfileMobileOfferings from "../components/consultantProfile/ConsultantProfileMobileOfferings";
 
 function ConsultantProfile() {
   const [activeTab, setActiveTab] = useState("Bio");
   const [bookingStep, setBookingStep] = useState<
-    "profile" | "times" | "hours" | "checkout" | "confirmation"
+    "profile" | "offerings" | "times" | "hours" | "checkout" | "confirmation"
   >("profile");
   const [selectedSlot, setSelectedSlot] = useState<SelectedSlot | null>(null);
   const [bookingType, setBookingType] = useState<
@@ -52,7 +53,34 @@ function ConsultantProfile() {
         <EventsSideBar />
 
         <main className="consultant-profile-content">
-          {bookingStep === "hours" && selectedSlot ? (
+          {bookingStep === "offerings" ? (
+            <ConsultantProfileMobileOfferings
+              onBack={() => setBookingStep("profile")}
+              onStrategy={() => {
+                setBookingType("strategy");
+                setSelectedSlot(null);
+                setSessionDuration(15);
+                setBookingStep("times");
+                window.scrollTo(0, 0);
+              }}
+              onConsulting={() => {
+                setBookingType("hourly");
+                setSelectedSlot(null);
+                setSessionDuration(15);
+                setSelectedHours(1);
+                setBookingStep("times");
+                window.scrollTo(0, 0);
+              }}
+              onPackage={(item) => {
+                setSelectedPackage(item);
+                setBookingType("package");
+                setSelectedSlot(null);
+                setSessionDuration(30);
+                setBookingStep("times");
+                window.scrollTo(0, 0);
+              }}
+            />
+          ) : bookingStep === "hours" && selectedSlot ? (
             <BookingHours
               selectedSlot={selectedSlot}
               sessionDuration={sessionDuration}
@@ -137,7 +165,12 @@ function ConsultantProfile() {
                       onDurationChange={setSessionDuration}
                       selectedSlot={selectedSlot}
                       onSelectSlot={setSelectedSlot}
-                      onBack={() => setBookingStep("profile")}
+                      onBack={() => {
+                        setBookingStep(
+                          window.innerWidth <= 767 ? "offerings" : "profile",
+                        );
+                        window.scrollTo(0, 0);
+                      }}
                       onNext={() => {
                         if (selectedSlot) {
                           setBookingStep(
@@ -148,7 +181,23 @@ function ConsultantProfile() {
                     />
                   ) : (
                     <>
-                      <ConsultantProfileBooking />
+                      <ConsultantProfileBooking
+                        onBookSession={() => {
+                          if (window.innerWidth <= 767) {
+                            setBookingStep("offerings");
+                            window.scrollTo(0, 0);
+                          } else {
+                            offeringsRef.current?.scrollTo({
+                              top: 0,
+                              behavior: "smooth",
+                            });
+                            offeringsRef.current?.scrollIntoView({
+                              behavior: "smooth",
+                              block: "start",
+                            });
+                          }
+                        }}
+                      />
                       <ConsultantProfileUpcoming />
                       <div
                         className="consultant-profile-offerings-list"
@@ -232,7 +281,14 @@ function ConsultantProfile() {
       </div>
 
       <Footer />
-      {!isBookingOpen && <ConsultantProfileStickyBar />}
+      {!isBookingOpen && (
+        <ConsultantProfileStickyBar
+          onSeeOfferings={() => {
+            setBookingStep("offerings");
+            window.scrollTo(0, 0);
+          }}
+        />
+      )}
     </>
   );
 }

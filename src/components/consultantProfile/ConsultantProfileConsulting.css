@@ -94,3 +94,6 @@
   gap: 0.4rem;
   font-size: 0.9rem;
 }
+.consultant-profile-consulting-mobile-price {
+  display: none;
+}

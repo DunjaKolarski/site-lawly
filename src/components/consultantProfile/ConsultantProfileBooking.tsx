@@ -1,6 +1,11 @@
 import "./ConsultantProfileBooking.css";
+type ConsultantProfileBookingProps = {
+  onBookSession: () => void;
+};
 
-function ConsultantProfileBooking() {
+function ConsultantProfileBooking({
+  onBookSession,
+}: ConsultantProfileBookingProps) {
   return (
     <div className="consultant-profile-booking">
       <div className="consultant-profile-availability">
@@ -15,7 +20,11 @@ function ConsultantProfileBooking() {
       </div>
 
       <div className="consultant-profile-booking-actions">
-        <button type="button" className="primary-button">
+        <button
+          type="button"
+          className="primary-button"
+          onClick={onBookSession}
+        >
           Book a session
         </button>
         <button type="button" className="consultant-profile-message">

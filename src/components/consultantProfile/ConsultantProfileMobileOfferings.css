@@ -1,0 +1,66 @@
+.consultant-profile-mobile-offerings {
+  padding: 1rem 1rem 4rem;
+}
+.consultant-profile-mobile-offerings-back {
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  color: #000d50;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.consultant-profile-mobile-offerings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 1rem;
+  margin-top: 1.5rem;
+}
+.consultant-profile-mobile-offerings-list > .consultant-profile-strategy,
+.consultant-profile-mobile-offerings-list > .consultant-profile-consulting,
+.consultant-profile-mobile-offerings-list > .consultant-profile-package {
+  margin-top: 0;
+}
+.consultant-profile-mobile-offerings-list .consultant-profile-powered {
+  display: none;
+}
+.consultant-profile-package-toggle {
+  align-self: flex-start;
+  font-size: 0.9rem;
+  color: #858484;
+  text-decoration: underline;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.consultant-profile-mobile-offerings-list
+  .consultant-profile-consulting-prices {
+  display: none;
+}
+.consultant-profile-mobile-offerings-list
+  .consultant-profile-consulting-mobile-price {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  color: #000d50;
+}
+.consultant-profile-consulting-mobile-price > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+.consultant-profile-consulting-mobile-price > span {
+  font-size: 0.9rem;
+}
+.consultant-profile-mobile-offerings-list
+  .consultant-profile-package-restriction {
+  display: none;
+}
