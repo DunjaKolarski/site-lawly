@@ -60,18 +60,6 @@
   gap: 0.4rem;
   font-size: 0.9rem;
 }
-.consultant-profile-package-more {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-  color: #000d50;
-  background-color: var(--border-color);
-  border: none;
-  border-radius: 0.5rem;
-  padding: 0.6rem 0.8rem;
-  cursor: pointer;
-}
 .consultant-profile-package-features {
   display: flex;
   flex-direction: column;
@@ -89,5 +77,91 @@
 }
 .consultant-profile-package-features > li > i {
   flex-shrink: 0;
+  color: #6b9fff;
+}
+.consultant-profile-package-content > .consultant-profile-package-restriction {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  color: #000d50;
+  margin-top: -0.5rem;
+}
+.consultant-profile-package-restriction > i {
+  flex-shrink: 0;
+}
+.consultant-profile-package-content > .consultant-profile-package-time {
+  font-size: 0.9rem;
+  color: #858484;
+}
+.consultant-profile-package-tiers {
+  min-width: 0;
+  border: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+.consultant-profile-package-tiers > legend {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000d50;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+.consultant-profile-package-tier-options {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 1.5rem 1rem;
+}
+.consultant-profile-package-tier {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  cursor: pointer;
+}
+.consultant-profile-package-tier > input {
+  appearance: none;
+  height: 1rem;
+  width: 1rem;
+  flex-shrink: 0;
+  background-color: #eff4f7;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  margin: 0.1rem 0 0;
+  cursor: pointer;
+}
+.consultant-profile-package-tier > input:checked {
+  background-image: radial-gradient(circle, #6b9fff 0 45%, transparent 50%);
+}
+.consultant-profile-package-tier > input:focus-visible {
+  outline: 2px solid #6b9fff;
+  outline-offset: 2px;
+}
+.consultant-profile-package-tier-content {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-size: 0.75rem;
+  color: #000d50;
+}
+.consultant-profile-package-tier-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+.consultant-profile-package-tier-prices {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+.consultant-profile-package-tier-prices > del {
+  color: #858484;
+}
+.consultant-profile-package-tier-saving {
   color: #6b9fff;
 }

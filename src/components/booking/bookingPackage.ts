@@ -39,3 +39,27 @@ export const packageFeatures = [
   "Support with adapting your statement to school-specific prompts and word limits",
   "A final review for grammar, consistency, and readability before submission",
 ];
+
+export const applicationPackageTiers = [
+  {
+    id: "five-schools",
+    name: "Full Support • 5 Schools",
+    hours: "60–80 hours",
+    price: 12000,
+    originalPrice: 24000,
+  },
+  {
+    id: "ten-schools",
+    name: "Full Support • 10 Schools",
+    hours: "70–90 hours",
+    price: 13500,
+    originalPrice: 28000,
+  },
+  {
+    id: "fifteen-schools",
+    name: "Full Support • 15 Schools",
+    hours: "80–100 hours",
+    price: 15500,
+    originalPrice: 32000,
+  },
+];

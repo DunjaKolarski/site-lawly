@@ -1,5 +1,5 @@
 import "./ConsultantProfile.css";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import EventsHeader from "../components/events/EventsHeader";
 import EventsSideBar from "../components/events/EventsSideBar";
 import ConsultantProfileHero from "../components/consultantProfile/ConsultantProfileHero";
@@ -41,6 +41,7 @@ function ConsultantProfile() {
     bookingPackages[0],
   );
 
+  const offeringsRef = useRef<HTMLDivElement>(null);
   const isBookingOpen = bookingStep !== "profile";
 
   return (
@@ -149,33 +150,57 @@ function ConsultantProfile() {
                     <>
                       <ConsultantProfileBooking />
                       <ConsultantProfileUpcoming />
-                      <ConsultantProfileStrategy
-                        onSeeTimes={() => {
-                          setBookingType("strategy");
-                          setSelectedSlot(null);
-                          setSessionDuration(15);
-                          setBookingStep("times");
-                        }}
-                      />
+                      <div
+                        className="consultant-profile-offerings-list"
+                        ref={offeringsRef}
+                        tabIndex={0}
+                        role="region"
+                        aria-label="Consultant offerings"
+                      >
+                        <ConsultantProfileStrategy
+                          onSeeTimes={() => {
+                            setBookingType("strategy");
+                            setSelectedSlot(null);
+                            setSessionDuration(15);
+                            setBookingStep("times");
+                          }}
+                        />
 
-                      <ConsultantProfileConsulting
-                        onSeeTimes={() => {
-                          setBookingType("hourly");
-                          setSelectedSlot(null);
-                          setSessionDuration(15);
-                          setSelectedHours(1);
-                          setBookingStep("times");
+                        <ConsultantProfileConsulting
+                          onSeeTimes={() => {
+                            setBookingType("hourly");
+                            setSelectedSlot(null);
+                            setSessionDuration(15);
+                            setSelectedHours(1);
+                            setBookingStep("times");
+                          }}
+                        />
+                        <ConsultantProfilePackage
+                          onSeeTimes={(item) => {
+                            setSelectedPackage(item);
+                            setBookingType("package");
+                            setSelectedSlot(null);
+                            setSessionDuration(30);
+                            setBookingStep("times");
+                          }}
+                        />
+                      </div>
+                      <button
+                        type="button"
+                        className="consultant-profile-offerings-more"
+                        onClick={() => {
+                          offeringsRef.current?.scrollBy({
+                            top: 300,
+                            behavior: "smooth",
+                          });
                         }}
-                      />
-                      <ConsultantProfilePackage
-                        onSeeTimes={(item) => {
-                          setSelectedPackage(item);
-                          setBookingType("package");
-                          setSelectedSlot(null);
-                          setSessionDuration(30);
-                          setBookingStep("times");
-                        }}
-                      />
+                      >
+                        Scroll to see more
+                        <i
+                          className="bi bi-chevron-down"
+                          aria-hidden="true"
+                        ></i>
+                      </button>
                     </>
                   )}
                 </div>
