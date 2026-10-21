@@ -1,0 +1,230 @@
+.messages-chat-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+.messages-chat-message {
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.messages-chat-message-received {
+  align-self: flex-start;
+}
+.messages-chat-message > p {
+  font-size: 0.9rem;
+  color: #000d50;
+  background-color: #eff4f7;
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+  overflow-wrap: anywhere;
+}
+.messages-chat-message > span {
+  align-self: flex-end;
+  font-size: 0.75rem;
+  color: #858484;
+}
+.messages-chat-composer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
+}
+.messages-chat-composer > p {
+  font-size: 0.75rem;
+  color: #858484;
+}
+.messages-chat-composer > p > strong {
+  color: #000d50;
+}
+.messages-chat-input {
+  position: relative;
+}
+.messages-chat-input > textarea {
+  min-height: 4.5rem;
+  width: 100%;
+  display: block;
+  font-size: 0.9rem;
+  color: #000d50;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.8rem 2.8rem 0.8rem 0.8rem;
+  resize: none;
+}
+.messages-chat-input > textarea::placeholder {
+  color: #858484;
+}
+.messages-chat-input > button {
+  height: 2rem;
+  width: 2rem;
+  position: absolute;
+  right: 0.4rem;
+  bottom: 0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #000d50;
+  background-color: transparent;
+  border: none;
+}
+.messages-chat-recommendation {
+  width: 70%;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.messages-chat-recommendation-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  background-color: #eff4f7;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+.messages-chat-recommendation-content > h3 {
+  font-size: 0.9rem;
+  text-align: center;
+  color: #000d50;
+}
+.messages-chat-offering {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+.messages-chat-offering > h4 {
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: #000d50;
+}
+.messages-chat-offering > p {
+  font-size: 0.9rem;
+  color: #858484;
+}
+.messages-chat-offering-price {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem;
+}
+.messages-chat-offering-price > span:last-child {
+  color: #329c64;
+}
+.messages-chat-offering > .primary-button {
+  font-size: 0.9rem;
+  padding: 0.6rem 1rem;
+}
+.messages-chat-recommendation > span {
+  align-self: center;
+  font-size: 0.75rem;
+  color: #858484;
+}
+.messages-chat-event {
+  width: 70%;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.messages-chat-event > p {
+  font-size: 0.9rem;
+  text-align: center;
+  color: #000d50;
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+}
+.messages-chat-event > span {
+  align-self: center;
+  font-size: 0.75rem;
+  color: #858484;
+}
+.messages-chat-event-booked {
+  background-color: #e8fff0;
+  text-decoration: underline;
+}
+.messages-chat-event-canceled {
+  background-color: #ffcec7;
+}
+.messages-chat-event-ended {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  background-color: #dfeffd;
+}
+.messages-chat-attachment {
+  max-width: 80%;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.messages-chat-file {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  background-color: #a0d2e7;
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+}
+.messages-chat-file > i {
+  flex-shrink: 0;
+  font-size: 1.5rem;
+  color: #6b9fff;
+  background-color: #ffffff;
+  border-radius: 0.3rem;
+  padding: 0.3rem;
+}
+.messages-chat-file > span {
+  min-width: 0;
+  font-size: 0.9rem;
+  color: #000d50;
+  overflow-wrap: anywhere;
+}
+.messages-chat-attachment > span {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  color: #858484;
+}
+.messages-chat-review {
+  width: 70%;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.messages-chat-review-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  background-color: #eff4f7;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+.messages-chat-review-content > h3 {
+  font-size: 0.9rem;
+  text-align: center;
+  color: #000d50;
+}
+.messages-chat-review-content > .primary-button {
+  font-size: 0.9rem;
+  padding: 0.7rem 1rem;
+}
+.messages-chat-review > span {
+  align-self: flex-end;
+  font-size: 0.75rem;
+  color: #858484;
+}

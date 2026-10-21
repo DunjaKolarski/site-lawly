@@ -1,0 +1,217 @@
+.messages-advisor {
+  width: 17rem;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem 1rem;
+  border-left: 1px solid var(--border-color);
+  color: #000d50;
+}
+.messages-advisor-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  text-align: center;
+}
+.messages-advisor-profile > img {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.messages-advisor-profile > h2 {
+  font-size: 1rem;
+}
+.messages-advisor-profile > p {
+  font-size: 0.75rem;
+  color: #858484;
+}
+.messages-advisor-profile strong {
+  color: #000d50;
+}
+.messages-advisor-time {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.messages-advisor-time-log {
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.messages-advisor-time-heading {
+  position: relative;
+  padding: 0.7rem 2rem;
+  text-align: center;
+}
+.messages-advisor-time-heading > h3 {
+  font-size: 0.9rem;
+}
+.messages-advisor-time-heading > i {
+  position: absolute;
+  top: 50%;
+  right: 0.8rem;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+}
+.messages-advisor-time-used {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #fff0d8;
+  color: #e39a35;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.75rem;
+  padding: 0.6rem;
+}
+.messages-advisor-time-entry {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  border-top: 1px solid var(--border-color);
+  padding: 0.8rem;
+}
+.messages-advisor-time-entry > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.messages-advisor-time-entry > div:last-child {
+  flex-shrink: 0;
+  text-align: right;
+}
+.messages-advisor-time-entry p {
+  font-size: 0.9rem;
+}
+.messages-advisor-time-entry span {
+  font-size: 0.75rem;
+  color: #858484;
+}
+.messages-advisor-schedule {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+.messages-advisor-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.5rem;
+}
+.messages-advisor-section > h3 {
+  font-size: 0.9rem;
+}
+.messages-advisor-past-sessions {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  color: #858484;
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
+}
+.messages-advisor-session {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #eff4f7;
+  border-radius: 0.4rem;
+  padding: 1.2rem 0.6rem 0.7rem;
+}
+.messages-advisor-session > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.messages-advisor-session strong {
+  font-size: 0.9rem;
+}
+.messages-advisor-session p {
+  font-size: 0.75rem;
+}
+.messages-advisor-session-options {
+  position: absolute;
+  top: 0.1rem;
+  right: 0.5rem;
+  font-size: 1rem;
+  color: #858484;
+  background-color: transparent;
+  border: none;
+}
+.messages-advisor-join-button {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  color: #ffffff;
+  background-color: #6b9fff;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.4rem 0.7rem;
+}
+.messages-advisor-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+.messages-advisor-section-heading > h3 {
+  font-size: 0.9rem;
+}
+.messages-advisor-section-heading > i {
+  font-size: 0.75rem;
+}
+.messages-advisor-files {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+}
+.messages-advisor-files > button {
+  max-width: 100%;
+  font-size: 0.9rem;
+  color: #6b9fff;
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  text-decoration: underline;
+  overflow-wrap: anywhere;
+}
+.messages-advisor-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.5rem;
+}
+.messages-advisor-actions > button {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: #000d50;
+  background-color: transparent;
+  border: none;
+  text-align: left;
+}
+.messages-advisor-actions > button > i {
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+.messages-advisor-actions > button > span {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.messages-advisor-actions small {
+  font-size: 0.75rem;
+  color: #858484;
+}

@@ -14,6 +14,7 @@ import MatchQuiz from "./pages/MatchQuiz";
 import FindAdvisors from "./pages/FindAdvisors";
 import SavedAdvisors from "./pages/SavedAdvisors";
 import ConsultantProfile from "./pages/ConsultantProfile";
+import Messages from "./pages/Messages";
 
 import "./App.css";
 
@@ -39,6 +40,7 @@ function App() {
         path="/consultants/:consultantId"
         element={<ConsultantProfile />}
       />
+      <Route path="/messages" element={<Messages />} />
     </Routes>
   );
 }
