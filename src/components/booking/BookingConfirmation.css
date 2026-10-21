@@ -336,6 +336,147 @@
   display: none;
 }
 
+.booking-verification-dialog {
+  width: 32rem;
+  max-width: calc(100% - 2rem);
+  position: fixed;
+  color: #000d50;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 3rem 2rem 2rem;
+  margin: auto;
+}
+.booking-verification-dialog::backdrop {
+  background-color: rgb(0 0 0 / 25%);
+}
+.booking-verification-close {
+  height: 2rem;
+  width: 2rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  color: #000d50;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.booking-verification-dialog > h2 {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #000d50;
+}
+.booking-verification-dialog > p {
+  font-size: 0.9rem;
+  text-align: center;
+  overflow-wrap: anywhere;
+  color: #858484;
+  margin-top: 1rem;
+}
+.booking-verification-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.booking-verification-form > input {
+  width: 100%;
+  max-width: 20rem;
+  font-size: 1rem;
+  text-align: center;
+  color: #000d50;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.7rem;
+}
+.booking-verification-form > p {
+  font-size: 0.9rem;
+  text-align: center;
+  color: #575757;
+}
+.booking-verification-form > p:empty {
+  display: none;
+}
+.booking-verification-form > .primary-button {
+  font-size: 0.9rem;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+}
+
+.booking-verification-help {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  color: #858484;
+}
+.booking-verification-help > button {
+  font-size: 0.75rem;
+  text-decoration: underline;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.booking-verification-resend {
+  color: #6b9fff;
+}
+.booking-verification-change {
+  color: #858484;
+}
+
+.booking-verification-success-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+.booking-verification-success-dismiss {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.booking-verification-success {
+  width: 28rem;
+  max-width: calc(100% - 2rem);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.9rem;
+  text-align: center;
+  color: #ffffff;
+  background-color: #329c64;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+.booking-verification-success-icon {
+  height: 1.8rem;
+  width: 1.8rem;
+  position: absolute;
+  top: -0.9rem;
+  left: -0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #ffffff;
+  background-color: #329c64;
+  border-radius: 50%;
+}
+
 @media (max-width: 767px) {
   .booking-confirmation {
     flex-direction: column;
@@ -483,5 +624,16 @@
   }
   .booking-confirmation-message-label-mobile {
     display: inline;
+  }
+
+  .booking-verification-dialog {
+    width: 24rem;
+    padding: 3rem 1.5rem 2rem;
+  }
+  .booking-verification-form > input {
+    max-width: none;
+  }
+  .booking-verification-success {
+    width: 18rem;
   }
 }

@@ -1,5 +1,5 @@
 import "./BookingConfirmation.css";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { getSessionTimeRange } from "./bookingTime";
 
@@ -29,6 +29,22 @@ function BookingConfirmation({
   const [messageNotice, setMessageNotice] = useState("");
   const [calendarNotice, setCalendarNotice] = useState("");
 
+  const verificationDialogRef = useRef<HTMLDialogElement>(null);
+  const [verificationCode, setVerificationCode] = useState("");
+  const [verificationError, setVerificationError] = useState("");
+  const [verificationNotice, setVerificationNotice] = useState("");
+
+  const countryCallingCodes: Record<string, string> = {
+    us: "+1",
+    ca: "+1",
+    gb: "+44",
+    rs: "+381",
+  };
+
+  const fullPhoneNumber = `${countryCallingCodes[country] ?? ""} ${phone.trim()}`;
+
+  const [showVerificationSuccess, setShowVerificationSuccess] = useState(false);
+
   const reminderContent = showReminder && (
     <div className="booking-confirmation-reminder">
       <h2>Get reminded about your sessions</h2>
@@ -42,9 +58,18 @@ function BookingConfirmation({
         className="booking-confirmation-phone-form"
         onSubmit={(event) => {
           event.preventDefault();
-          setReminderNotice(
-            "This is a demo. No verification code has been sent.",
-          );
+
+          if (!phone.trim()) {
+            setReminderNotice("Please enter your phone number.");
+            return;
+          }
+
+          setReminderNotice("");
+          setVerificationCode("");
+          setVerificationError("");
+          setVerificationNotice("");
+          setShowVerificationSuccess(false);
+          verificationDialogRef.current?.showModal();
         }}
       >
         <label htmlFor="booking-phone">Add your phone number</label>
@@ -321,6 +346,122 @@ function BookingConfirmation({
           </div>
         )}
       </div>
+
+      <dialog
+        ref={verificationDialogRef}
+        className="booking-verification-dialog"
+        aria-labelledby="booking-verification-title"
+      >
+        <form method="dialog">
+          <button
+            type="submit"
+            className="booking-verification-close"
+            aria-label="Close phone verification"
+          >
+            <i className="bi bi-x-lg" aria-hidden="true"></i>
+          </button>
+        </form>
+
+        <h2 id="booking-verification-title">Confirm your phone number</h2>
+
+        <p>Enter the 6-digit code Lawly just sent to {fullPhoneNumber}</p>
+
+        <form
+          className="booking-verification-form"
+          onSubmit={(event) => {
+            event.preventDefault();
+
+            if (verificationCode !== "123456") {
+              setVerificationError("Incorrect code. Use 123456 for this demo.");
+              return;
+            }
+
+            verificationDialogRef.current?.close();
+            setShowVerificationSuccess(true);
+          }}
+        >
+          <input
+            id="booking-verification-code"
+            aria-label="Verification code"
+            type="text"
+            inputMode="numeric"
+            autoComplete="one-time-code"
+            maxLength={6}
+            pattern="[0-9]{6}"
+            value={verificationCode}
+            onChange={(event) => {
+              setVerificationCode(event.target.value);
+              setVerificationError("");
+            }}
+            aria-describedby="booking-verification-error"
+            aria-invalid={Boolean(verificationError)}
+            required
+          />
+
+          <p id="booking-verification-error" role="alert">
+            {verificationError}
+          </p>
+          <div className="booking-verification-help">
+            <span>Didn't get a text?</span>
+
+            <button
+              type="button"
+              className="booking-verification-resend"
+              onClick={() => {
+                setVerificationCode("");
+                setVerificationError("");
+                setVerificationNotice(
+                  "No SMS is sent in this preview. Use code 123456.",
+                );
+              }}
+            >
+              Send again
+            </button>
+
+            <span>or</span>
+
+            <button
+              type="button"
+              className="booking-verification-change"
+              onClick={() => {
+                verificationDialogRef.current?.close();
+                document.getElementById("booking-phone")?.focus();
+              }}
+            >
+              change number
+            </button>
+          </div>
+
+          <p role="status">{verificationNotice}</p>
+          <button type="submit" className="primary-button">
+            Verify
+          </button>
+        </form>
+      </dialog>
+
+      {showVerificationSuccess && (
+        <div
+          className="booking-verification-success-overlay"
+          onClick={() => setShowVerificationSuccess(false)}
+        >
+          <button
+            type="button"
+            className="booking-verification-success-dismiss"
+            aria-label="Dismiss confirmation"
+          />
+
+          <div className="booking-verification-success" role="status">
+            <span
+              className="booking-verification-success-icon"
+              aria-hidden="true"
+            >
+              <i className="bi bi-check"></i>
+            </span>
+
+            <span>Your phone number has been successfully added</span>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
