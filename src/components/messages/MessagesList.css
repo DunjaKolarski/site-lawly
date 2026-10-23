@@ -120,3 +120,16 @@
   background-color: transparent;
   border: none;
 }
+
+@media (max-width: 767px) {
+  .messages-list {
+    width: 100%;
+    border-right: none;
+  }
+  .messages-list-item {
+    padding: 1rem;
+  }
+  .messages-list-item-active {
+    background-color: transparent;
+  }
+}

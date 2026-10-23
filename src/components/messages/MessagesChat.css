@@ -228,3 +228,79 @@
   font-size: 0.75rem;
   color: #858484;
 }
+.messages-chat-message-sent,
+.messages-chat-message-mobile {
+  display: none;
+}
+.messages-chat-day {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .messages-chat-body {
+    padding: 1.5rem 1rem;
+  }
+  .messages-chat-event {
+    width: 100%;
+  }
+  .messages-chat-recommendation,
+  .messages-chat-review {
+    width: 90%;
+  }
+  .messages-chat-offering {
+    width: 100%;
+  }
+  .messages-chat-event-booked {
+    text-decoration: none;
+  }
+  .messages-chat-review > span {
+    align-self: center;
+  }
+  .messages-chat-composer {
+    padding: 1rem 1rem 2rem;
+  }
+  .messages-chat-input > textarea {
+    min-height: 5rem;
+  }
+
+  .messages-chat-message-sent,
+  .messages-chat-message-mobile {
+    display: flex;
+  }
+  .messages-chat-message-sent {
+    align-self: flex-end;
+  }
+  .messages-chat-message-sent > p {
+    background-color: #a0d2e7;
+  }
+  .messages-chat-message-sent > span {
+    align-self: flex-start;
+  }
+  .messages-chat-message-mobile {
+    align-self: flex-start;
+  }
+
+  .messages-chat-day {
+    display: flex;
+    align-items: center;
+  }
+  .messages-chat-day::before,
+  .messages-chat-day::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background-color: var(--border-color);
+  }
+  .messages-chat-day > span {
+    font-size: 0.75rem;
+    color: #000d50;
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 0.2rem 0.6rem;
+  }
+  .messages-chat-attachment,
+  .messages-chat-recommendation {
+    display: none;
+  }
+}

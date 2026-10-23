@@ -3,19 +3,52 @@ import type { Conversation } from "./messagesData";
 
 type MessagesChatProps = {
   conversation: Conversation;
+  onBack: () => void;
+  onViewDetails: () => void;
 };
 
-function MessagesChat({ conversation }: MessagesChatProps) {
+function MessagesChat({
+  conversation,
+  onBack,
+  onViewDetails,
+}: MessagesChatProps) {
   return (
     <section className="messages-chat" aria-label="Conversation">
       <header className="messages-chat-header">
+        <button
+          type="button"
+          className="messages-chat-back"
+          aria-label="Back to conversations"
+          onClick={onBack}
+        >
+          <i className="bi bi-chevron-left" aria-hidden="true"></i>
+        </button>
         <img src={conversation.image} alt="" />
-        <h2>{conversation.name}</h2>
+        <div className="messages-chat-person">
+          <h2>{conversation.name}</h2>
+          <button type="button" onClick={onViewDetails}>
+            View Details
+          </button>
+        </div>
       </header>
 
       <div className="messages-chat-body">
+        <div className="messages-chat-day">
+          <span>Tuesday</span>
+        </div>
         <div className="messages-chat-message messages-chat-message-received">
           <p>Lorem ipsum dolor sit amet consectetur.</p>
+          <span>4:23 PM</span>
+        </div>
+        <div className="messages-chat-message messages-chat-message-sent">
+          <p>Lorem ipsum dolor sit amet consectetur.</p>
+          <span>4:23 PM</span>
+        </div>
+
+        <div className="messages-chat-message messages-chat-message-mobile">
+          <p>
+            Lorem ipsum dolor sit amet consectetur. Faucibus id condimentum.
+          </p>
           <span>4:23 PM</span>
         </div>
         <div className="messages-chat-recommendation">
@@ -44,6 +77,10 @@ function MessagesChat({ conversation }: MessagesChatProps) {
             <strong>Session Booked</strong> for 3/1/2025 3:30 to 4:30 pm EST
           </p>
           <span>4:28 PM</span>
+        </div>
+
+        <div className="messages-chat-day">
+          <span>Yesterday</span>
         </div>
 
         <div className="messages-chat-event">

@@ -11,6 +11,7 @@ import MessagesAdvisor from "../components/messages/MessagesAdvisor";
 function Messages() {
   const [selectedConversationId, setSelectedConversationId] =
     useState("jeremy");
+  const [mobileView, setMobileView] = useState("list");
 
   const selectedConversation = initialConversations.find(
     (conversation) => conversation.id === selectedConversationId,
@@ -23,7 +24,7 @@ function Messages() {
       <div className="messages-layout">
         <EventsSideBar />
 
-        <main className="messages-content">
+        <main className={`messages-content messages-view-${mobileView}`}>
           <div className="messages-main">
             <h1>Messages</h1>
 
@@ -31,18 +32,27 @@ function Messages() {
               <MessagesList
                 conversations={initialConversations}
                 selectedConversationId={selectedConversationId}
-                onSelectConversation={setSelectedConversationId}
+                onSelectConversation={(id) => {
+                  setSelectedConversationId(id);
+                  setMobileView("chat");
+                }}
               />
 
               {selectedConversation && (
                 <MessagesChat
                   key={selectedConversation.id}
                   conversation={selectedConversation}
+                  onBack={() => setMobileView("list")}
+                  onViewDetails={() => setMobileView("advisor")}
                 />
               )}
             </div>
           </div>
-          <MessagesAdvisor />
+          <MessagesAdvisor
+            onBack={() => setMobileView("chat")}
+            status="in-progress"
+            showRecommendation={false}
+          />
         </main>
       </div>
 

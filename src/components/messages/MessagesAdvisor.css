@@ -49,12 +49,20 @@
 .messages-advisor-time-heading > h3 {
   font-size: 0.9rem;
 }
-.messages-advisor-time-heading > i {
+.messages-advisor-time-heading > button {
   position: absolute;
   top: 50%;
-  right: 0.8rem;
+  right: 0.4rem;
   transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 0.75rem;
+  color: #000d50;
+  background-color: transparent;
+  border: none;
+  padding: 0.4rem;
+  cursor: pointer;
 }
 .messages-advisor-time-used {
   display: flex;
@@ -163,8 +171,16 @@
 .messages-advisor-section-heading > h3 {
   font-size: 0.9rem;
 }
-.messages-advisor-section-heading > i {
+.messages-advisor-section-heading > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 0.75rem;
+  color: #000d50;
+  background-color: transparent;
+  border: none;
+  padding: 0.4rem;
+  cursor: pointer;
 }
 .messages-advisor-files {
   display: flex;
@@ -214,4 +230,124 @@
 .messages-advisor-actions small {
   font-size: 0.75rem;
   color: #858484;
+}
+.messages-advisor-session > .messages-advisor-session-menu {
+  position: absolute;
+  top: 1.4rem;
+  right: 0.5rem;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.6rem;
+}
+.messages-advisor-session-menu > button {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: #000d50;
+  background-color: transparent;
+  border: none;
+}
+
+.messages-advisor-empty-time {
+  max-width: 18rem;
+  margin-top: 0.5rem;
+}
+
+.messages-advisor-empty {
+  font-size: 0.75rem;
+  color: #858484;
+}
+
+.messages-advisor-recommendation {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.messages-advisor-recommendation > h3 {
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+.messages-advisor-offering {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+}
+.messages-advisor-offering > h4 {
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+.messages-advisor-offering > p {
+  font-size: 0.9rem;
+  color: #858484;
+}
+.messages-advisor-offering > p > span {
+  color: #6b9fff;
+}
+.messages-advisor-offering-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+.messages-advisor-offering-bottom > .primary-button {
+  font-size: 0.9rem;
+  padding: 0.6rem 0.8rem;
+}
+.messages-advisor-offering-bottom > span {
+  font-size: 0.75rem;
+  color: #858484;
+}
+
+@media (max-width: 767px) {
+  .messages-advisor-profile {
+    gap: 0.7rem;
+  }
+  .messages-advisor-profile > img {
+    height: 4rem;
+    width: 4rem;
+  }
+  .messages-advisor-time-used {
+    color: #858484;
+    background-color: #f8f8f8;
+  }
+  .messages-advisor-time-entry {
+    padding: 1rem;
+  }
+  .messages-advisor-schedule {
+    width: 75%;
+    align-self: center;
+  }
+  .messages-advisor-section {
+    gap: 1rem;
+    padding-top: 2rem;
+  }
+  .messages-advisor-actions {
+    gap: 1.5rem;
+    padding-top: 2rem;
+  }
+  .messages-advisor-actions > button:last-child {
+    order: -1;
+  }
+
+  .messages-advisor-files {
+    max-height: 8rem;
+    overflow-y: auto;
+  }
+  .messages-advisor-files > button {
+    flex-shrink: 0;
+  }
+
+  .messages-advisor-new > .messages-advisor-section {
+    margin-bottom: 10rem;
+  }
 }
