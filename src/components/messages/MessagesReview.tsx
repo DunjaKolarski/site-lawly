@@ -1,6 +1,7 @@
 import "./MessagesReview.css";
 import cynthia from "../../assets/profile2.png";
 import { useState } from "react";
+import EventsHeader from "../events/EventsHeader";
 
 const reviewAreas = [
   {
@@ -32,6 +33,10 @@ function MessagesReview() {
 
   return (
     <div className="messages-review">
+      <div className="messages-review-mobile-header">
+        <EventsHeader />
+      </div>
+
       <header className="messages-review-header">
         <img src={cynthia} alt="" />
         <h2 id="messages-review-title">Leave a Review for Cynthia</h2>

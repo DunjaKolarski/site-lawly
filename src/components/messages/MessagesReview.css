@@ -164,7 +164,7 @@
 }
 .messages-review-area > h4 {
   font-size: 0.9rem;
-  font-weight: normal;
+  font-weight: bold;
 }
 .messages-review-area > .messages-review-stars > button {
   font-size: 1.2rem;
@@ -200,6 +200,10 @@
   align-items: center;
   gap: 0.5rem;
   font-size: 0.9rem;
+  font-weight: bold;
+}
+.messages-review-field > label > span {
+  font-weight: normal;
 }
 .messages-review-field > label > span,
 .messages-review-field > p {
@@ -230,4 +234,40 @@
 .messages-review-field > textarea::placeholder {
   font-weight: normal;
   color: #858484;
+}
+
+.messages-review-mobile-header {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .messages-review-dialog {
+    height: 100%;
+    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+  }
+  .messages-review-mobile-header {
+    display: block;
+  }
+  .messages-review-header {
+    justify-content: flex-start;
+    padding: 1.5rem 3rem 1.5rem 1rem;
+  }
+  .messages-review-content {
+    padding: 0 1rem 2rem;
+  }
+  .messages-review-areas {
+    width: 100%;
+  }
+  .messages-review-actions {
+    gap: 0.7rem;
+    padding: 1rem;
+  }
+  .messages-review-area > h4 {
+    font-size: 1rem;
+  }
 }
