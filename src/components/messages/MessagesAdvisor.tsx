@@ -9,6 +9,7 @@ type MessagesAdvisorProps = {
   status: AdvisorStatus;
   showRecommendation?: boolean;
   onReview: () => void;
+  onSchedule: () => void;
 };
 
 function MessagesAdvisor({
@@ -16,6 +17,7 @@ function MessagesAdvisor({
   status,
   showRecommendation = false,
   onReview,
+  onSchedule,
 }: MessagesAdvisorProps) {
   const [filesOpen, setFilesOpen] = useState(status === "in-progress");
   const [timeLogOpen, setTimeLogOpen] = useState(status === "in-progress");
@@ -112,6 +114,7 @@ function MessagesAdvisor({
           <button
             type="button"
             className="primary-button messages-advisor-schedule"
+            onClick={onSchedule}
           >
             <i className="bi bi-calendar3" aria-hidden="true"></i>
             Schedule session

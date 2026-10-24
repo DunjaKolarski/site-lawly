@@ -8,6 +8,7 @@ import { initialConversations } from "../components/messages/messagesData";
 import MessagesChat from "../components/messages/MessagesChat";
 import MessagesAdvisor from "../components/messages/MessagesAdvisor";
 import MessagesReview from "../components/messages/MessagesReview";
+import ScheduleSession from "../components/schedule/ScheduleSession";
 
 function Messages() {
   const [selectedConversationId, setSelectedConversationId] =
@@ -18,6 +19,8 @@ function Messages() {
     (conversation) => conversation.id === selectedConversationId,
   );
   const reviewDialogRef = useRef<HTMLDialogElement>(null);
+
+  const scheduleDialogRef = useRef<HTMLDialogElement>(null);
 
   return (
     <>
@@ -56,6 +59,7 @@ function Messages() {
             status="in-progress"
             showRecommendation={false}
             onReview={() => reviewDialogRef.current?.showModal()}
+            onSchedule={() => scheduleDialogRef.current?.showModal()}
           />
         </main>
       </div>
@@ -65,6 +69,14 @@ function Messages() {
         aria-labelledby="messages-review-title"
       >
         <MessagesReview />
+      </dialog>
+
+      <dialog
+        ref={scheduleDialogRef}
+        className="schedule-session-dialog"
+        aria-labelledby="schedule-session-title"
+      >
+        <ScheduleSession />
       </dialog>
       <Footer />
     </>

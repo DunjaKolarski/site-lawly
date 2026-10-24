@@ -1,0 +1,244 @@
+.schedule-session-dialog {
+  width: 65rem;
+  max-width: calc(100% - 2rem);
+  max-height: calc(100% - 2rem);
+  margin: auto;
+  padding: 0;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  overflow-y: auto;
+}
+.schedule-session-dialog::backdrop {
+  background-color: rgb(0 0 0 / 20%);
+}
+.schedule-session {
+  width: 100%;
+  color: #000d50;
+}
+.schedule-session-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 1.5rem;
+}
+.schedule-session-header > h2 {
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+.schedule-session-header > form > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  color: #000d50;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.schedule-session-content {
+  display: flex;
+  gap: 3rem;
+  padding: 3rem;
+}
+.schedule-session-overview,
+.schedule-session-calendar {
+  width: 50%;
+  min-width: 0;
+}
+.schedule-session-overview > h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.schedule-session-overview > p,
+.schedule-session-calendar > p {
+  font-size: 0.9rem;
+}
+.schedule-session-overview > p > span,
+.schedule-session-calendar > p > span {
+  color: #6b9fff;
+}
+.schedule-session-overview > p > span {
+  margin-left: 0.5rem;
+}
+.schedule-session-type {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 3rem;
+}
+.schedule-session-type > h4 {
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+.schedule-session-type-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.schedule-session-type-options > button {
+  font-size: 0.75rem;
+  font-weight: normal;
+  border-radius: 0.5rem;
+  padding: 0.7rem;
+  cursor: pointer;
+}
+.schedule-session-type-options > button:not(.primary-button) {
+  color: #000d50;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+}
+
+.schedule-session-duration {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+.schedule-session-duration > h4 {
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+.schedule-session-duration-options {
+  display: flex;
+  background-color: #eff4f7;
+  border-radius: 0.5rem;
+}
+.schedule-session-duration-options > button {
+  flex: 1;
+  font-size: 0.75rem;
+  font-weight: normal;
+  padding: 0.7rem 0.4rem;
+  cursor: pointer;
+}
+.schedule-session-duration-options > button:not(.primary-button) {
+  color: #000d50;
+  background-color: transparent;
+  border: none;
+}
+.schedule-session-duration-options > button:disabled {
+  color: #858484;
+  cursor: default;
+}
+.schedule-session-dates {
+  max-height: 25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow-y: auto;
+  margin-top: 2rem;
+  scrollbar-width: none;
+  cursor: grab;
+}
+.schedule-session-dates.schedule-session-dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+.schedule-session-dates::-webkit-scrollbar {
+  display: none;
+}
+.schedule-session-day {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.schedule-session-day > h4 {
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: #858484;
+}
+.schedule-session-times {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+.schedule-session-times > button {
+  width: 100%;
+  min-width: 0;
+  font-size: 0.75rem;
+  font-weight: normal;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.7rem 0.3rem;
+  cursor: pointer;
+}
+.schedule-session-times > button:not(.primary-button) {
+  color: #575757;
+  background-color: #dfeffd;
+}
+.schedule-session-summary {
+  width: 100%;
+  max-width: 22rem;
+  display: flex;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+.schedule-session-summary-day {
+  width: 28%;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #cf7517;
+  background-color: #eff4f7;
+  border-right: 1px solid var(--border-color);
+  padding: 0.8rem 0.5rem;
+}
+.schedule-session-summary-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.8rem;
+}
+.schedule-session-summary-info > p {
+  font-size: 0.9rem;
+}
+.schedule-session-summary-info > strong {
+  font-size: 0.75rem;
+}
+.schedule-session-message {
+  width: 100%;
+  max-width: 22rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-top: 2rem;
+}
+.schedule-session-message > label {
+  font-size: 0.9rem;
+}
+.schedule-session-message > textarea {
+  min-height: 6rem;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  color: #000d50;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+  resize: vertical;
+}
+.schedule-session-actions {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid var(--border-color);
+  padding: 1rem 1.5rem;
+}
+.schedule-session-actions > .primary-button {
+  font-size: 0.9rem;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+}
+.schedule-session-actions > .primary-button:disabled {
+  color: #575757;
+  background-color: #d5d5d5;
+  cursor: default;
+}
