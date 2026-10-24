@@ -1,0 +1,154 @@
+.messages-session {
+  width: 100%;
+}
+.messages-session-toggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: #000d50;
+  background-color: #fff0d8;
+  border: none;
+  padding: 1rem 1.5rem;
+  text-align: left;
+  cursor: pointer;
+}
+.messages-session-toggle > i {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+}
+.messages-session-toggle-open {
+  background-color: #ffffff;
+}
+.messages-session-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 1.5rem 1.5rem;
+}
+.messages-session-details > p {
+  font-size: 0.75rem;
+  color: #858484;
+}
+.messages-session-card {
+  background-color: #eff4f7;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+.messages-session-card > p {
+  font-size: 0.9rem;
+  color: #000d50;
+}
+.messages-session-card > .messages-session-previous {
+  font-size: 0.75rem;
+  color: #d9534f;
+  margin-top: 0.4rem;
+}
+.messages-session-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.messages-session-secondary {
+  font-size: 0.9rem;
+  color: #575757;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.8rem;
+}
+.messages-session-actions > .primary-button {
+  font-size: 0.9rem;
+  padding: 0.6rem 0.8rem;
+}
+.messages-session-card > .messages-session-notice {
+  margin-bottom: 1rem;
+}
+.messages-session-date-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.messages-session-date > p {
+  font-size: 0.9rem;
+  color: #000d50;
+}
+.messages-session-calendar {
+  width: 15rem;
+  flex-shrink: 0;
+  position: relative;
+}
+.messages-session-calendar-toggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #000d50;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.7rem;
+  cursor: pointer;
+}
+.messages-session-calendar-options {
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+}
+.messages-session-calendar-options > button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #000d50;
+  background-color: transparent;
+  border: none;
+  padding: 0.7rem;
+  text-align: left;
+}
+.messages-session-cancel-actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 0.5rem;
+}
+.messages-session-cancel-actions > .primary-button {
+  font-size: 0.9rem;
+  padding: 0.6rem 0.8rem;
+}
+
+@media (max-width: 767px) {
+  .messages-session-toggle {
+    padding: 1rem;
+  }
+  .messages-session-details {
+    padding: 0 1rem 1.5rem;
+  }
+  .messages-session-date-row {
+    flex-direction: column;
+  }
+  .messages-session-calendar {
+    max-width: 100%;
+  }
+  .messages-session-actions {
+    max-width: 13rem;
+  }
+  .messages-session-actions > .primary-button {
+    order: -1;
+  }
+  .messages-session-actions > button:first-child {
+    order: -2;
+  }
+}

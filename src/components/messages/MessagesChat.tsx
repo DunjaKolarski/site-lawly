@@ -1,5 +1,6 @@
 import "./MessagesChat.css";
 import type { Conversation } from "./messagesData";
+import MessagesSession from "./MessagesSession";
 
 type MessagesChatProps = {
   conversation: Conversation;
@@ -31,6 +32,8 @@ function MessagesChat({
           </button>
         </div>
       </header>
+
+      <MessagesSession />
 
       <div className="messages-chat-body">
         <div className="messages-chat-day">
