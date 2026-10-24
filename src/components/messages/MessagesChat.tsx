@@ -6,12 +6,14 @@ type MessagesChatProps = {
   conversation: Conversation;
   onBack: () => void;
   onViewDetails: () => void;
+  onReview: () => void;
 };
 
 function MessagesChat({
   conversation,
   onBack,
   onViewDetails,
+  onReview,
 }: MessagesChatProps) {
   return (
     <section className="messages-chat" aria-label="Conversation">
@@ -112,7 +114,7 @@ function MessagesChat({
           <div className="messages-chat-review-content">
             <h3>Rate your experience with Cynthia</h3>
 
-            <button type="button" className="primary-button">
+            <button type="button" className="primary-button" onClick={onReview}>
               Leave a review
             </button>
           </div>

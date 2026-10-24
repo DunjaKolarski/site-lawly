@@ -1,0 +1,233 @@
+.messages-review-dialog {
+  width: 32rem;
+  max-width: calc(100% - 2rem);
+  max-height: calc(100% - 2rem);
+  margin: auto;
+  padding: 0;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  overflow-y: auto;
+}
+.messages-review-dialog::backdrop {
+  background-color: rgb(0 0 0 / 20%);
+}
+
+.messages-review {
+  width: 100%;
+  color: #000d50;
+}
+.messages-review-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+  position: relative;
+  padding: 1.5rem 3rem;
+}
+.messages-review-header > img {
+  height: 2rem;
+  width: 2rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.messages-review-header > h2 {
+  font-size: 0.9rem;
+}
+.messages-review-header > form {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+}
+.messages-review-header > form > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  color: #000d50;
+  background-color: transparent;
+  border: none;
+  padding: 0.4rem;
+  cursor: pointer;
+}
+.messages-review-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0 2rem 2rem;
+}
+.messages-review-step {
+  font-size: 0.75rem;
+  color: #6b9fff;
+}
+.messages-review-content h3 {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.messages-review-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+}
+.messages-review-stars {
+  display: flex;
+  gap: 0.3rem;
+}
+.messages-review-stars > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  color: #d3d3d3;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.messages-review-stars > .messages-review-star-selected {
+  color: #ff9800;
+}
+.messages-review-rating > p {
+  font-size: 0.75rem;
+  color: #858484;
+}
+
+.messages-review-anonymous {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #eff4f7;
+  padding: 1rem;
+  cursor: pointer;
+}
+.messages-review-anonymous > input {
+  appearance: none;
+  height: 1rem;
+  width: 1rem;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+.messages-review-anonymous > input:checked::after {
+  content: "✓";
+  font-size: 0.9rem;
+  color: #000d50;
+}
+.messages-review-anonymous > input:focus-visible {
+  outline: 2px solid #6b9fff;
+  outline-offset: 2px;
+}
+.messages-review-anonymous > span {
+  font-size: 0.75rem;
+  color: #858484;
+}
+.messages-review-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+}
+.messages-review-submit-now {
+  font-size: 0.75rem;
+  color: #858484;
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.messages-review-actions > .primary-button {
+  font-size: 0.9rem;
+  padding: 0.6rem 1rem;
+}
+
+.messages-review-areas {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.messages-review-area {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.messages-review-area > h4 {
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+.messages-review-area > .messages-review-stars > button {
+  font-size: 1.2rem;
+}
+.messages-review-area > p {
+  font-size: 0.75rem;
+  color: #858484;
+}
+.messages-review-back {
+  margin-right: auto;
+  font-size: 0.9rem;
+  color: #575757;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.8rem;
+  cursor: pointer;
+}
+
+.messages-review-fields {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.messages-review-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.messages-review-field > label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+.messages-review-field > label > span,
+.messages-review-field > p {
+  font-size: 0.75rem;
+  color: #858484;
+}
+.messages-review-field > input,
+.messages-review-field > textarea {
+  width: 100%;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  color: #000d50;
+  font-weight: bold;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+}
+.messages-review-field > input:focus,
+.messages-review-field > textarea:focus {
+  outline: none;
+}
+.messages-review-field > textarea {
+  min-height: 10rem;
+  resize: vertical;
+}
+.messages-review-field > input::placeholder,
+.messages-review-field > textarea::placeholder {
+  font-weight: normal;
+  color: #858484;
+}

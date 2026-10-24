@@ -1,5 +1,5 @@
 import "./Messages.css";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import EventsHeader from "../components/events/EventsHeader";
 import EventsSideBar from "../components/events/EventsSideBar";
 import Footer from "../components/layout/Footer";
@@ -7,6 +7,7 @@ import MessagesList from "../components/messages/MessagesList";
 import { initialConversations } from "../components/messages/messagesData";
 import MessagesChat from "../components/messages/MessagesChat";
 import MessagesAdvisor from "../components/messages/MessagesAdvisor";
+import MessagesReview from "../components/messages/MessagesReview";
 
 function Messages() {
   const [selectedConversationId, setSelectedConversationId] =
@@ -16,6 +17,7 @@ function Messages() {
   const selectedConversation = initialConversations.find(
     (conversation) => conversation.id === selectedConversationId,
   );
+  const reviewDialogRef = useRef<HTMLDialogElement>(null);
 
   return (
     <>
@@ -44,6 +46,7 @@ function Messages() {
                   conversation={selectedConversation}
                   onBack={() => setMobileView("list")}
                   onViewDetails={() => setMobileView("advisor")}
+                  onReview={() => reviewDialogRef.current?.showModal()}
                 />
               )}
             </div>
@@ -52,10 +55,17 @@ function Messages() {
             onBack={() => setMobileView("chat")}
             status="in-progress"
             showRecommendation={false}
+            onReview={() => reviewDialogRef.current?.showModal()}
           />
         </main>
       </div>
-
+      <dialog
+        ref={reviewDialogRef}
+        className="messages-review-dialog"
+        aria-labelledby="messages-review-title"
+      >
+        <MessagesReview />
+      </dialog>
       <Footer />
     </>
   );

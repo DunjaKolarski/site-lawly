@@ -8,12 +8,14 @@ type MessagesAdvisorProps = {
   onBack: () => void;
   status: AdvisorStatus;
   showRecommendation?: boolean;
+  onReview: () => void;
 };
 
 function MessagesAdvisor({
   onBack,
   status,
   showRecommendation = false,
+  onReview,
 }: MessagesAdvisorProps) {
   const [filesOpen, setFilesOpen] = useState(status === "in-progress");
   const [timeLogOpen, setTimeLogOpen] = useState(status === "in-progress");
@@ -253,7 +255,7 @@ function MessagesAdvisor({
             <span>View order details</span>
           </button>
 
-          <button type="button">
+          <button type="button" onClick={onReview}>
             <i className="bi bi-star" aria-hidden="true"></i>
             <span>
               Leave a review
