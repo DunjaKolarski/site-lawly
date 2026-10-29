@@ -8,6 +8,10 @@
   border: 1px solid var(--border-color);
   border-radius: 0.5rem;
   overflow-y: auto;
+  scrollbar-width: none;
+}
+.schedule-session-dialog::-webkit-scrollbar {
+  display: none;
 }
 .schedule-session-dialog::backdrop {
   background-color: rgb(0 0 0 / 20%);
@@ -241,4 +245,264 @@
   color: #575757;
   background-color: #d5d5d5;
   cursor: default;
+}
+
+.schedule-checkout-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+  border-top: 1px solid var(--border-color);
+  padding: 1rem 1.5rem;
+}
+.schedule-checkout-footer > p {
+  font-size: 0.75rem;
+}
+.schedule-checkout-footer > .primary-button {
+  flex-shrink: 0;
+  font-size: 0.9rem;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+}
+.schedule-checkout-footer > .primary-button:disabled {
+  color: #575757;
+  background-color: #d5d5d5;
+  cursor: default;
+}
+
+.schedule-session .booking-confirmation-close,
+.schedule-session .booking-confirmation-back {
+  display: none;
+}
+
+.schedule-session .booking-confirmation {
+  padding: 3rem 5rem;
+}
+.schedule-session .booking-confirmation-heading {
+  padding: 0;
+  margin-bottom: 3rem;
+}
+.schedule-session .booking-confirmation-details {
+  width: 45%;
+  align-items: flex-start;
+  padding: 0 3rem 0 0;
+}
+.schedule-session .booking-confirmation-preparation {
+  width: 55%;
+  padding: 0 0 0 3rem;
+}
+.schedule-session .booking-confirmation-calendar {
+  align-self: flex-start;
+  margin-top: 0.7rem;
+  margin-right: 0;
+}
+.schedule-session .booking-confirmation-message-form {
+  margin-top: 3rem;
+}
+.schedule-session .booking-confirmation-reminder {
+  max-width: none;
+  text-align: center;
+}
+.schedule-session .booking-confirmation-phone-form > .primary-button {
+  width: 100%;
+  align-self: stretch;
+}
+.schedule-session .booking-confirmation-later {
+  align-self: center;
+}
+.schedule-session .booking-checkout {
+  gap: 3rem;
+  padding: 3rem;
+}
+.schedule-session .booking-checkout-overview {
+  width: 50%;
+  justify-content: flex-start;
+  border-right: none;
+  padding: 0;
+}
+.schedule-session .booking-checkout-payment {
+  width: 50%;
+  padding: 0;
+}
+.schedule-session .booking-checkout-price {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.schedule-selection-description {
+  color: #858484;
+}
+.schedule-selection-session-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 3rem;
+}
+.schedule-selection-session-heading > h4 {
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+.schedule-selection-session-heading > button {
+  color: #6b9fff;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.schedule-selection-session-heading + .schedule-session-summary {
+  margin-top: 0.7rem;
+}
+.schedule-selection {
+  width: 50%;
+  min-width: 0;
+}
+.schedule-selection > h4 {
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+.schedule-selection-hours {
+  max-height: 25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow-y: auto;
+  scrollbar-width: none;
+  margin-top: 2rem;
+  cursor: grab;
+  user-select: none;
+}
+.schedule-selection-hours::-webkit-scrollbar {
+  display: none;
+}
+.schedule-selection-hours .schedule-selection-option {
+  flex-shrink: 0;
+  cursor: inherit;
+}
+.schedule-selection-hours.schedule-selection-dragging {
+  cursor: grabbing;
+}
+.schedule-selection-option {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.9rem;
+  padding: 1rem 0;
+  cursor: pointer;
+}
+.schedule-selection-option > input:disabled {
+  cursor: default;
+}
+.schedule-selection-option > input:disabled ~ span {
+  color: #858484;
+}
+.schedule-selection-saving {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: #6b9fff;
+  background-color: #dfeffd;
+  border-radius: 0.4rem;
+  padding: 0.4rem 0.6rem;
+}
+.schedule-selection-price {
+  margin-left: auto;
+  color: #858484;
+}
+.schedule-selection-saving + .schedule-selection-price {
+  margin-left: 0;
+}
+
+.schedule-selection-tabs {
+  display: flex;
+  background-color: #eff4f7;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+.schedule-selection-tabs > button {
+  flex: 1;
+  font-size: 0.9rem;
+  font-weight: normal;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+}
+.schedule-selection-tabs > button:not(.primary-button) {
+  color: #000d50;
+  background-color: transparent;
+  border: none;
+}
+.schedule-selection-packages {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.schedule-selection-package-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.schedule-selection-package-info > small {
+  font-size: 0.75rem;
+  color: #858484;
+}
+
+.schedule-selection-tiers {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0.5rem 0 1rem 2rem;
+}
+.schedule-selection-tier {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+.schedule-selection-tier-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.schedule-selection-tier-info > span > small {
+  font-size: 0.75rem;
+  font-weight: normal;
+}
+.schedule-selection-tier-prices {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem;
+}
+.schedule-selection-tier-prices > del {
+  color: #858484;
+}
+.schedule-selection-tier-saving {
+  color: #6b9fff;
+}
+
+.schedule-selection-option > input,
+.schedule-selection-tier > input {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  appearance: none;
+  background-color: #eff4f7;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  margin: 0;
+  cursor: pointer;
+}
+.schedule-selection-option > input:checked,
+.schedule-selection-tier > input:checked {
+  background-image: radial-gradient(circle, #6b9fff 0 45%, transparent 50%);
+}
+.schedule-selection-option > input:focus-visible,
+.schedule-selection-tier > input:focus-visible {
+  outline: 2px solid #6b9fff;
+  outline-offset: 2px;
+}
+
+.schedule-selection-hours .schedule-selection-option > input + span {
+  font-weight: bold;
 }

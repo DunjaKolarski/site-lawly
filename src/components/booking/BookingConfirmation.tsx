@@ -11,6 +11,7 @@ type BookingConfirmationProps = {
     time: string;
   };
   onViewProfile: () => void;
+  scheduleMode?: boolean;
 };
 
 function BookingConfirmation({
@@ -18,6 +19,7 @@ function BookingConfirmation({
   sessionDuration = 15,
   selectedSlot,
   onViewProfile,
+  scheduleMode = false,
 }: BookingConfirmationProps) {
   const [calendarOpen, setCalendarOpen] = useState(false);
   const [showReminder, setShowReminder] = useState(true);
@@ -25,9 +27,8 @@ function BookingConfirmation({
   const [country, setCountry] = useState("");
   const [message, setMessage] = useState("");
   const [reminderNotice, setReminderNotice] = useState("");
-  const isConsultingBooking = bookingType !== "strategy";
+  const isConsultingBooking = bookingType !== "strategy" || scheduleMode;
   const [messageNotice, setMessageNotice] = useState("");
-  const [calendarNotice, setCalendarNotice] = useState("");
 
   const verificationDialogRef = useRef<HTMLDialogElement>(null);
   const [verificationCode, setVerificationCode] = useState("");
@@ -136,7 +137,9 @@ function BookingConfirmation({
       }}
     >
       <label htmlFor="booking-message">
-        {bookingType === "package" ? (
+        {scheduleMode ? (
+          "Let Cynthia know what you plan to discuss."
+        ) : bookingType === "package" ? (
           <>
             <span className="booking-confirmation-message-label-desktop">
               What would you like to discuss?
@@ -152,7 +155,11 @@ function BookingConfirmation({
 
       <textarea
         id="booking-message"
-        placeholder="Write Cynthia a message."
+        placeholder={
+          scheduleMode
+            ? "Hi Cynthia, I'm looking forward to our discussion."
+            : "Write Cynthia a message."
+        }
         value={message}
         onChange={(event) => {
           setMessage(event.target.value);
@@ -212,7 +219,7 @@ function BookingConfirmation({
       </button>
 
       <div className="booking-confirmation-details">
-        {bookingType === "strategy" && <h1>Your session was scheduled</h1>}
+        {!isConsultingBooking && <h1>Your session was scheduled</h1>}
         {bookingType === "hourly" && (
           <h2 className="booking-confirmation-session-label">
             Session Details
@@ -224,7 +231,11 @@ function BookingConfirmation({
           </div>
 
           <div className="booking-confirmation-session-info">
-            <p>{sessionDuration}-Minute Consulting Session with Cynthia</p>
+            <p>
+              {sessionDuration}-Minute{" "}
+              {bookingType === "strategy" ? "Strategy" : "Consulting"} Session
+              with Cynthia
+            </p>
             <strong>
               {getSessionTimeRange(selectedSlot.time, sessionDuration)}
             </strong>
@@ -256,9 +267,6 @@ function BookingConfirmation({
               <button
                 type="button"
                 onClick={() => {
-                  setCalendarNotice(
-                    "Calendar integration is not connected in this demo.",
-                  );
                   setCalendarOpen(false);
                 }}
               >
@@ -269,9 +277,6 @@ function BookingConfirmation({
               <button
                 type="button"
                 onClick={() => {
-                  setCalendarNotice(
-                    "Calendar integration is not connected in this demo.",
-                  );
                   setCalendarOpen(false);
                 }}
               >
@@ -282,18 +287,14 @@ function BookingConfirmation({
           )}
         </div>
 
-        <p className="booking-confirmation-notice" role="status">
-          {calendarNotice}
-        </p>
-
-        {bookingType === "strategy" && reminderContent}
+        {!isConsultingBooking && reminderContent}
         {isConsultingBooking && messageContent}
       </div>
 
       <div className="booking-confirmation-preparation">
         {isConsultingBooking && reminderContent}
 
-        {bookingType === "strategy" && (
+        {!isConsultingBooking && (
           <>
             <h2>Make the most out of your strategy call with Cynthia</h2>
 
@@ -324,9 +325,9 @@ function BookingConfirmation({
           </>
         )}
 
-        {bookingType === "strategy" && messageContent}
+        {!isConsultingBooking && messageContent}
 
-        {bookingType === "strategy" && (
+        {!isConsultingBooking && (
           <div className="booking-confirmation-help">
             <h2>Looking for help right away?</h2>
 

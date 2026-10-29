@@ -76,7 +76,7 @@ function Messages() {
         className="schedule-session-dialog"
         aria-labelledby="schedule-session-title"
       >
-        <ScheduleSession />
+        <ScheduleSession onClose={() => scheduleDialogRef.current?.close()} />
       </dialog>
       <Footer />
     </>
