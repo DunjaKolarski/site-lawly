@@ -7,6 +7,8 @@ import BookingCheckout from "../booking/BookingCheckout";
 import { bookingPackage } from "../booking/bookingPackage";
 import BookingConfirmation from "../booking/BookingConfirmation";
 import ScheduleSelection from "./ScheduleSelection";
+import EventsHeader from "../events/EventsHeader";
+import logo from "../../assets/logo.png";
 
 type ScheduleSessionProps = {
   onClose: () => void;
@@ -43,7 +45,26 @@ function ScheduleSession({ onClose }: ScheduleSessionProps) {
 
   return (
     <div className="schedule-session">
+      <div className="schedule-session-mobile-header">
+        <EventsHeader />
+      </div>
       <header className="schedule-session-header">
+        <button
+          type="button"
+          className="schedule-session-mobile-back"
+          aria-label="Go back"
+          onClick={() => {
+            if (step === "times" || step === "confirmation") {
+              onClose();
+            } else if (step === "selection") {
+              setStep("times");
+            } else {
+              setStep(sessionType === "strategy" ? "times" : "selection");
+            }
+          }}
+        >
+          <i className="bi bi-chevron-left" aria-hidden="true"></i>
+        </button>
         <h2 id="schedule-session-title">Schedule Session</h2>
 
         <form method="dialog">
@@ -56,6 +77,10 @@ function ScheduleSession({ onClose }: ScheduleSessionProps) {
         <>
           <div className="schedule-session-content">
             <div className="schedule-session-overview">
+              <div className="schedule-session-powered">
+                <span>Powered by</span>
+                <img src={logo} alt="Lawly" />
+              </div>
               <h3>Schedule a session with Cynthia</h3>
               <p>
                 Time Balance <span>0h 0m</span>

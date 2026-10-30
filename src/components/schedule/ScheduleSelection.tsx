@@ -42,7 +42,7 @@ function ScheduleSelection({
 
   return (
     <>
-      <div className="schedule-session-content">
+      <div className="schedule-session-content schedule-selection-content">
         <div className="schedule-session-overview">
           <h3>Add time to your balance</h3>
           <p className="schedule-selection-description">
@@ -102,7 +102,13 @@ function ScheduleSelection({
               aria-label="Consulting hours"
               tabIndex={0}
               onPointerDown={(event) => {
-                if (event.pointerType !== "mouse" || event.button !== 0) return;
+                if (
+                  event.pointerType !== "mouse" ||
+                  event.button !== 0 ||
+                  window.innerWidth <= 767
+                ) {
+                  return;
+                }
 
                 drag.current = {
                   active: true,
@@ -285,7 +291,7 @@ function ScheduleSelection({
         </div>
       </div>
 
-      <div className="schedule-checkout-footer">
+      <div className="schedule-checkout-footer schedule-selection-footer">
         {purchaseType === "hourly" && (
           <p>You will be refunded for any unused hours.</p>
         )}

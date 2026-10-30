@@ -506,3 +506,239 @@
 .schedule-selection-hours .schedule-selection-option > input + span {
   font-weight: bold;
 }
+.schedule-session-mobile-header {
+  display: none;
+}
+.schedule-session-mobile-back,
+.schedule-session-powered {
+  display: none;
+}
+
+.booking-checkout-form > .schedule-checkout-mobile-submit,
+.schedule-checkout-mobile-refund,
+.schedule-checkout-mobile-name {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .schedule-session-dialog {
+    width: 100%;
+    max-width: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+  }
+  .schedule-session-mobile-header {
+    display: block;
+  }
+  .schedule-session-header {
+    padding: 1rem 1.5rem;
+  }
+  .schedule-session-content {
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 2rem 1.5rem;
+  }
+  .schedule-session-overview,
+  .schedule-session-calendar,
+  .schedule-selection {
+    width: 100%;
+  }
+  .schedule-session-overview > h3 {
+    margin-bottom: 1rem;
+  }
+  .schedule-session-type {
+    margin-top: 2rem;
+  }
+  .schedule-session-type-options {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .schedule-session-calendar > p {
+    display: none;
+  }
+  .schedule-session-duration {
+    margin-top: 0;
+  }
+  .schedule-session-times {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .schedule-session-dates {
+    cursor: auto;
+  }
+  .schedule-session-summary,
+  .schedule-session-message {
+    max-width: none;
+  }
+  .schedule-session-actions {
+    padding: 1rem 1.5rem;
+  }
+  .schedule-checkout-footer {
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+  }
+  .schedule-selection-hours {
+    max-height: none;
+    overflow-y: visible;
+    cursor: auto;
+    user-select: auto;
+  }
+  .schedule-selection-option {
+    gap: 0.7rem;
+  }
+  .schedule-selection-tiers {
+    padding-left: 1.5rem;
+  }
+  .schedule-session-header {
+    border-bottom: none;
+  }
+  .schedule-session-header > h2 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .schedule-session-mobile-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: #000d50;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  .schedule-session-powered {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .schedule-session-powered > img {
+    width: 3rem;
+    height: auto;
+    display: block;
+  }
+  .schedule-session-overview
+    > .schedule-session-powered
+    ~ .schedule-session-summary,
+  .schedule-session-message {
+    display: none;
+  }
+
+  .schedule-session .booking-checkout {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+  }
+  .schedule-session .booking-checkout-overview {
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 0 2rem;
+  }
+  .schedule-session .booking-checkout-payment {
+    width: 100%;
+    padding: 0;
+  }
+  .schedule-session .booking-checkout-price {
+    width: 100%;
+    max-width: none;
+    margin-top: 0;
+  }
+  .schedule-session .booking-checkout-back,
+  .schedule-session .booking-checkout-consultant,
+  .schedule-checkout-payment-footer {
+    display: none;
+  }
+  .schedule-checkout-mobile-name {
+    display: inline;
+  }
+  .schedule-session .booking-checkout-fee {
+    display: flex;
+  }
+  .schedule-session .booking-checkout-note {
+    display: block;
+  }
+  .schedule-session .schedule-checkout-mobile-submit {
+    display: block;
+    align-self: flex-end;
+    max-width: 100%;
+    margin-top: 0.7rem;
+  }
+  .schedule-checkout-mobile-refund {
+    display: block;
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  .schedule-session .booking-confirmation {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 2rem 1.5rem 3rem;
+  }
+  .schedule-session .booking-confirmation-heading {
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+  .schedule-session .booking-confirmation-heading > h1 {
+    font-size: 1.2rem;
+    text-align: left;
+  }
+  .schedule-session .booking-confirmation-details,
+  .schedule-session .booking-confirmation-preparation {
+    display: contents;
+    width: auto;
+    padding: 0;
+    border: none;
+  }
+  .schedule-session .booking-confirmation-session {
+    width: 100%;
+    max-width: none;
+    margin-top: 0;
+  }
+  .schedule-session .booking-confirmation-calendar {
+    align-self: flex-start;
+    margin-top: 0.7rem;
+    margin-right: 0;
+  }
+  .schedule-session .booking-confirmation-reminder {
+    width: 100%;
+    max-width: none;
+    margin-top: 2rem;
+    padding-top: 2rem;
+  }
+  .schedule-session .booking-confirmation-phone-form > .primary-button {
+    width: fit-content;
+    align-self: center;
+  }
+  .schedule-session .booking-confirmation-message-form {
+    width: 100%;
+    max-width: none;
+    margin-top: 2rem;
+    padding-top: 2rem;
+  }
+  .schedule-session .booking-confirmation-session-label {
+    display: none;
+  }
+
+  .schedule-selection-content .schedule-selection-session-heading,
+  .schedule-selection-content .schedule-session-summary,
+  .schedule-selection-footer > p {
+    display: none;
+  }
+  .schedule-selection-footer {
+    border-top: none;
+    padding: 1rem 1.5rem 3rem;
+  }
+  .schedule-selection-content .schedule-session-overview > h3,
+  .schedule-selection-content .schedule-selection-description,
+  .schedule-selection-content .schedule-selection > h4 {
+    text-align: center;
+  }
+}

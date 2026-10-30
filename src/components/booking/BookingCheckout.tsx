@@ -72,10 +72,17 @@ function BookingCheckout({
 
             <h1>
               {bookingType === "package"
-                ? selectedPackage.name
+                ? selectedPackage.id === "statement-review"
+                  ? `${selectedPackage.name} Package`
+                  : selectedPackage.name
                 : bookingType === "hourly"
                   ? "Hourly Consulting with"
                   : "15-Minute Strategy Session with"}
+              {showFooter && (
+                <span className="schedule-checkout-mobile-name">
+                  {bookingType === "package" ? " with Cynthia" : " Cynthia"}
+                </span>
+              )}
             </h1>
 
             <div className="booking-checkout-photo">
@@ -265,14 +272,22 @@ function BookingCheckout({
               />
             </div>
 
-            {!showFooter && (
-              <button
-                type="submit"
-                className="primary-button"
-                disabled={!onBook}
-              >
-                {submitLabel}
-              </button>
+            <button
+              type="submit"
+              className={
+                showFooter
+                  ? "primary-button schedule-checkout-mobile-submit"
+                  : "primary-button"
+              }
+              disabled={!onBook}
+            >
+              {submitLabel}
+            </button>
+
+            {showFooter && bookingType !== "strategy" && (
+              <p className="schedule-checkout-mobile-refund">
+                You will be refunded for any unused hours.
+              </p>
             )}
           </form>
 
@@ -296,7 +311,7 @@ function BookingCheckout({
       </section>
 
       {showFooter && (
-        <div className="schedule-checkout-footer">
+        <div className="schedule-checkout-footer schedule-checkout-payment-footer">
           <p>
             {bookingType === "strategy"
               ? "Your Strategy Session price of $25 will be credited to any future purchase from Cynthia."
