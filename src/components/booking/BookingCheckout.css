@@ -94,6 +94,8 @@
   width: 28%;
   flex-shrink: 0;
   display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
   justify-content: center;
   align-items: center;
   font-size: 0.9rem;
@@ -102,6 +104,9 @@
   background-color: #eff4f7;
   border-right: 1px solid var(--border-color);
   padding: 0.8rem 0.5rem;
+}
+.booking-checkout-session-day > span + span {
+  color: #000d50;
 }
 .booking-checkout-session-info {
   min-width: 0;

@@ -227,7 +227,19 @@ function BookingConfirmation({
         )}
         <div className="booking-confirmation-session">
           <div className="booking-confirmation-session-day">
-            <span>{selectedSlot.dayLabel}</span>
+            <span>{selectedSlot.dayLabel.split(" ")[0]}</span>
+            {selectedSlot.dayLabel.includes(" ") && (
+              <span>
+                {new Date(
+                  2000,
+                  Number(selectedSlot.dayLabel.split(" ")[1].split("/")[0]) - 1,
+                  Number(selectedSlot.dayLabel.split(" ")[1].split("/")[1]),
+                ).toLocaleDateString("en-US", {
+                  month: "short",
+                  day: "numeric",
+                })}
+              </span>
+            )}
           </div>
 
           <div className="booking-confirmation-session-info">
