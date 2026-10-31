@@ -1,4 +1,5 @@
 import "./EventsSideBar.css";
+import { Link } from "react-router-dom";
 
 function EventsSideBar() {
   return (
@@ -19,9 +20,9 @@ function EventsSideBar() {
         <button type="button" aria-label="History">
           <i className="bi bi-clock-history"></i>
         </button>
-        <button type="button" aria-label="Payments">
-          <i className="bi bi-credit-card"></i>
-        </button>
+        <Link to="/payments" aria-label="Payments">
+          <i className="bi bi-credit-card" aria-hidden="true"></i>
+        </Link>
         <button type="button" aria-label="Profile">
           <i className="bi bi-person"></i>
         </button>

@@ -15,6 +15,7 @@ import FindAdvisors from "./pages/FindAdvisors";
 import SavedAdvisors from "./pages/SavedAdvisors";
 import ConsultantProfile from "./pages/ConsultantProfile";
 import Messages from "./pages/Messages";
+import Payments from "./pages/Payments";
 
 import "./App.css";
 
@@ -41,6 +42,7 @@ function App() {
         element={<ConsultantProfile />}
       />
       <Route path="/messages" element={<Messages />} />
+      <Route path="/payments" element={<Payments />} />
     </Routes>
   );
 }

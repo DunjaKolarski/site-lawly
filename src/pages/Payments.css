@@ -1,0 +1,129 @@
+.payments-layout {
+  width: 100%;
+  display: flex;
+}
+.payments-content {
+  width: 96%;
+  min-width: 0;
+  min-height: 40rem;
+  color: #000d50;
+}
+.payments-content > h1 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.5rem 2rem;
+}
+.payments-sections {
+  display: flex;
+  align-items: flex-start;
+  gap: 4rem;
+  padding: 4rem 5rem;
+}
+.payments-methods,
+.payments-credits {
+  flex: 1;
+  min-width: 0;
+}
+.payments-methods {
+  padding-top: 1rem;
+}
+.payments-methods > h2,
+.payments-credits > h2 {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+.payments-methods > p,
+.payments-credits > p {
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+.payments-methods > .payments-method-status {
+  margin-top: 2rem;
+}
+.payments-stripe-button {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: Arial, sans-serif;
+  font-size: 0.75rem;
+  color: #858484;
+  background-color: #ececec;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.7rem;
+  margin-top: 0.8rem;
+}
+.payments-stripe-button > span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #635bff;
+}
+.payments-credits {
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+.payments-credits-empty {
+  font-size: 0.75rem;
+  text-align: center;
+  background-color: #f5f6f7;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-top: 1.5rem;
+}
+.payments-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+.payments-card-logo {
+  display: block;
+  width: 3rem;
+  height: auto;
+  border-radius: 0.2rem;
+}
+.payments-card-details {
+  font-size: 0.75rem;
+}
+.payments-credits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.payments-credit {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #f5f6f7;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+}
+.payments-credit > img {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.payments-credit-details {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.75rem;
+  color: #858484;
+}
+.payments-credit-amount {
+  color: #000d50;
+  font-weight: bold;
+}
+.payments-credit-details > .payments-credit-expiration {
+  color: #d9534f;
+}
+.payments-credit > button {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  padding: 0.6rem 0.75rem;
+}

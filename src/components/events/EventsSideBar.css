@@ -13,7 +13,8 @@
   align-items: center;
   gap: 1.5rem;
 }
-.events-sidebar-navigation > button {
+.events-sidebar-navigation > button,
+.events-sidebar-navigation > a {
   display: flex;
   justify-content: center;
   align-items: center;
